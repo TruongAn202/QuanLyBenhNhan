@@ -182,7 +182,7 @@ namespace QuanLyBenhNhan
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(595, 357);
+            this.btnXoa.Location = new System.Drawing.Point(600, 361);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(123, 39);
@@ -200,7 +200,7 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(750, 357);
+            this.btnSave.Location = new System.Drawing.Point(755, 361);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(127, 39);
             this.btnSave.TabIndex = 73;
@@ -241,7 +241,7 @@ namespace QuanLyBenhNhan
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(909, 357);
+            this.btnSua.Location = new System.Drawing.Point(914, 361);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(123, 39);
@@ -280,7 +280,7 @@ namespace QuanLyBenhNhan
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1063, 357);
+            this.btnThem.Location = new System.Drawing.Point(1068, 361);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(123, 39);

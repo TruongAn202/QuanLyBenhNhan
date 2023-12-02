@@ -30,5 +30,6 @@ namespace QuanLyBenhNhan
     //        }
     //        return viewList;
     //    }
+    //chua update
     }
 }
