@@ -29,8 +29,8 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -57,11 +57,16 @@ namespace QuanLyBenhNhan
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLHD)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -95,9 +100,9 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(1051, 362);
+            this.btnSave.Location = new System.Drawing.Point(834, 352);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 39);
+            this.btnSave.Size = new System.Drawing.Size(145, 39);
             this.btnSave.TabIndex = 132;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -107,7 +112,7 @@ namespace QuanLyBenhNhan
             // 
             this.cbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbMaPK.FormattingEnabled = true;
-            this.cbMaPK.Location = new System.Drawing.Point(753, 166);
+            this.cbMaPK.Location = new System.Drawing.Point(739, 173);
             this.cbMaPK.Name = "cbMaPK";
             this.cbMaPK.Size = new System.Drawing.Size(192, 28);
             this.cbMaPK.TabIndex = 131;
@@ -117,7 +122,7 @@ namespace QuanLyBenhNhan
             // 
             this.dtNgayLapPhieu.Font = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayLapPhieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLapPhieu.Location = new System.Drawing.Point(377, 218);
+            this.dtNgayLapPhieu.Location = new System.Drawing.Point(365, 216);
             this.dtNgayLapPhieu.Name = "dtNgayLapPhieu";
             this.dtNgayLapPhieu.Size = new System.Drawing.Size(141, 28);
             this.dtNgayLapPhieu.TabIndex = 129;
@@ -126,7 +131,7 @@ namespace QuanLyBenhNhan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label3.Location = new System.Drawing.Point(256, 224);
+            this.label3.Location = new System.Drawing.Point(244, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 121;
@@ -136,7 +141,7 @@ namespace QuanLyBenhNhan
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label6.Location = new System.Drawing.Point(591, 169);
+            this.label6.Location = new System.Drawing.Point(577, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 20);
             this.label6.TabIndex = 119;
@@ -147,7 +152,7 @@ namespace QuanLyBenhNhan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label1.Location = new System.Drawing.Point(256, 180);
+            this.label1.Location = new System.Drawing.Point(244, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 20);
             this.label1.TabIndex = 118;
@@ -157,7 +162,7 @@ namespace QuanLyBenhNhan
             // 
             this.tbMaHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMaHD.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbMaHD.Location = new System.Drawing.Point(377, 178);
+            this.tbMaHD.Location = new System.Drawing.Point(365, 176);
             this.tbMaHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaHD.Name = "tbMaHD";
             this.tbMaHD.Size = new System.Drawing.Size(141, 28);
@@ -169,14 +174,14 @@ namespace QuanLyBenhNhan
             this.dgvQLHD.AllowUserToDeleteRows = false;
             this.dgvQLHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLHD.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvQLHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -184,14 +189,14 @@ namespace QuanLyBenhNhan
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLHD.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLHD.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvQLHD.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvQLHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgvQLHD.Location = new System.Drawing.Point(0, 689);
@@ -203,6 +208,7 @@ namespace QuanLyBenhNhan
             this.dgvQLHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLHD.Size = new System.Drawing.Size(1402, 294);
             this.dgvQLHD.TabIndex = 116;
+            this.dgvQLHD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLHD_RowEnter);
             // 
             // Column1
             // 
@@ -248,7 +254,7 @@ namespace QuanLyBenhNhan
             // 
             this.tbTenBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTenBN.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbTenBN.Location = new System.Drawing.Point(753, 202);
+            this.tbTenBN.Location = new System.Drawing.Point(739, 220);
             this.tbTenBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenBN.Name = "tbTenBN";
             this.tbTenBN.Size = new System.Drawing.Size(192, 28);
@@ -258,7 +264,7 @@ namespace QuanLyBenhNhan
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label7.Location = new System.Drawing.Point(591, 204);
+            this.label7.Location = new System.Drawing.Point(577, 222);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 20);
             this.label7.TabIndex = 122;
@@ -273,7 +279,7 @@ namespace QuanLyBenhNhan
             this.btnLapHD.ForeColor = System.Drawing.Color.White;
             this.btnLapHD.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnLapHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapHD.Location = new System.Drawing.Point(889, 362);
+            this.btnLapHD.Location = new System.Drawing.Point(1018, 352);
             this.btnLapHD.Margin = new System.Windows.Forms.Padding(0);
             this.btnLapHD.Name = "btnLapHD";
             this.btnLapHD.Size = new System.Drawing.Size(145, 39);
@@ -286,19 +292,21 @@ namespace QuanLyBenhNhan
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label2.Location = new System.Drawing.Point(591, 243);
+            this.label2.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(418, 296);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.Size = new System.Drawing.Size(132, 34);
             this.label2.TabIndex = 141;
-            this.label2.Text = "Tổng tiền dịch vụ";
+            this.label2.Text = "Tổng thu";
             // 
             // tbTongTien
             // 
-            this.tbTongTien.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbTongTien.Location = new System.Drawing.Point(753, 240);
+            this.tbTongTien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTongTien.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTongTien.Location = new System.Drawing.Point(560, 290);
             this.tbTongTien.Name = "tbTongTien";
-            this.tbTongTien.Size = new System.Drawing.Size(192, 28);
+            this.tbTongTien.ReadOnly = true;
+            this.tbTongTien.Size = new System.Drawing.Size(192, 40);
             this.tbTongTien.TabIndex = 142;
             // 
             // panel3
@@ -338,6 +346,10 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.tbTongTien);
@@ -356,6 +368,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(1198, 410);
             this.groupBox2.TabIndex = 154;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // panel2
             // 
@@ -377,6 +390,47 @@ namespace QuanLyBenhNhan
             this.label9.Size = new System.Drawing.Size(225, 35);
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin hóa đơn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Inter Medium", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(500, 41);
+            this.label4.TabIndex = 143;
+            this.label4.Text = "Hóa đơn khám và điều trị răng";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources._20;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 144;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label5.Font = new System.Drawing.Font("Inter Medium Italic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 384);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(307, 23);
+            this.label5.TabIndex = 145;
+            this.label5.Text = "(*)Là tổng tiền của tất cả dịch vụ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Inter Italic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(402, 301);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 29);
+            this.label8.TabIndex = 146;
+            this.label8.Text = "*";
             // 
             // FormQLHD
             // 
@@ -400,6 +454,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,5 +486,9 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
     }
 }

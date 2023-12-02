@@ -243,6 +243,9 @@
     <Content Include="iconMini.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-magnifying-glass-20.png" />
+    <None Include="Resources\icons8-thick-arrow-pointing-down-20.png" />
+    <None Include="Resources\icons8-arrow-20.png" />
     <None Include="Resources\icons8-list-25.png" />
     <None Include="Resources\icons8-list-20 %282%291.png" />
     <None Include="Resources\icons8-list-20 %282%29.png" />

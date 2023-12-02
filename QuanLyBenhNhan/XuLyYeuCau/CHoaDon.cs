@@ -47,5 +47,6 @@ namespace QuanLyBenhNhan
             //this.PhieuKham = null;
             //this.BenhNhan = null;
         }
+       
     }
 }

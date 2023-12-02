@@ -97,5 +97,29 @@ namespace QuanLyBenhNhan
         {
 
         }
+        private string getMaHD()
+        {
+            if (dgvQLHD.SelectedRows.Count == 0) return "";
+            int index = dgvQLHD.SelectedRows[0].Index;
+            return dgvQLHD.Rows[index].Cells[0].Value.ToString();
+        }
+        private void dgvQLHD_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string mahd = getMaHD();
+            if (mahd == "") return;
+            CHoaDon hd = xulyHD.searchHD(mahd); // không duoc sua mã
+
+            tbMaHD.Text = hd.Mahoadon;
+            cbMaPK.Text = hd.MaPK;
+            dtNgayLapPhieu.Value = hd.Ngaylaphoadon;
+            tbTongTien.Text = hd.TongTien;
+            tbTenBN.Text = hd.TenBN;
+            
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -223,6 +223,16 @@ namespace QuanLyBenhNhan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_arrow_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-20", resourceCulture);
@@ -373,6 +383,16 @@ namespace QuanLyBenhNhan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_magnifying_glass_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-magnifying-glass-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_medical_doctor_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-medical-doctor-20", resourceCulture);
@@ -516,6 +536,16 @@ namespace QuanLyBenhNhan.Properties {
         internal static System.Drawing.Bitmap icons8_subtract_30__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-subtract-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_thick_arrow_pointing_down_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-thick-arrow-pointing-down-20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
