@@ -213,11 +213,11 @@ namespace QuanLyBenhNhan
             // 
             this.labTime.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labTime.AutoSize = true;
-            this.labTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labTime.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.labTime.Location = new System.Drawing.Point(555, 572);
+            this.labTime.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTime.ForeColor = System.Drawing.Color.White;
+            this.labTime.Location = new System.Drawing.Point(531, 601);
             this.labTime.Name = "labTime";
-            this.labTime.Size = new System.Drawing.Size(130, 55);
+            this.labTime.Size = new System.Drawing.Size(170, 72);
             this.labTime.TabIndex = 2;
             this.labTime.Text = "Time";
             // 
@@ -225,11 +225,11 @@ namespace QuanLyBenhNhan
             // 
             this.labDay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labDay.AutoSize = true;
-            this.labDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDay.ForeColor = System.Drawing.Color.AliceBlue;
-            this.labDay.Location = new System.Drawing.Point(536, 627);
+            this.labDay.Font = new System.Drawing.Font("Inter Italic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labDay.ForeColor = System.Drawing.Color.White;
+            this.labDay.Location = new System.Drawing.Point(501, 673);
             this.labDay.Name = "labDay";
-            this.labDay.Size = new System.Drawing.Size(42, 24);
+            this.labDay.Size = new System.Drawing.Size(57, 29);
             this.labDay.TabIndex = 1;
             this.labDay.Text = "Day";
             // 
@@ -237,9 +237,9 @@ namespace QuanLyBenhNhan
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources.An__5_;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 252);
+            this.pictureBox1.Location = new System.Drawing.Point(475, 214);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(386, 388);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 480);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;

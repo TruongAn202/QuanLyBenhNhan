@@ -29,8 +29,8 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -55,18 +55,18 @@ namespace QuanLyBenhNhan
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLHD)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -85,7 +85,7 @@ namespace QuanLyBenhNhan
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Inter", 19.8F, System.Drawing.FontStyle.Bold);
             this.label.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label.Location = new System.Drawing.Point(587, 25);
+            this.label.Location = new System.Drawing.Point(562, 25);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(279, 40);
             this.label.TabIndex = 0;
@@ -94,6 +94,7 @@ namespace QuanLyBenhNhan
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -110,6 +111,8 @@ namespace QuanLyBenhNhan
             // 
             // cbMaPK
             // 
+            this.cbMaPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMaPK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbMaPK.FormattingEnabled = true;
             this.cbMaPK.Location = new System.Drawing.Point(739, 173);
@@ -120,6 +123,7 @@ namespace QuanLyBenhNhan
             // 
             // dtNgayLapPhieu
             // 
+            this.dtNgayLapPhieu.CalendarFont = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayLapPhieu.Font = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayLapPhieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgayLapPhieu.Location = new System.Drawing.Point(365, 216);
@@ -174,14 +178,14 @@ namespace QuanLyBenhNhan
             this.dgvQLHD.AllowUserToDeleteRows = false;
             this.dgvQLHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLHD.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvQLHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -189,14 +193,14 @@ namespace QuanLyBenhNhan
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLHD.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLHD.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvQLHD.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvQLHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgvQLHD.Location = new System.Drawing.Point(0, 689);
@@ -253,10 +257,12 @@ namespace QuanLyBenhNhan
             // tbTenBN
             // 
             this.tbTenBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTenBN.Enabled = false;
             this.tbTenBN.Font = new System.Drawing.Font("Inter", 10.2F);
             this.tbTenBN.Location = new System.Drawing.Point(739, 220);
             this.tbTenBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenBN.Name = "tbTenBN";
+            this.tbTenBN.ReadOnly = true;
             this.tbTenBN.Size = new System.Drawing.Size(192, 28);
             this.tbTenBN.TabIndex = 125;
             // 
@@ -273,6 +279,7 @@ namespace QuanLyBenhNhan
             // btnLapHD
             // 
             this.btnLapHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnLapHD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLapHD.FlatAppearance.BorderSize = 0;
             this.btnLapHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLapHD.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,7 +300,7 @@ namespace QuanLyBenhNhan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(418, 296);
+            this.label2.Location = new System.Drawing.Point(371, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 34);
             this.label2.TabIndex = 141;
@@ -301,12 +308,14 @@ namespace QuanLyBenhNhan
             // 
             // tbTongTien
             // 
-            this.tbTongTien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTongTien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTongTien.Cursor = System.Windows.Forms.Cursors.No;
+            this.tbTongTien.Enabled = false;
             this.tbTongTien.Font = new System.Drawing.Font("Inter", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTongTien.Location = new System.Drawing.Point(560, 290);
+            this.tbTongTien.Location = new System.Drawing.Point(509, 296);
             this.tbTongTien.Name = "tbTongTien";
             this.tbTongTien.ReadOnly = true;
-            this.tbTongTien.Size = new System.Drawing.Size(192, 40);
+            this.tbTongTien.Size = new System.Drawing.Size(273, 33);
             this.tbTongTien.TabIndex = 142;
             // 
             // panel3
@@ -370,6 +379,47 @@ namespace QuanLyBenhNhan
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Inter Italic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(355, 301);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 29);
+            this.label8.TabIndex = 146;
+            this.label8.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label5.Font = new System.Drawing.Font("Inter Medium Italic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 384);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(386, 23);
+            this.label5.TabIndex = 145;
+            this.label5.Text = "(*)tổng tiền của tất cả dịch vụ đã đăng ký";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources._20;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 144;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Inter Medium", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(493, 40);
+            this.label4.TabIndex = 143;
+            this.label4.Text = "Hóa đơn khám và điều trị răng";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
@@ -391,47 +441,6 @@ namespace QuanLyBenhNhan
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin hóa đơn";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Inter Medium", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(370, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(500, 41);
-            this.label4.TabIndex = 143;
-            this.label4.Text = "Hóa đơn khám và điều trị răng";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources._20;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 144;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Font = new System.Drawing.Font("Inter Medium Italic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 384);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(307, 23);
-            this.label5.TabIndex = 145;
-            this.label5.Text = "(*)Là tổng tiền của tất cả dịch vụ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Inter Italic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(402, 301);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 29);
-            this.label8.TabIndex = 146;
-            this.label8.Text = "*";
-            // 
             // FormQLHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,9 +461,9 @@ namespace QuanLyBenhNhan
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

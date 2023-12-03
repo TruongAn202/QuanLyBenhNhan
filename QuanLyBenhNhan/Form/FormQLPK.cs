@@ -25,14 +25,14 @@ namespace QuanLyBenhNhan
             showDSPK();
             
         }
-        private void showDV()
+        private void showDV() // du lieu dich vu
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = xuLyDV.getDsDichVu();
             cbMaDV.DataSource = bs;
 
         }
-        private void showDSPK()
+        private void showDSPK() // du lieu phieu kham
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = xyLyPK.getDsPhieuKham();
@@ -197,7 +197,7 @@ namespace QuanLyBenhNhan
             if (mapk != "")
             {
                 xyLyPK.deletePK(mapk);
-
+                showDSPK();
                 clear();
 
             }
@@ -237,8 +237,32 @@ namespace QuanLyBenhNhan
 
         private void btnChonDV_Click_1(object sender, EventArgs e)
         {
+            //CDichVu dv = cbMaDV.SelectedItem as CDichVu;
+            //int soluong = int.Parse(tbSoLuong.Text);
+            //pk.insert(dv, soluong);
+            //showChiTietPK(pk.DsCTPK);
+            if (pk == null)
+            {
+                MessageBox.Show("Hãy lập phiếu khám mới trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng hàm nếu pk là null
+            }
+
             CDichVu dv = cbMaDV.SelectedItem as CDichVu;
-            int soluong = int.Parse(tbSoLuong.Text);
+
+            // Kiểm tra nếu tbSoLuong trống
+            if (string.IsNullOrEmpty(tbSoLuong.Text))
+            {
+                MessageBox.Show("Hãy nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng hàm nếu số lượng không được nhập
+            }
+
+            // Kiểm tra nếu nhập số lượng không hợp lệ
+            if (!int.TryParse(tbSoLuong.Text, out int soluong) || soluong <= 0)
+            {
+                MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng hàm nếu số lượng không hợp lệ
+            }
+
             pk.insert(dv, soluong);
             showChiTietPK(pk.DsCTPK);
         }

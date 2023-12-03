@@ -42,6 +42,9 @@ namespace QuanLyBenhNhan
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXemPK = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dgvQLPK = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +52,17 @@ namespace QuanLyBenhNhan
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbDonGia = new System.Windows.Forms.TextBox();
             this.tbSoLuong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnLapPK = new System.Windows.Forms.Button();
+            this.btnChonDV = new System.Windows.Forms.Button();
             this.tbMaPK = new System.Windows.Forms.TextBox();
             this.tbTenDV = new System.Windows.Forms.TextBox();
             this.cbMaDV = new System.Windows.Forms.ComboBox();
@@ -71,15 +78,8 @@ namespace QuanLyBenhNhan
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnLapPK = new System.Windows.Forms.Button();
-            this.btnChonDV = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXemPK = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -106,7 +106,7 @@ namespace QuanLyBenhNhan
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Inter", 19.8F, System.Drawing.FontStyle.Bold);
             this.label.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label.Location = new System.Drawing.Point(591, 25);
+            this.label.Location = new System.Drawing.Point(533, 25);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(337, 40);
             this.label.TabIndex = 0;
@@ -206,9 +206,65 @@ namespace QuanLyBenhNhan
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Location = new System.Drawing.Point(399, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(828, 513);
+            this.groupBox2.Size = new System.Drawing.Size(828, 524);
             this.groupBox2.TabIndex = 146;
             this.groupBox2.TabStop = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(84)))));
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(532, 451);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(123, 39);
+            this.btnSua.TabIndex = 151;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXemPK
+            // 
+            this.btnXemPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnXemPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXemPK.FlatAppearance.BorderSize = 0;
+            this.btnXemPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemPK.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemPK.ForeColor = System.Drawing.Color.White;
+            this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemPK.Location = new System.Drawing.Point(6, 74);
+            this.btnXemPK.Name = "btnXemPK";
+            this.btnXemPK.Size = new System.Drawing.Size(217, 47);
+            this.btnXemPK.TabIndex = 147;
+            this.btnXemPK.Text = "Xem phiếu khám";
+            this.btnXemPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXemPK.UseVisualStyleBackColor = false;
+            this.btnXemPK.Click += new System.EventHandler(this.btnXemPK_Click_1);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(689, 451);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(115, 39);
+            this.btnSave.TabIndex = 150;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // dgvQLPK
             // 
@@ -248,7 +304,7 @@ namespace QuanLyBenhNhan
             this.dgvQLPK.RowHeadersWidth = 51;
             this.dgvQLPK.RowTemplate.Height = 24;
             this.dgvQLPK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQLPK.Size = new System.Drawing.Size(817, 288);
+            this.dgvQLPK.Size = new System.Drawing.Size(817, 284);
             this.dgvQLPK.TabIndex = 146;
             this.dgvQLPK.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLPK_RowEnter);
             // 
@@ -302,6 +358,17 @@ namespace QuanLyBenhNhan
             this.panel2.Size = new System.Drawing.Size(1021, 32);
             this.panel2.TabIndex = 83;
             // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Transparent;
+            this.label11.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
+            this.label11.Location = new System.Drawing.Point(0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 32);
+            this.label11.TabIndex = 102;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -313,6 +380,25 @@ namespace QuanLyBenhNhan
             this.label14.Size = new System.Drawing.Size(267, 35);
             this.label14.TabIndex = 101;
             this.label14.Text = "Danh mục phiếu khám";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(23)))), ((int)(((byte)(0)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(390, 451);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 39);
+            this.btnDelete.TabIndex = 149;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // label6
             // 
@@ -347,7 +433,7 @@ namespace QuanLyBenhNhan
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 513);
+            this.groupBox1.Size = new System.Drawing.Size(373, 524);
             this.groupBox1.TabIndex = 151;
             this.groupBox1.TabStop = false;
             // 
@@ -393,6 +479,46 @@ namespace QuanLyBenhNhan
             this.label10.TabIndex = 159;
             this.label10.Text = "Số lượng";
             // 
+            // btnLapPK
+            // 
+            this.btnLapPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnLapPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapPK.FlatAppearance.BorderSize = 0;
+            this.btnLapPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapPK.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapPK.ForeColor = System.Drawing.Color.White;
+            this.btnLapPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_arrow_20;
+            this.btnLapPK.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLapPK.Location = new System.Drawing.Point(179, 227);
+            this.btnLapPK.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLapPK.Name = "btnLapPK";
+            this.btnLapPK.Size = new System.Drawing.Size(167, 39);
+            this.btnLapPK.TabIndex = 157;
+            this.btnLapPK.Text = "Lập phiếu khám";
+            this.btnLapPK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapPK.UseVisualStyleBackColor = false;
+            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click_1);
+            // 
+            // btnChonDV
+            // 
+            this.btnChonDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnChonDV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChonDV.FlatAppearance.BorderSize = 0;
+            this.btnChonDV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChonDV.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonDV.ForeColor = System.Drawing.Color.White;
+            this.btnChonDV.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_thick_arrow_pointing_down_20;
+            this.btnChonDV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChonDV.Location = new System.Drawing.Point(199, 451);
+            this.btnChonDV.Margin = new System.Windows.Forms.Padding(0);
+            this.btnChonDV.Name = "btnChonDV";
+            this.btnChonDV.Size = new System.Drawing.Size(147, 39);
+            this.btnChonDV.TabIndex = 156;
+            this.btnChonDV.Text = "Chọn dịch vụ";
+            this.btnChonDV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChonDV.UseVisualStyleBackColor = false;
+            this.btnChonDV.Click += new System.EventHandler(this.btnChonDV_Click_1);
+            // 
             // tbMaPK
             // 
             this.tbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
@@ -417,6 +543,8 @@ namespace QuanLyBenhNhan
             // cbMaDV
             // 
             this.cbMaDV.BackColor = System.Drawing.Color.White;
+            this.cbMaDV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMaDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaDV.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbMaDV.FormattingEnabled = true;
             this.cbMaDV.Location = new System.Drawing.Point(152, 334);
@@ -428,6 +556,8 @@ namespace QuanLyBenhNhan
             // cbBS
             // 
             this.cbBS.BackColor = System.Drawing.Color.White;
+            this.cbBS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbBS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBS.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbBS.FormattingEnabled = true;
             this.cbBS.Location = new System.Drawing.Point(179, 175);
@@ -437,6 +567,8 @@ namespace QuanLyBenhNhan
             // 
             // cbBN
             // 
+            this.cbBN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbBN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBN.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbBN.FormattingEnabled = true;
             this.cbBN.Location = new System.Drawing.Point(180, 140);
@@ -546,18 +678,6 @@ namespace QuanLyBenhNhan
             this.panel3.Size = new System.Drawing.Size(1402, 32);
             this.panel3.TabIndex = 152;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(36, 0);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.label13.Size = new System.Drawing.Size(219, 35);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Danh mục dịch vụ";
-            // 
             // label12
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
@@ -569,125 +689,17 @@ namespace QuanLyBenhNhan
             this.label12.Size = new System.Drawing.Size(37, 32);
             this.label12.TabIndex = 100;
             // 
-            // btnLapPK
+            // label13
             // 
-            this.btnLapPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
-            this.btnLapPK.FlatAppearance.BorderSize = 0;
-            this.btnLapPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLapPK.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapPK.ForeColor = System.Drawing.Color.White;
-            this.btnLapPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_arrow_20;
-            this.btnLapPK.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLapPK.Location = new System.Drawing.Point(179, 227);
-            this.btnLapPK.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLapPK.Name = "btnLapPK";
-            this.btnLapPK.Size = new System.Drawing.Size(167, 39);
-            this.btnLapPK.TabIndex = 157;
-            this.btnLapPK.Text = "Lập phiếu khám";
-            this.btnLapPK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapPK.UseVisualStyleBackColor = false;
-            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click_1);
-            // 
-            // btnChonDV
-            // 
-            this.btnChonDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
-            this.btnChonDV.FlatAppearance.BorderSize = 0;
-            this.btnChonDV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChonDV.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonDV.ForeColor = System.Drawing.Color.White;
-            this.btnChonDV.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_thick_arrow_pointing_down_20;
-            this.btnChonDV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChonDV.Location = new System.Drawing.Point(199, 451);
-            this.btnChonDV.Margin = new System.Windows.Forms.Padding(0);
-            this.btnChonDV.Name = "btnChonDV";
-            this.btnChonDV.Size = new System.Drawing.Size(147, 39);
-            this.btnChonDV.TabIndex = 156;
-            this.btnChonDV.Text = "Chọn dịch vụ";
-            this.btnChonDV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChonDV.UseVisualStyleBackColor = false;
-            this.btnChonDV.Click += new System.EventHandler(this.btnChonDV_Click_1);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(84)))));
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(532, 451);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(123, 39);
-            this.btnSua.TabIndex = 151;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXemPK
-            // 
-            this.btnXemPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnXemPK.FlatAppearance.BorderSize = 0;
-            this.btnXemPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemPK.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemPK.ForeColor = System.Drawing.Color.White;
-            this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
-            this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemPK.Location = new System.Drawing.Point(6, 74);
-            this.btnXemPK.Name = "btnXemPK";
-            this.btnXemPK.Size = new System.Drawing.Size(217, 47);
-            this.btnXemPK.TabIndex = 147;
-            this.btnXemPK.Text = "Xem phiếu khám";
-            this.btnXemPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXemPK.UseVisualStyleBackColor = false;
-            this.btnXemPK.Click += new System.EventHandler(this.btnXemPK_Click_1);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(689, 451);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 39);
-            this.btnSave.TabIndex = 150;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label11.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Transparent;
-            this.label11.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
-            this.label11.Location = new System.Drawing.Point(0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 32);
-            this.label11.TabIndex = 102;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(23)))), ((int)(((byte)(0)))));
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(390, 451);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 39);
-            this.btnDelete.TabIndex = 149;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(36, 0);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.label13.Size = new System.Drawing.Size(219, 35);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Danh mục dịch vụ";
             // 
             // FormQLPK
             // 

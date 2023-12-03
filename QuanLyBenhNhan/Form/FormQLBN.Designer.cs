@@ -29,12 +29,14 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnInsert = new System.Windows.Forms.Panel();
             this.lbPnInsert = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbGhiChu = new System.Windows.Forms.GroupBox();
+            this.tbGhiChu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.dtNgayKham = new System.Windows.Forms.DateTimePicker();
@@ -51,11 +53,9 @@ namespace QuanLyBenhNhan
             this.label2 = new System.Windows.Forms.Label();
             this.tbTenBN = new System.Windows.Forms.TextBox();
             this.tbSDT = new System.Windows.Forms.TextBox();
-            this.tbGhiChu = new System.Windows.Forms.TextBox();
             this.tbMaBN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,7 @@ namespace QuanLyBenhNhan
             this.label10 = new System.Windows.Forms.Label();
             this.pnInsert.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbGhiChu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBN)).BeginInit();
@@ -93,7 +94,7 @@ namespace QuanLyBenhNhan
             this.lbPnInsert.AutoSize = true;
             this.lbPnInsert.Font = new System.Drawing.Font("Inter", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPnInsert.ForeColor = System.Drawing.Color.Transparent;
-            this.lbPnInsert.Location = new System.Drawing.Point(535, 21);
+            this.lbPnInsert.Location = new System.Drawing.Point(541, 21);
             this.lbPnInsert.Name = "lbPnInsert";
             this.lbPnInsert.Size = new System.Drawing.Size(321, 40);
             this.lbPnInsert.TabIndex = 0;
@@ -102,6 +103,7 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.gbGhiChu);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.dtNgayKham);
             this.groupBox2.Controls.Add(this.dtNgaySInh);
@@ -116,11 +118,9 @@ namespace QuanLyBenhNhan
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.tbTenBN);
             this.groupBox2.Controls.Add(this.tbSDT);
-            this.groupBox2.Controls.Add(this.tbGhiChu);
             this.groupBox2.Controls.Add(this.tbMaBN);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 95);
             this.groupBox2.Name = "groupBox2";
@@ -128,6 +128,30 @@ namespace QuanLyBenhNhan
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // gbGhiChu
+            // 
+            this.gbGhiChu.Controls.Add(this.tbGhiChu);
+            this.gbGhiChu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbGhiChu.Font = new System.Drawing.Font("Inter", 10.2F);
+            this.gbGhiChu.Location = new System.Drawing.Point(804, 91);
+            this.gbGhiChu.Name = "gbGhiChu";
+            this.gbGhiChu.Size = new System.Drawing.Size(387, 176);
+            this.gbGhiChu.TabIndex = 84;
+            this.gbGhiChu.TabStop = false;
+            this.gbGhiChu.Text = "Ghi chú";
+            // 
+            // tbGhiChu
+            // 
+            this.tbGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbGhiChu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbGhiChu.Font = new System.Drawing.Font("Inter", 10.2F);
+            this.tbGhiChu.Location = new System.Drawing.Point(3, 24);
+            this.tbGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbGhiChu.Multiline = true;
+            this.tbGhiChu.Name = "tbGhiChu";
+            this.tbGhiChu.Size = new System.Drawing.Size(381, 149);
+            this.tbGhiChu.TabIndex = 73;
             // 
             // panel2
             // 
@@ -156,7 +180,7 @@ namespace QuanLyBenhNhan
             this.dtNgayKham.CalendarFont = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayKham.Font = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayKham.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayKham.Location = new System.Drawing.Point(665, 150);
+            this.dtNgayKham.Location = new System.Drawing.Point(548, 142);
             this.dtNgayKham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgayKham.Name = "dtNgayKham";
             this.dtNgayKham.Size = new System.Drawing.Size(234, 28);
@@ -167,7 +191,7 @@ namespace QuanLyBenhNhan
             this.dtNgaySInh.CalendarFont = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgaySInh.Font = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgaySInh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaySInh.Location = new System.Drawing.Point(300, 150);
+            this.dtNgaySInh.Location = new System.Drawing.Point(183, 142);
             this.dtNgaySInh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgaySInh.Name = "dtNgaySInh";
             this.dtNgaySInh.Size = new System.Drawing.Size(200, 28);
@@ -176,6 +200,7 @@ namespace QuanLyBenhNhan
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(23)))), ((int)(((byte)(0)))));
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,6 +219,7 @@ namespace QuanLyBenhNhan
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,17 +238,19 @@ namespace QuanLyBenhNhan
             // 
             this.groupBox1.Controls.Add(this.cbGioiTinh);
             this.groupBox1.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.groupBox1.Location = new System.Drawing.Point(914, 113);
+            this.groupBox1.Location = new System.Drawing.Point(670, 219);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(112, 59);
+            this.groupBox1.Size = new System.Drawing.Size(112, 65);
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giới tính";
             // 
             // cbGioiTinh
             // 
+            this.cbGioiTinh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
@@ -235,6 +263,7 @@ namespace QuanLyBenhNhan
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(84)))));
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,7 +283,7 @@ namespace QuanLyBenhNhan
             // 
             this.tbDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbDiaChi.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbDiaChi.Location = new System.Drawing.Point(300, 181);
+            this.tbDiaChi.Location = new System.Drawing.Point(183, 186);
             this.tbDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.Size = new System.Drawing.Size(599, 28);
@@ -265,7 +294,7 @@ namespace QuanLyBenhNhan
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(142, 184);
+            this.label4.Location = new System.Drawing.Point(25, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 78;
@@ -274,6 +303,7 @@ namespace QuanLyBenhNhan
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,7 +325,7 @@ namespace QuanLyBenhNhan
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(522, 150);
+            this.label3.Location = new System.Drawing.Point(410, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 77;
@@ -306,7 +336,7 @@ namespace QuanLyBenhNhan
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(142, 151);
+            this.label2.Location = new System.Drawing.Point(25, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 76;
@@ -316,7 +346,7 @@ namespace QuanLyBenhNhan
             // 
             this.tbTenBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTenBN.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbTenBN.Location = new System.Drawing.Point(665, 114);
+            this.tbTenBN.Location = new System.Drawing.Point(548, 99);
             this.tbTenBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenBN.Name = "tbTenBN";
             this.tbTenBN.Size = new System.Drawing.Size(234, 28);
@@ -326,27 +356,17 @@ namespace QuanLyBenhNhan
             // 
             this.tbSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSDT.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbSDT.Location = new System.Drawing.Point(300, 218);
+            this.tbSDT.Location = new System.Drawing.Point(183, 239);
             this.tbSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(200, 28);
+            this.tbSDT.Size = new System.Drawing.Size(481, 28);
             this.tbSDT.TabIndex = 74;
-            // 
-            // tbGhiChu
-            // 
-            this.tbGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbGhiChu.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbGhiChu.Location = new System.Drawing.Point(665, 215);
-            this.tbGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbGhiChu.Name = "tbGhiChu";
-            this.tbGhiChu.Size = new System.Drawing.Size(234, 28);
-            this.tbGhiChu.TabIndex = 73;
             // 
             // tbMaBN
             // 
             this.tbMaBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMaBN.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbMaBN.Location = new System.Drawing.Point(300, 114);
+            this.tbMaBN.Location = new System.Drawing.Point(183, 99);
             this.tbMaBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaBN.Name = "tbMaBN";
             this.tbMaBN.Size = new System.Drawing.Size(200, 28);
@@ -357,7 +377,7 @@ namespace QuanLyBenhNhan
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(522, 114);
+            this.label5.Location = new System.Drawing.Point(405, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 20);
             this.label5.TabIndex = 70;
@@ -368,29 +388,18 @@ namespace QuanLyBenhNhan
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(142, 218);
+            this.label7.Location = new System.Drawing.Point(25, 239);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 20);
             this.label7.TabIndex = 69;
             this.label7.Text = "Số điện thoại";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(522, 226);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
-            this.label6.TabIndex = 71;
-            this.label6.Text = "Ghi chú";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 10.2F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(142, 117);
+            this.label1.Location = new System.Drawing.Point(25, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 68;
@@ -464,21 +473,21 @@ namespace QuanLyBenhNhan
             // 
             this.dgvDSBN.AllowUserToAddRows = false;
             this.dgvDSBN.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDSBN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDSBN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDSBN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSBN.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSBN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSBN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSBN.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDSBN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSBN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -489,14 +498,14 @@ namespace QuanLyBenhNhan
             this.Column6,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSBN.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSBN.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDSBN.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSBN.EnableHeadersVisualStyles = false;
             this.dgvDSBN.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
@@ -566,6 +575,8 @@ namespace QuanLyBenhNhan
             this.pnInsert.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbGhiChu.ResumeLayout(false);
+            this.gbGhiChu.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -598,7 +609,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.TextBox tbMaBN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
@@ -614,5 +624,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox gbGhiChu;
     }
 }

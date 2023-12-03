@@ -20,6 +20,7 @@ namespace QuanLyBenhNhan
         {
             InitializeComponent();
             showPK();
+            
         }
 
         //private void showHD(List<CHoaDon> dsHD) // danh muc dich vu

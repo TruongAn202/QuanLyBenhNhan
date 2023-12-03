@@ -51,7 +51,7 @@ namespace QuanLyBenhNhan
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e) // hành dộng hỏi khi nhấn thoát
         {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK) // hiển thị messagebox có title là thông báo, nội dung :"", nếu != nhấn ok thì cancel = true(tức là bấm vào cancel)
+            if (MessageBox.Show("Bạn có thật sự muốn thoát?", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK) // hiển thị messagebox có title là thông báo, nội dung :"", nếu != nhấn ok thì cancel = true(tức là bấm vào cancel)
             {
                 e.Cancel = true;
             }
