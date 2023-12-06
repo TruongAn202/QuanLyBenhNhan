@@ -61,7 +61,6 @@ namespace QuanLyBenhNhan
             this.tbSoLuong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnLapPK = new System.Windows.Forms.Button();
             this.btnChonDV = new System.Windows.Forms.Button();
             this.tbMaPK = new System.Windows.Forms.TextBox();
             this.tbTenDV = new System.Windows.Forms.TextBox();
@@ -80,6 +79,9 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnLapPK = new System.Windows.Forms.Button();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -88,6 +90,8 @@ namespace QuanLyBenhNhan
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -144,14 +148,14 @@ namespace QuanLyBenhNhan
             this.dgvChiTietPK.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietPK.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvChiTietPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.dgvChiTietPK.Location = new System.Drawing.Point(0, 792);
+            this.dgvChiTietPK.Location = new System.Drawing.Point(0, 803);
             this.dgvChiTietPK.Name = "dgvChiTietPK";
             this.dgvChiTietPK.ReadOnly = true;
             this.dgvChiTietPK.RowHeadersVisible = false;
             this.dgvChiTietPK.RowHeadersWidth = 51;
             this.dgvChiTietPK.RowTemplate.Height = 24;
             this.dgvChiTietPK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiTietPK.Size = new System.Drawing.Size(1402, 191);
+            this.dgvChiTietPK.Size = new System.Drawing.Size(1402, 180);
             this.dgvChiTietPK.TabIndex = 137;
             this.dgvChiTietPK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietPK_CellContentClick);
             // 
@@ -198,6 +202,7 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.btnLapPK);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXemPK);
             this.groupBox2.Controls.Add(this.btnSave);
@@ -206,7 +211,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Location = new System.Drawing.Point(399, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(828, 524);
+            this.groupBox2.Size = new System.Drawing.Size(828, 535);
             this.groupBox2.TabIndex = 146;
             this.groupBox2.TabStop = false;
             // 
@@ -412,28 +417,12 @@ namespace QuanLyBenhNhan
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.tbDonGia);
-            this.groupBox1.Controls.Add(this.tbSoLuong);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.btnLapPK);
-            this.groupBox1.Controls.Add(this.btnChonDV);
-            this.groupBox1.Controls.Add(this.tbMaPK);
-            this.groupBox1.Controls.Add(this.tbTenDV);
-            this.groupBox1.Controls.Add(this.cbMaDV);
-            this.groupBox1.Controls.Add(this.cbBS);
-            this.groupBox1.Controls.Add(this.cbBN);
-            this.groupBox1.Controls.Add(this.dtNgayLapPhieu);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 524);
+            this.groupBox1.Size = new System.Drawing.Size(373, 535);
             this.groupBox1.TabIndex = 151;
             this.groupBox1.TabStop = false;
             // 
@@ -443,7 +432,7 @@ namespace QuanLyBenhNhan
             this.tbDonGia.Enabled = false;
             this.tbDonGia.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDonGia.ForeColor = System.Drawing.Color.Black;
-            this.tbDonGia.Location = new System.Drawing.Point(151, 407);
+            this.tbDonGia.Location = new System.Drawing.Point(143, 141);
             this.tbDonGia.Name = "tbDonGia";
             this.tbDonGia.ReadOnly = true;
             this.tbDonGia.Size = new System.Drawing.Size(195, 28);
@@ -454,7 +443,7 @@ namespace QuanLyBenhNhan
             this.tbSoLuong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSoLuong.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSoLuong.ForeColor = System.Drawing.Color.Black;
-            this.tbSoLuong.Location = new System.Drawing.Point(151, 372);
+            this.tbSoLuong.Location = new System.Drawing.Point(143, 106);
             this.tbSoLuong.Name = "tbSoLuong";
             this.tbSoLuong.Size = new System.Drawing.Size(195, 28);
             this.tbSoLuong.TabIndex = 160;
@@ -463,7 +452,7 @@ namespace QuanLyBenhNhan
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label9.Location = new System.Drawing.Point(27, 409);
+            this.label9.Location = new System.Drawing.Point(19, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 20);
             this.label9.TabIndex = 158;
@@ -473,31 +462,11 @@ namespace QuanLyBenhNhan
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label10.Location = new System.Drawing.Point(27, 374);
+            this.label10.Location = new System.Drawing.Point(19, 108);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 20);
             this.label10.TabIndex = 159;
             this.label10.Text = "Số lượng";
-            // 
-            // btnLapPK
-            // 
-            this.btnLapPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
-            this.btnLapPK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLapPK.FlatAppearance.BorderSize = 0;
-            this.btnLapPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLapPK.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapPK.ForeColor = System.Drawing.Color.White;
-            this.btnLapPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_arrow_20;
-            this.btnLapPK.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLapPK.Location = new System.Drawing.Point(179, 227);
-            this.btnLapPK.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLapPK.Name = "btnLapPK";
-            this.btnLapPK.Size = new System.Drawing.Size(167, 39);
-            this.btnLapPK.TabIndex = 157;
-            this.btnLapPK.Text = "Lập phiếu khám";
-            this.btnLapPK.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapPK.UseVisualStyleBackColor = false;
-            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click_1);
             // 
             // btnChonDV
             // 
@@ -509,12 +478,12 @@ namespace QuanLyBenhNhan
             this.btnChonDV.ForeColor = System.Drawing.Color.White;
             this.btnChonDV.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_thick_arrow_pointing_down_20;
             this.btnChonDV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChonDV.Location = new System.Drawing.Point(199, 451);
+            this.btnChonDV.Location = new System.Drawing.Point(123, 185);
             this.btnChonDV.Margin = new System.Windows.Forms.Padding(0);
             this.btnChonDV.Name = "btnChonDV";
-            this.btnChonDV.Size = new System.Drawing.Size(147, 39);
+            this.btnChonDV.Size = new System.Drawing.Size(215, 39);
             this.btnChonDV.TabIndex = 156;
-            this.btnChonDV.Text = "Chọn dịch vụ";
+            this.btnChonDV.Text = "Thêm vào phiếu khám";
             this.btnChonDV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChonDV.UseVisualStyleBackColor = false;
             this.btnChonDV.Click += new System.EventHandler(this.btnChonDV_Click_1);
@@ -522,7 +491,7 @@ namespace QuanLyBenhNhan
             // tbMaPK
             // 
             this.tbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbMaPK.Location = new System.Drawing.Point(179, 74);
+            this.tbMaPK.Location = new System.Drawing.Point(172, 33);
             this.tbMaPK.Name = "tbMaPK";
             this.tbMaPK.Size = new System.Drawing.Size(166, 28);
             this.tbMaPK.TabIndex = 155;
@@ -533,7 +502,7 @@ namespace QuanLyBenhNhan
             this.tbTenDV.Enabled = false;
             this.tbTenDV.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenDV.ForeColor = System.Drawing.Color.Black;
-            this.tbTenDV.Location = new System.Drawing.Point(151, 299);
+            this.tbTenDV.Location = new System.Drawing.Point(143, 33);
             this.tbTenDV.Name = "tbTenDV";
             this.tbTenDV.ReadOnly = true;
             this.tbTenDV.Size = new System.Drawing.Size(195, 28);
@@ -547,7 +516,7 @@ namespace QuanLyBenhNhan
             this.cbMaDV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaDV.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbMaDV.FormattingEnabled = true;
-            this.cbMaDV.Location = new System.Drawing.Point(152, 334);
+            this.cbMaDV.Location = new System.Drawing.Point(144, 68);
             this.cbMaDV.Name = "cbMaDV";
             this.cbMaDV.Size = new System.Drawing.Size(194, 28);
             this.cbMaDV.TabIndex = 153;
@@ -560,7 +529,7 @@ namespace QuanLyBenhNhan
             this.cbBS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBS.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbBS.FormattingEnabled = true;
-            this.cbBS.Location = new System.Drawing.Point(179, 175);
+            this.cbBS.Location = new System.Drawing.Point(172, 134);
             this.cbBS.Name = "cbBS";
             this.cbBS.Size = new System.Drawing.Size(167, 28);
             this.cbBS.TabIndex = 152;
@@ -571,7 +540,7 @@ namespace QuanLyBenhNhan
             this.cbBN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBN.Font = new System.Drawing.Font("Inter", 10.2F);
             this.cbBN.FormattingEnabled = true;
-            this.cbBN.Location = new System.Drawing.Point(180, 140);
+            this.cbBN.Location = new System.Drawing.Point(173, 99);
             this.cbBN.Name = "cbBN";
             this.cbBN.Size = new System.Drawing.Size(165, 28);
             this.cbBN.TabIndex = 151;
@@ -581,7 +550,7 @@ namespace QuanLyBenhNhan
             // 
             this.dtNgayLapPhieu.Font = new System.Drawing.Font("Inter", 10.2F);
             this.dtNgayLapPhieu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayLapPhieu.Location = new System.Drawing.Point(179, 107);
+            this.dtNgayLapPhieu.Location = new System.Drawing.Point(172, 66);
             this.dtNgayLapPhieu.Name = "dtNgayLapPhieu";
             this.dtNgayLapPhieu.Size = new System.Drawing.Size(166, 28);
             this.dtNgayLapPhieu.TabIndex = 150;
@@ -590,7 +559,7 @@ namespace QuanLyBenhNhan
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label5.Location = new System.Drawing.Point(27, 337);
+            this.label5.Location = new System.Drawing.Point(19, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 149;
@@ -600,7 +569,7 @@ namespace QuanLyBenhNhan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label3.Location = new System.Drawing.Point(18, 183);
+            this.label3.Location = new System.Drawing.Point(11, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 20);
             this.label3.TabIndex = 148;
@@ -610,7 +579,7 @@ namespace QuanLyBenhNhan
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label8.Location = new System.Drawing.Point(18, 82);
+            this.label8.Location = new System.Drawing.Point(11, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 20);
             this.label8.TabIndex = 147;
@@ -620,7 +589,7 @@ namespace QuanLyBenhNhan
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label4.Location = new System.Drawing.Point(27, 301);
+            this.label4.Location = new System.Drawing.Point(19, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 20);
             this.label4.TabIndex = 146;
@@ -630,7 +599,7 @@ namespace QuanLyBenhNhan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label2.Location = new System.Drawing.Point(18, 148);
+            this.label2.Location = new System.Drawing.Point(11, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 20);
             this.label2.TabIndex = 145;
@@ -640,7 +609,7 @@ namespace QuanLyBenhNhan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label1.Location = new System.Drawing.Point(18, 115);
+            this.label1.Location = new System.Drawing.Point(11, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 144;
@@ -663,9 +632,9 @@ namespace QuanLyBenhNhan
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(3);
-            this.label7.Size = new System.Drawing.Size(216, 35);
+            this.label7.Size = new System.Drawing.Size(238, 35);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Thông tin dịch vụ";
+            this.label7.Text = "Chi tiết phiếu khám";
             // 
             // panel3
             // 
@@ -673,7 +642,7 @@ namespace QuanLyBenhNhan
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 760);
+            this.panel3.Location = new System.Drawing.Point(0, 771);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1402, 32);
             this.panel3.TabIndex = 152;
@@ -701,6 +670,63 @@ namespace QuanLyBenhNhan
             this.label13.TabIndex = 0;
             this.label13.Text = "Danh mục dịch vụ";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.dtNgayLapPhieu);
+            this.groupBox3.Controls.Add(this.cbBN);
+            this.groupBox3.Controls.Add(this.tbMaPK);
+            this.groupBox3.Controls.Add(this.cbBS);
+            this.groupBox3.Font = new System.Drawing.Font("Inter Italic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 52);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(361, 210);
+            this.groupBox3.TabIndex = 162;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thông tin phiếu khám";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.tbDonGia);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.tbSoLuong);
+            this.groupBox4.Controls.Add(this.cbMaDV);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.tbTenDV);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.btnChonDV);
+            this.groupBox4.Font = new System.Drawing.Font("Inter Italic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.groupBox4.Location = new System.Drawing.Point(5, 282);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(362, 243);
+            this.groupBox4.TabIndex = 152;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Thông tin dịch vụ";
+            // 
+            // btnLapPK
+            // 
+            this.btnLapPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnLapPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapPK.FlatAppearance.BorderSize = 0;
+            this.btnLapPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapPK.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapPK.ForeColor = System.Drawing.Color.White;
+            this.btnLapPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
+            this.btnLapPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapPK.Location = new System.Drawing.Point(249, 74);
+            this.btnLapPK.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLapPK.Name = "btnLapPK";
+            this.btnLapPK.Size = new System.Drawing.Size(202, 47);
+            this.btnLapPK.TabIndex = 152;
+            this.btnLapPK.Text = "Lập phiếu khám mới";
+            this.btnLapPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLapPK.UseVisualStyleBackColor = false;
+            this.btnLapPK.Click += new System.EventHandler(this.btnLapPK_Click);
+            // 
             // FormQLPK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -724,11 +750,14 @@ namespace QuanLyBenhNhan
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -759,7 +788,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.TextBox tbSoLuong;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnLapPK;
         private System.Windows.Forms.Button btnChonDV;
         private System.Windows.Forms.TextBox tbMaPK;
         private System.Windows.Forms.TextBox tbTenDV;
@@ -782,5 +810,8 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnLapPK;
     }
 }

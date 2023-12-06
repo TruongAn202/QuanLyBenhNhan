@@ -12,10 +12,10 @@ namespace QuanLyBenhNhan
 {
     public partial class FormQLHD : Form
     {
-        private CXuLyHoaDon xulyHD;
+        private CXuLyHoaDon xulyHD = new CXuLyHoaDon();
         private CXuLyPhieuKham xulyPK = new CXuLyPhieuKham();
         private CHoaDon hd;
-
+        private CPhieuKham pk;
         public FormQLHD()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace QuanLyBenhNhan
         //}
         private void FormQLHD_Load(object sender, EventArgs e)
         {
-            xulyHD = new CXuLyHoaDon();
+            
             showDSHD();
         }
         private void showPK()
@@ -44,6 +44,7 @@ namespace QuanLyBenhNhan
         private void cbMaPK_SelectedIndexChanged(object sender, EventArgs e)
         {
             CPhieuKham pk = cbMaPK.SelectedItem as CPhieuKham;
+            
             tbTenBN.Text = pk.BenhNhan.TenBN;
             tbTongTien.Text = pk.ThanhTien.ToString();
         }
@@ -66,18 +67,17 @@ namespace QuanLyBenhNhan
             {
                 MessageBox.Show("Mã hóa đơn đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-
             }
             else
             {
-                
+                pk = new CPhieuKham(); 
+                pk.Maphieukham = cbMaPK.Text; 
+                pk.Maphieukham = cbMaPK.SelectedValue.ToString();
 
-                hd = new CHoaDon(tbMaHD.Text, dtNgayLapPhieu.Value, cbMaPK.Text, tbTenBN.Text, tbTongTien.Text) ;
+                hd = new CHoaDon(tbMaHD.Text, dtNgayLapPhieu.Value, pk, tbTenBN.Text, tbTongTien.Text);
                 xulyHD.insertHD(hd);
 
-                //dgvQLHD.DataSource = xulyHD.getDSHoaDon();
                 showDSHD();
-                
             }
         }
 
@@ -100,9 +100,25 @@ namespace QuanLyBenhNhan
         }
         private string getMaHD()
         {
+            //if (dgvQLHD.SelectedRows.Count == 0) return "";
+            //int index = dgvQLHD.SelectedRows[0].Index;
+            //return dgvQLHD.Rows[index].Cells[0].Value.ToString();
             if (dgvQLHD.SelectedRows.Count == 0) return "";
             int index = dgvQLHD.SelectedRows[0].Index;
-            return dgvQLHD.Rows[index].Cells[0].Value.ToString();
+
+            // Kiểm tra xem ô có giá trị null không
+            object cellValue = dgvQLHD.Rows[index].Cells[0].Value;
+
+            if (cellValue != null)
+            {
+                return cellValue.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi cell: Giá trị của ô là null");
+                // Xử lý trường hợp giá trị là null
+                return "";
+            }
         }
         private void dgvQLHD_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,16 +127,35 @@ namespace QuanLyBenhNhan
             CHoaDon hd = xulyHD.searchHD(mahd); // không duoc sua mã
 
             tbMaHD.Text = hd.Mahoadon;
-            cbMaPK.Text = hd.MaPK;
+            cbMaPK.Text = hd.PhieuKham.Maphieukham;
             dtNgayLapPhieu.Value = hd.Ngaylaphoadon;
             tbTongTien.Text = hd.TongTien;
             tbTenBN.Text = hd.TenBN;
+
             
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvQLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string mahd = getMaHD();
+            if (mahd != "")
+            {
+                xulyHD.deleteDV(mahd);
+                showDSHD();
+                
+
+            }
         }
     }
 }

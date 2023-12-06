@@ -10,7 +10,9 @@ namespace QuanLyBenhNhan
     internal class CPhieuKham
     {
         private List<CChiTietPhieuKham> dsCTPK; //= new List<CChiTietPhieuKham>();
-        public List<CChiTietPhieuKham> DsCTPK { get => dsCTPK.ToList(); set => dsCTPK = value; }
+        public List<CChiTietPhieuKham> DsCTPK { 
+            get => dsCTPK.ToList(); 
+            set => dsCTPK = value; }
 
         
         private string maphieukham;

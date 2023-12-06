@@ -12,29 +12,28 @@ namespace QuanLyBenhNhan
         private string mahoadon;
         private DateTime ngaylaphoadon;
         private string tenBN;
-        private string maPK;
+        //private string maPK;
         private string tongTien;
-        //private CPhieuKham phieuKham;
+        private CPhieuKham phieuKham;
        // private CBenhNhan benhNhan;
 
         public string Mahoadon { get => mahoadon; set => mahoadon = value; }
         public DateTime Ngaylaphoadon { get => ngaylaphoadon; set => ngaylaphoadon = value; }
         public string TenBN { get => tenBN; set => tenBN = value; }
-        public string MaPK { get => maPK; set => maPK = value; }
+        //public string MaPK { get => maPK; set => maPK = value; }
         public string TongTien { get => tongTien; set => tongTien = value; }
 
-        // internal CPhieuKham PhieuKham { get => phieuKham; set => phieuKham = value; }
+        public CPhieuKham PhieuKham { get => phieuKham; set => phieuKham = value; }
         // internal CBenhNhan BenhNhan { get => benhNhan; set => benhNhan = value; }
 
-        public CHoaDon(string mahoadon, DateTime ngaylaphoadon, string mapk, string tenbn, string tongtien)
+        public CHoaDon(string mahoadon, DateTime ngaylaphoadon, CPhieuKham pk, string tenbn, string tongtien)
         {
             Mahoadon = mahoadon;
             Ngaylaphoadon = ngaylaphoadon;
             TenBN = tenbn;
-            MaPK = mapk;
+            PhieuKham = pk;
             TongTien = tongtien;
-            //this.PhieuKham = phieukham;
-            //this.BenhNhan = benhnhan;
+            
         }
 
         public CHoaDon() 
@@ -42,10 +41,10 @@ namespace QuanLyBenhNhan
             Mahoadon = null;
             ngaylaphoadon = DateTime.Today;
             TenBN = null;
-            MaPK = null;
+            PhieuKham = null;
             TongTien = null;
-            //this.PhieuKham = null;
-            //this.BenhNhan = null;
+            
+           
         }
        
     }

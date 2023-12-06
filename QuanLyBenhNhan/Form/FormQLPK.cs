@@ -16,7 +16,7 @@ namespace QuanLyBenhNhan
         private CXuLyPhieuKham xyLyPK = new CXuLyPhieuKham();
         private CXuLyDichVu xuLyDV = new CXuLyDichVu();
         CChiTietPhieuKham ctpk = new CChiTietPhieuKham();
-        
+        CDichVu dv = new CDichVu();
         private CPhieuKham pk;
         public FormQLPK()
         {
@@ -48,54 +48,9 @@ namespace QuanLyBenhNhan
         }
         private void FormQLPK_Load(object sender, EventArgs e)
         {
-            cbBS.DataSource = xyLyPK.getDsBacSi();
-           
-            cbBN.DataSource = xyLyPK.getDsBenhNhan();
-
-            
-        }
-        
-        
-
-        //private void btnLapPK_Click(object sender, EventArgs e)
-        //{
-        //    string mapk = tbMaPK.Text.Trim();
-        //    if (string.IsNullOrEmpty(mapk))
-        //    {
-        //        MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-        //    else if (xyLyPK.ktTrungMa(mapk))
-        //    {
-        //        MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-
-        //    }
-        //    else
-        //    {
-        //        CBacSi bs = new CBacSi();
-        //        CBenhNhan bn = new CBenhNhan();
-        //        bs.TenBS = cbBS.Text;
-        //        bs.MaBS = cbBS.SelectedValue.ToString();
-        //        bn.TenBN = cbBN.Text;
-        //        bn.MaBN = cbBN.SelectedValue.ToString();
-        //        dsCTPK = new List<CChiTietPhieuKham>();
-        //        pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
-        //        xyLyPK.insertPK(pk);
-
-
-        //        showDSPK();
-        //        clear();
-        //    }
-        //}
-
-        //private void cbMaDV_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    CDichVu dv = cbMaDV.SelectedItem as CDichVu;
-        //    tbTenDV.Text = dv.TenDichVu;
-        //    tbDonGia.Text = dv.Dongia + "";
-        //}
-
+            cbBS.DataSource = xyLyPK.getDsBacSi();           
+            cbBN.DataSource = xyLyPK.getDsBenhNhan();          
+        }     
         private void clear()
         {
             tbMaPK.Clear();
@@ -116,53 +71,10 @@ namespace QuanLyBenhNhan
             bs.DataSource = CViewCTPK.getViewList(dsCTPK); //lay danh sach view
             dgvChiTietPK.DataSource = bs;
         }
-
-        //private void btnChonDV_Click(object sender, EventArgs e)
-        //{
-        //    CDichVu dv = cbMaDV.SelectedItem as CDichVu;
-        //    int soluong = int.Parse(tbSoLuong.Text);
-        //    pk.insert(dv, soluong);
-        //    showChiTietPK(pk.DsCTPK);
-        //}
-
-        //private void btnXemPK_Click(object sender, EventArgs e)
-        //{
-            
-        //}
-
-        //private void btnDelete_Click(object sender, EventArgs e)
-        //{
-        //    string mapk = getMaPK();
-        //    if (mapk != "")
-        //    {
-        //        xyLyPK.deletePK(mapk);
-
-        //        clear();
-                
-        //    }
-           
-        //}
-
-        //private void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    if (TruyCapDuLieu.luuFile("data.dat"))
-        //    {
-        //        MessageBox.Show("Dữ liệu đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Không thể lưu dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-            
-        //}
-
-       
-
         private void dgvChiTietPK_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }                  
-
         private void btnXemPK_Click_1(object sender, EventArgs e)
         {
             string mapk = getMaPK();
@@ -201,50 +113,42 @@ namespace QuanLyBenhNhan
                 clear();
 
             }
-        }
-
-        private void btnLapPK_Click_1(object sender, EventArgs e)
-        {
-            string mapk = tbMaPK.Text.Trim();
-            if (string.IsNullOrEmpty(mapk))
-            {
-                MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (xyLyPK.ktTrungMa(mapk))
-            {
-                MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-
-            }
-            else
-            {
-                CBacSi bs = new CBacSi();
-                CBenhNhan bn = new CBenhNhan();
-                bs.TenBS = cbBS.Text;
-                bs.MaBS = cbBS.SelectedValue.ToString();
-                bn.TenBN = cbBN.Text;
-                bn.MaBN = cbBN.SelectedValue.ToString();
-                dsCTPK = new List<CChiTietPhieuKham>();
-                pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
-                xyLyPK.insertPK(pk);
-
-
-                showDSPK();
-                clear();
-            }
-        }
-
+        }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
-        {
-            //CDichVu dv = cbMaDV.SelectedItem as CDichVu;
-            //int soluong = int.Parse(tbSoLuong.Text);
-            //pk.insert(dv, soluong);
-            //showChiTietPK(pk.DsCTPK);
+        {          
             if (pk == null)
             {
-                MessageBox.Show("Hãy lập phiếu khám mới trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng hàm nếu pk là null
+                
+                string mapk = tbMaPK.Text.Trim();
+                if (string.IsNullOrEmpty(mapk))
+                {
+                    MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (xyLyPK.ktTrungMa(mapk))
+                {
+                    MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+                else
+                {
+                    CBacSi bs = new CBacSi();
+                    CBenhNhan bn = new CBenhNhan();
+                    bs.TenBS = cbBS.Text;
+                    bs.MaBS = cbBS.SelectedValue.ToString();
+                    bn.TenBN = cbBN.Text;
+                    bn.MaBN = cbBN.SelectedValue.ToString();
+                    dsCTPK = new List<CChiTietPhieuKham>();
+                    pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
+                    xyLyPK.insertPK(pk);
+
+
+                    showDSPK();
+                   
+                }
+                //MessageBox.Show("Hãy lập phiếu khám mới trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return; // Dừng hàm nếu pk là null
             }
 
             CDichVu dv = cbMaDV.SelectedItem as CDichVu;
@@ -320,6 +224,12 @@ namespace QuanLyBenhNhan
             cbBN.Text = pk.BenhNhan.TenBN;
             cbBS.Text = pk.BacSi.TenBS;
            
+        }
+
+        private void btnLapPK_Click(object sender, EventArgs e)
+        {
+            pk = null;
+            clear();
         }
     }
 }

@@ -60,7 +60,6 @@
     <Compile Include="XuLyYeuCau\CHoaDon.cs" />
     <Compile Include="XuLyYeuCau\CPhieuKham.cs" />
     <Compile Include="XuLyYeuCau\CViewCTPK.cs" />
-    <Compile Include="XuLyYeuCau\CViewHD.cs" />
     <Compile Include="XuLyYeuCau\CXuLyBacSi.cs" />
     <Compile Include="XuLyYeuCau\CXuLyDichVu.cs" />
     <Compile Include="XuLyYeuCau\CXuLyBenhNhan.cs" />
