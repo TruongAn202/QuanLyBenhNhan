@@ -16,6 +16,7 @@ namespace QuanLyBenhNhan
         private CXuLyPhieuKham xyLyPK = new CXuLyPhieuKham();
         private CXuLyDichVu xuLyDV = new CXuLyDichVu();
         CChiTietPhieuKham ctpk = new CChiTietPhieuKham();
+        List<CChiTietPhieuKham> dsTamThoi = new List<CChiTietPhieuKham>();
         CDichVu dv = new CDichVu();
         private CPhieuKham pk;
         public FormQLPK()
@@ -116,40 +117,13 @@ namespace QuanLyBenhNhan
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
         {          
-            if (pk == null)
-            {
-                
-                string mapk = tbMaPK.Text.Trim();
-                if (string.IsNullOrEmpty(mapk))
-                {
-                    MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                else if (xyLyPK.ktTrungMa(mapk))
-                {
-                    MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-
-                }
-                else
-                {
-                    CBacSi bs = new CBacSi();
-                    CBenhNhan bn = new CBenhNhan();
-                    bs.TenBS = cbBS.Text;
-                    bs.MaBS = cbBS.SelectedValue.ToString();
-                    bn.TenBN = cbBN.Text;
-                    bn.MaBN = cbBN.SelectedValue.ToString();
-                    dsCTPK = new List<CChiTietPhieuKham>();
-                    pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
-                    xyLyPK.insertPK(pk);
+            //if (pk == null)
+            //{
 
 
-                    showDSPK();
-                   
-                }
-                //MessageBox.Show("Hãy lập phiếu khám mới trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //return; // Dừng hàm nếu pk là null
-            }
+            //    MessageBox.Show("Hãy lập phiếu khám mới trước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return; // Dừng hàm nếu pk là null
+            //}
 
             CDichVu dv = cbMaDV.SelectedItem as CDichVu;
 
@@ -166,9 +140,10 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng hàm nếu số lượng không hợp lệ
             }
-
-            pk.insert(dv, soluong);
-            showChiTietPK(pk.DsCTPK);
+            dsTamThoi.Add(new CChiTietPhieuKham(soluong, dv));
+            //pk.insert(dv, soluong);
+            showChiTietPK(dsTamThoi);
+            //showChiTietPK(pk.DsCTPK);
         }
 
         private void cbBN_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -230,6 +205,50 @@ namespace QuanLyBenhNhan
         {
             pk = null;
             clear();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string mapk = tbMaPK.Text.Trim();
+            if (string.IsNullOrEmpty(mapk))
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (xyLyPK.ktTrungMa(mapk))
+            {
+                MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+
+            }
+            else
+            {
+                CBacSi bs = new CBacSi();
+                CBenhNhan bn = new CBenhNhan();
+                bs.TenBS = cbBS.Text;
+                bs.MaBS = cbBS.SelectedValue.ToString();
+                bn.TenBN = cbBN.Text;
+                bn.MaBN = cbBN.SelectedValue.ToString();
+                dsCTPK = new List<CChiTietPhieuKham>();
+                
+                pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
+                xyLyPK.insertPK(pk);
+                if (dsTamThoi.Count > 0)
+                {
+                    // Nếu có, thêm các dịch vụ từ danh sách tạm thời vào pk
+                    foreach (CChiTietPhieuKham ctpk in dsTamThoi)
+                    {
+                        pk.insert(ctpk.DichVu, ctpk.SoLuong);
+                    }
+
+                    // Làm sạch danh sách tạm thời
+                    dsTamThoi.Clear();
+                }
+                //pk.insert(dsTamThoi);
+
+                showDSPK();
+
+            }
         }
     }
 }

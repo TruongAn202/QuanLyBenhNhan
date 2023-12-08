@@ -63,7 +63,7 @@ namespace QuanLyBenhNhan
                 existCtpk.SoLuong += soLuong;
             }
         }
-
+        
         public void delete(string maDV)
         {
             CChiTietPhieuKham existCtpk = timCtpk(maDV);
