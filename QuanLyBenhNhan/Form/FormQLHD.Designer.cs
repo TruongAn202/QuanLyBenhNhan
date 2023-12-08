@@ -33,7 +33,6 @@ namespace QuanLyBenhNhan
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.cbMaPK = new System.Windows.Forms.ComboBox();
             this.dtNgayLapPhieu = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,14 +50,11 @@ namespace QuanLyBenhNhan
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbTenBN = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnLapHD = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbTongTien = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tbConLai = new System.Windows.Forms.TextBox();
@@ -66,16 +62,20 @@ namespace QuanLyBenhNhan
             this.tbDaTra = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLapHD = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLHD)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -99,24 +99,6 @@ namespace QuanLyBenhNhan
             this.label.Size = new System.Drawing.Size(279, 40);
             this.label.TabIndex = 0;
             this.label.Text = "Quản lý hóa đơn";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(856, 482);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(145, 39);
-            this.btnSave.TabIndex = 132;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbMaPK
             // 
@@ -313,26 +295,6 @@ namespace QuanLyBenhNhan
             this.label7.TabIndex = 122;
             this.label7.Text = "Tên bệnh nhân";
             // 
-            // btnLapHD
-            // 
-            this.btnLapHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
-            this.btnLapHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLapHD.FlatAppearance.BorderSize = 0;
-            this.btnLapHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLapHD.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapHD.ForeColor = System.Drawing.Color.White;
-            this.btnLapHD.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
-            this.btnLapHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapHD.Location = new System.Drawing.Point(1040, 482);
-            this.btnLapHD.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLapHD.Name = "btnLapHD";
-            this.btnLapHD.Size = new System.Drawing.Size(145, 39);
-            this.btnLapHD.TabIndex = 140;
-            this.btnLapHD.Text = "Lập hóa đơn";
-            this.btnLapHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLapHD.UseVisualStyleBackColor = false;
-            this.btnLapHD.Click += new System.EventHandler(this.btnLapHD_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -365,17 +327,6 @@ namespace QuanLyBenhNhan
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1402, 32);
             this.panel3.TabIndex = 153;
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Transparent;
-            this.label12.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 32);
-            this.label12.TabIndex = 100;
             // 
             // label13
             // 
@@ -421,25 +372,6 @@ namespace QuanLyBenhNhan
             this.groupBox2.TabIndex = 154;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(23)))), ((int)(((byte)(0)))));
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Inter Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(709, 482);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 39);
-            this.btnDelete.TabIndex = 158;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // label14
             // 
@@ -513,16 +445,6 @@ namespace QuanLyBenhNhan
             this.label5.TabIndex = 145;
             this.label5.Text = "(*)Tổng tiền của tất cả dịch vụ đã đăng ký";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources._20;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 144;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -554,6 +476,84 @@ namespace QuanLyBenhNhan
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin hóa đơn";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(23)))), ((int)(((byte)(0)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(684, 482);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(111, 39);
+            this.btnDelete.TabIndex = 158;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources._20;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 144;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnLapHD
+            // 
+            this.btnLapHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnLapHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapHD.FlatAppearance.BorderSize = 0;
+            this.btnLapHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapHD.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLapHD.ForeColor = System.Drawing.Color.White;
+            this.btnLapHD.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
+            this.btnLapHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapHD.Location = new System.Drawing.Point(1008, 482);
+            this.btnLapHD.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLapHD.Name = "btnLapHD";
+            this.btnLapHD.Size = new System.Drawing.Size(177, 39);
+            this.btnLapHD.TabIndex = 140;
+            this.btnLapHD.Text = "Lập hóa đơn";
+            this.btnLapHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLapHD.UseVisualStyleBackColor = false;
+            this.btnLapHD.Click += new System.EventHandler(this.btnLapHD_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(831, 482);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(145, 39);
+            this.btnSave.TabIndex = 132;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label12
+            // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Transparent;
+            this.label12.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 32);
+            this.label12.TabIndex = 100;
+            // 
             // FormQLHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -574,9 +574,9 @@ namespace QuanLyBenhNhan
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

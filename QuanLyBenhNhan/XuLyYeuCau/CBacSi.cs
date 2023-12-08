@@ -41,7 +41,7 @@ namespace QuanLyBenhNhan
         {
 
         }
-        public override string ToString() //hienthi chi madv len cb
+        public override string ToString() 
         {
             return TenBS;
         }
