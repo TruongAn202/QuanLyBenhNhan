@@ -74,7 +74,7 @@ namespace QuanLyBenhNhan
                 pk.Maphieukham = cbMaPK.Text; 
                 pk.Maphieukham = cbMaPK.SelectedValue.ToString();
 
-                hd = new CHoaDon(tbMaHD.Text, dtNgayLapPhieu.Value, pk, tbTenBN.Text, tbTongTien.Text);
+                hd = new CHoaDon(tbMaHD.Text, dtNgayLapPhieu.Value, pk, tbTenBN.Text, tbTongTien.Text, double.Parse(tbDaTra.Text));
                 xulyHD.insertHD(hd);
 
                 showDSHD();
@@ -131,7 +131,8 @@ namespace QuanLyBenhNhan
             dtNgayLapPhieu.Value = hd.Ngaylaphoadon;
             tbTongTien.Text = hd.TongTien;
             tbTenBN.Text = hd.TenBN;
-
+            tbDaTra.Text = hd.DaTra.ToString();
+            tbConLai.Text = hd.ConLai.ToString();
             
 
         }
@@ -146,14 +147,26 @@ namespace QuanLyBenhNhan
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+       
+
+        private void tbDaTra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbConLai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             string mahd = getMaHD();
             if (mahd != "")
             {
                 xulyHD.deleteDV(mahd);
                 showDSHD();
-                
+
 
             }
         }
