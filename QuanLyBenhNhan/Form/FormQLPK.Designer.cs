@@ -29,10 +29,10 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.dgvChiTietPK = new System.Windows.Forms.DataGridView();
@@ -42,6 +42,9 @@ namespace QuanLyBenhNhan
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tbTimPk = new System.Windows.Forms.TextBox();
+            this.btnTimPK = new System.Windows.Forms.Button();
             this.btnLapPKMoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXemPK = new System.Windows.Forms.Button();
@@ -86,6 +89,7 @@ namespace QuanLyBenhNhan
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLPK)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -121,17 +125,19 @@ namespace QuanLyBenhNhan
             // 
             this.dgvChiTietPK.AllowUserToAddRows = false;
             this.dgvChiTietPK.AllowUserToDeleteRows = false;
+            this.dgvChiTietPK.AllowUserToResizeColumns = false;
+            this.dgvChiTietPK.AllowUserToResizeRows = false;
             this.dgvChiTietPK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTietPK.BackgroundColor = System.Drawing.Color.White;
             this.dgvChiTietPK.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChiTietPK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietPK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column6,
@@ -139,17 +145,18 @@ namespace QuanLyBenhNhan
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietPK.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietPK.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiTietPK.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvChiTietPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgvChiTietPK.Location = new System.Drawing.Point(0, 851);
+            this.dgvChiTietPK.MultiSelect = false;
             this.dgvChiTietPK.Name = "dgvChiTietPK";
             this.dgvChiTietPK.ReadOnly = true;
             this.dgvChiTietPK.RowHeadersVisible = false;
@@ -158,7 +165,6 @@ namespace QuanLyBenhNhan
             this.dgvChiTietPK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTietPK.Size = new System.Drawing.Size(1402, 132);
             this.dgvChiTietPK.TabIndex = 137;
-            this.dgvChiTietPK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietPK_CellContentClick);
             // 
             // Column6
             // 
@@ -203,6 +209,7 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.btnLapPKMoi);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXemPK);
@@ -215,7 +222,47 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(828, 567);
             this.groupBox2.TabIndex = 146;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tbTimPk);
+            this.groupBox5.Controls.Add(this.btnTimPK);
+            this.groupBox5.Font = new System.Drawing.Font("Inter", 12F);
+            this.groupBox5.Location = new System.Drawing.Point(391, 43);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(431, 102);
+            this.groupBox5.TabIndex = 160;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tìm kiếm";
+            // 
+            // tbTimPk
+            // 
+            this.tbTimPk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTimPk.Location = new System.Drawing.Point(229, 30);
+            this.tbTimPk.Multiline = true;
+            this.tbTimPk.Name = "tbTimPk";
+            this.tbTimPk.Size = new System.Drawing.Size(178, 47);
+            this.tbTimPk.TabIndex = 151;
+            this.tbTimPk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTimPk_KeyDown);
+            // 
+            // btnTimPK
+            // 
+            this.btnTimPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnTimPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTimPK.FlatAppearance.BorderSize = 0;
+            this.btnTimPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimPK.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimPK.ForeColor = System.Drawing.Color.White;
+            this.btnTimPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnTimPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimPK.Location = new System.Drawing.Point(21, 30);
+            this.btnTimPK.Name = "btnTimPK";
+            this.btnTimPK.Size = new System.Drawing.Size(178, 47);
+            this.btnTimPK.TabIndex = 150;
+            this.btnTimPK.Text = "Tìm theo mã";
+            this.btnTimPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimPK.UseVisualStyleBackColor = false;
+            this.btnTimPK.Click += new System.EventHandler(this.btnTimPK_Click);
             // 
             // btnLapPKMoi
             // 
@@ -227,7 +274,7 @@ namespace QuanLyBenhNhan
             this.btnLapPKMoi.ForeColor = System.Drawing.Color.White;
             this.btnLapPKMoi.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_refresh_20;
             this.btnLapPKMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapPKMoi.Location = new System.Drawing.Point(249, 74);
+            this.btnLapPKMoi.Location = new System.Drawing.Point(240, 93);
             this.btnLapPKMoi.Margin = new System.Windows.Forms.Padding(0);
             this.btnLapPKMoi.Name = "btnLapPKMoi";
             this.btnLapPKMoi.Size = new System.Drawing.Size(135, 47);
@@ -266,7 +313,7 @@ namespace QuanLyBenhNhan
             this.btnXemPK.ForeColor = System.Drawing.Color.White;
             this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
             this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemPK.Location = new System.Drawing.Point(6, 74);
+            this.btnXemPK.Location = new System.Drawing.Point(6, 93);
             this.btnXemPK.Name = "btnXemPK";
             this.btnXemPK.Size = new System.Drawing.Size(217, 47);
             this.btnXemPK.TabIndex = 147;
@@ -297,17 +344,19 @@ namespace QuanLyBenhNhan
             // 
             this.dgvQLPK.AllowUserToAddRows = false;
             this.dgvQLPK.AllowUserToDeleteRows = false;
+            this.dgvQLPK.AllowUserToResizeColumns = false;
+            this.dgvQLPK.AllowUserToResizeRows = false;
             this.dgvQLPK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQLPK.BackgroundColor = System.Drawing.Color.White;
             this.dgvQLPK.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQLPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQLPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvQLPK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQLPK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -315,23 +364,24 @@ namespace QuanLyBenhNhan
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvQLPK.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvQLPK.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvQLPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.dgvQLPK.Location = new System.Drawing.Point(5, 131);
+            this.dgvQLPK.Location = new System.Drawing.Point(5, 151);
+            this.dgvQLPK.MultiSelect = false;
             this.dgvQLPK.Name = "dgvQLPK";
             this.dgvQLPK.ReadOnly = true;
             this.dgvQLPK.RowHeadersVisible = false;
             this.dgvQLPK.RowHeadersWidth = 51;
             this.dgvQLPK.RowTemplate.Height = 24;
             this.dgvQLPK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvQLPK.Size = new System.Drawing.Size(817, 284);
+            this.dgvQLPK.Size = new System.Drawing.Size(817, 264);
             this.dgvQLPK.TabIndex = 146;
             this.dgvQLPK.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLPK_RowEnter);
             // 
@@ -543,7 +593,6 @@ namespace QuanLyBenhNhan
             this.tbTenDV.ReadOnly = true;
             this.tbTenDV.Size = new System.Drawing.Size(195, 28);
             this.tbTenDV.TabIndex = 154;
-            this.tbTenDV.TextChanged += new System.EventHandler(this.tbTenDV_TextChanged);
             // 
             // label10
             // 
@@ -673,7 +722,6 @@ namespace QuanLyBenhNhan
             this.cbBN.Name = "cbBN";
             this.cbBN.Size = new System.Drawing.Size(165, 28);
             this.cbBN.TabIndex = 151;
-            this.cbBN.SelectedIndexChanged += new System.EventHandler(this.cbBN_SelectedIndexChanged_1);
             // 
             // tbMaPK
             // 
@@ -769,6 +817,8 @@ namespace QuanLyBenhNhan
             this.pnEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLPK)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -837,5 +887,8 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnLapPKMoi;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tbTimPk;
+        private System.Windows.Forms.Button btnTimPK;
     }
 }

@@ -65,21 +65,20 @@ namespace QuanLyBenhNhan
 
             dgvChiTietPK.DataSource = null;
         }
-
         private void showChiTietPK(List<CChiTietPhieuKham> dsCTPK) // danh muc dich vu
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = CViewCTPK.getViewList(dsCTPK); //lay danh sach view
             dgvChiTietPK.DataSource = bs;
-        }
-        private void dgvChiTietPK_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }                  
+        }              
         private void btnXemPK_Click_1(object sender, EventArgs e)
         {
             string mapk = getMaPK();
-            if (mapk == "") return;
+            if (string.IsNullOrEmpty(mapk))
+            {
+                MessageBox.Show("Hãy chọn một phiếu khám để thực hiện hành động.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             CPhieuKham pk = xyLyPK.searchPK(mapk);
 
             tbMaPK.Text = pk.Maphieukham;
@@ -91,7 +90,6 @@ namespace QuanLyBenhNhan
 
             showChiTietPK(pk.DsCTPK);
         }
-
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (TruyCapDuLieu.luuFile("data.dat"))
@@ -103,7 +101,6 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Không thể lưu dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             string mapk = getMaPK();
@@ -117,8 +114,6 @@ namespace QuanLyBenhNhan
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
         {
-
-
             CDichVu dv = cbMaDV.SelectedItem as CDichVu;
 
             if (string.IsNullOrEmpty(tbSoLuong.Text))
@@ -148,16 +143,6 @@ namespace QuanLyBenhNhan
             }
 
             showChiTietPK(dsTamThoi);
-        }
-
-        private void cbBN_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbTenDV_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void cbMaDV_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -225,6 +210,15 @@ namespace QuanLyBenhNhan
         {
             pk = null;
             clear();
+            foreach (DataGridViewRow row in dgvQLPK.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
+                dgvQLPK.ClearSelection();
+            }
+
+            // Xóa nội dung trong TextBox "tbTim"
+            tbTimPk.Clear();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -274,9 +268,97 @@ namespace QuanLyBenhNhan
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnTimPK_Click(object sender, EventArgs e)
         {
+            string mapk = tbTimPk.Text.Trim();
 
+            if (string.IsNullOrEmpty(mapk))
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu khám vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTimPk.Focus();
+                return;
+            }
+
+            int columnIndexMaBN = 0; //thay 0 bang cot thuc te
+            //xoa hightlight trc do
+            foreach (DataGridViewRow row in dgvQLPK.Rows)
+            {
+                dgvQLPK.ClearSelection();
+                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
+            }
+            CPhieuKham pk = xyLyPK.searchPK(mapk);
+
+            if (pk != null)
+            {
+                DataGridViewRow foundRow = dgvQLPK.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mapk)
+                    .FirstOrDefault();
+
+                if (foundRow != null)
+                {
+                    //hightlight
+                    foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                    foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    dgvQLPK.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy phiếu khám có mã: " + mapk + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbTimPk.Focus();
+            }
+            tbTimPk.Clear();
+        }
+
+        private void tbTimPk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress    
+                string mapk = tbTimPk.Text.Trim();
+                if (string.IsNullOrEmpty(mapk))
+                {
+                    MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbTimPk.SelectAll();
+                    tbTimPk.Focus();
+                    return;
+                }
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
+
+                foreach (DataGridViewRow row in dgvQLPK.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
+                }
+                CPhieuKham pk = xyLyPK.searchPK(mapk);
+
+                if (pk != null)
+                {
+                    // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
+                    DataGridViewRow foundRow = dgvQLPK.Rows
+                        .Cast<DataGridViewRow>()
+                        .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mapk)
+                        .FirstOrDefault();
+                    if (foundRow != null)
+                    {
+                        dgvQLPK.ClearSelection();
+                        foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                        foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                        dgvQLPK.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy phiếu khám có mã: " + mapk + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbTimPk.Focus();
+                }
+                tbTimPk.Clear();
+            }
         }
     }
 }
