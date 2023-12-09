@@ -116,28 +116,38 @@ namespace QuanLyBenhNhan
             }
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
-        {          
-            
+        {
+
 
             CDichVu dv = cbMaDV.SelectedItem as CDichVu;
 
-            
             if (string.IsNullOrEmpty(tbSoLuong.Text))
             {
                 MessageBox.Show("Hãy nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                return;
             }
 
-           
             if (!int.TryParse(tbSoLuong.Text, out int soluong) || soluong <= 0)
             {
                 MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                return;
             }
-            dsTamThoi.Add(new CChiTietPhieuKham(soluong, dv));
-            //pk.insert(dv, soluong);
+
+            // Kiểm tra xem mã dịch vụ 
+            CChiTietPhieuKham existingItem = dsTamThoi.FirstOrDefault(item => item.DichVu.MaDichVu == dv.MaDichVu);
+
+            if (existingItem != null)
+            {
+                // cập nhật số lượng
+                existingItem.SoLuong += soluong;
+            }
+            else
+            {
+                
+                dsTamThoi.Add(new CChiTietPhieuKham(soluong, dv));
+            }
+
             showChiTietPK(dsTamThoi);
-            //showChiTietPK(pk.DsCTPK);
         }
 
         private void cbBN_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -159,7 +169,7 @@ namespace QuanLyBenhNhan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string mapk = getMaPK(); ;
+            string mapk = getMaPK();
             if (mapk == "") return;
             CPhieuKham pk = xyLyPK.searchPK(mapk);
 
@@ -172,14 +182,30 @@ namespace QuanLyBenhNhan
                 tbMaPK.Text = mapk;
                 return;
             }
+
             pk.BacSi.TenBS = cbBS.Text;
             pk.BenhNhan.TenBN = cbBN.Text;
             pk.Ngaylapphieu = dtNgayLapPhieu.Value;
 
-
             xyLyPK.updatePK(pk);
             showDSPK();
-            dgvQLPK.ClearSelection();
+
+            // Tim va chon dong vua sua
+            int rowIndex = -1;
+            foreach (DataGridViewRow row in dgvQLPK.Rows)
+            {
+                if (row.Cells[0].Value.ToString().Equals(newMaPK, StringComparison.OrdinalIgnoreCase))
+                {
+                    rowIndex = row.Index;
+                    break;
+                }
+            }
+
+            if (rowIndex != -1)
+            {
+                dgvQLPK.CurrentCell = dgvQLPK.Rows[rowIndex].Cells[0];
+                dgvQLPK.Rows[rowIndex].Selected = true; // Chọn dòng
+            }
         }
 
         private void dgvQLPK_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -213,10 +239,16 @@ namespace QuanLyBenhNhan
             {
                 MessageBox.Show("Mã phiếu khám đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-
             }
             else
             {
+                // Kiểm tra xem có dịch vụ nào được chọn không
+                if (dsTamThoi.Count == 0)
+                {
+                    MessageBox.Show("Hãy chọn dịch vụ trước khi lập phiếu khám", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 CBacSi bs = new CBacSi();
                 CBenhNhan bn = new CBenhNhan();
                 bs.TenBS = cbBS.Text;
@@ -224,26 +256,27 @@ namespace QuanLyBenhNhan
                 bn.TenBN = cbBN.Text;
                 bn.MaBN = cbBN.SelectedValue.ToString();
                 dsCTPK = new List<CChiTietPhieuKham>();
-                
                 pk = new CPhieuKham(tbMaPK.Text, dtNgayLapPhieu.Value, bn, bs, dsCTPK);
                 xyLyPK.insertPK(pk);
 
-                if (dsTamThoi.Count > 0)
+                foreach (CChiTietPhieuKham ctpk in dsTamThoi)
                 {
-                    
-                    foreach (CChiTietPhieuKham ctpk in dsTamThoi)
-                    {
-                        pk.insert(ctpk.DichVu, ctpk.SoLuong);
-                    }
-
-                    
-                    dsTamThoi.Clear();
+                    pk.insert(ctpk.DichVu, ctpk.SoLuong);
                 }
-                
+                dsTamThoi.Clear();
 
                 showDSPK();
 
+                // Highlight dòng mới thêm vào
+                int rowIndex = dgvQLPK.Rows.Count - 1;
+                dgvQLPK.CurrentCell = dgvQLPK.Rows[rowIndex].Cells[0];
+                clear();
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
