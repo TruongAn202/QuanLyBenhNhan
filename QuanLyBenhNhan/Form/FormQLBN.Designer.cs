@@ -132,7 +132,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(1214, 423);
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            //this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // gbGhiChu
             // 
@@ -178,7 +178,7 @@ namespace QuanLyBenhNhan
             this.label9.Size = new System.Drawing.Size(252, 35);
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin bệnh nhân";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            //this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dtNgayKham
             // 
@@ -527,7 +527,7 @@ namespace QuanLyBenhNhan
             this.dgvDSBN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSBN.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSBN.TabIndex = 72;
-            this.dgvDSBN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBN_CellContentClick);
+            //this.dgvDSBN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBN_CellContentClick);
             //this.dgvDSBN.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDSBN_CellMouseDown);
             this.dgvDSBN.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBN_RowEnter);
             // 

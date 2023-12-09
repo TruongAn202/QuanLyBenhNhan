@@ -64,21 +64,8 @@ namespace QuanLyBenhNhan
             
             dgvDSBN.RowPostPaint += dgvDSBN_RowPostPaint;
             dgvDSBN.RowHeadersVisible = true; // STT
-            dgvDSBN.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders; // dieu chinh cot trai de chua all noi dung
-            //dgvDSBN.EnableHeadersVisualStyles = false;
-            //dgvDSBN.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; 
-            //dgvDSBN.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(140, 181, 252);
-            //dgvDSBN.DefaultCellStyle.Font = new Font("Inter", 9, FontStyle.Regular);
-            // Đổi font chữ cho thanh tiêu đề
-            //dgvDSBN.ColumnHeadersDefaultCellStyle.Font = new Font("Inter", 9, FontStyle.Regular);
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBN.dat");
-            //if (File.Exists(defaultPath))
-            //{
-            //    xulyBN.docFile(defaultPath);
-            //}
-            dgvDSBN.DataSource = xulyBN.getDsBenhNhan();
-            
-            
+            dgvDSBN.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders; // dieu chinh cot trai de chua all noi dung       
+            dgvDSBN.DataSource = xulyBN.getDsBenhNhan();  
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -177,8 +164,7 @@ namespace QuanLyBenhNhan
         }       
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBN.dat");
+        {           
 
             if (TruyCapDuLieu.luuFile("data.dat"))
             {
@@ -189,23 +175,7 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Không thể lưu dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dgvDSBN.ClearSelection();
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvDSBN_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+        }  
         private void btnTim_Click(object sender, EventArgs e)
         {
             string mabn = tbTim.Text.Trim();
@@ -255,36 +225,23 @@ namespace QuanLyBenhNhan
         private void tbTim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
-                // Xử lý tìm kiếm khi nhấn phím Enter
+            {  
                 e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress
-
-                // Lấy mã bệnh nhân từ TextBox
                 string mabn = tbTim.Text.Trim();
-
                 if (string.IsNullOrEmpty(mabn))
-                {
-                    // Hiển thị cảnh báo nếu văn bản tìm kiếm trống
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    // Highlight nội dung trong "tbTim"
+                {                   
+                    MessageBox.Show("Vui lòng nhập mã bệnh nhân vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
                 }
-
-                // Lấy chỉ mục của cột chứa mã bệnh nhân
-                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
-
-                // Xóa tất cả các dòng đã làm nổi bật trước đó
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn             
                 foreach (DataGridViewRow row in dgvDSBN.Rows)
                 {
                     row.DefaultCellStyle.BackColor = dgvDSBN.DefaultCellStyle.BackColor;
                     row.DefaultCellStyle.ForeColor = dgvDSBN.DefaultCellStyle.ForeColor;
                 }
-
                 CBenhNhan bn = xulyBN.searchBN(mabn);
-
                 if (bn != null)
                 {
                     // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
@@ -304,11 +261,8 @@ namespace QuanLyBenhNhan
                     }
                 }
                 else
-                {
-                    // Hiển thị thông báo hoặc xử lý trường hợp nếu không tìm thấy bệnh nhân.
-                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabn + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    // Focus vào ô nhập liệu "tbTim"
+                {                  
+                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabn + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);                   
                     tbTim.Focus();
                 }
                 tbTim.Clear();
