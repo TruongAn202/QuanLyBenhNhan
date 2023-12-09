@@ -84,20 +84,11 @@ namespace QuanLyBenhNhan
             dgvDSBS.RowPostPaint += dgvDSBS_RowPostPaint;
             dgvDSBS.RowHeadersVisible = true;
             dgvDSBS.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBS.dat");
-            //    if (File.Exists(defaultPath))
-            //    {
-            //        xulyBS.docFile(defaultPath);
-            //    }
             dgvDSBS.DataSource = xulyBS.getDsBacSi(); // load data lên dgv ngay
             
         }
-
-        
-
         private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBS.dat");
+        {           
 
             if (TruyCapDuLieu.luuFile("data.dat"))
             {
@@ -109,7 +100,6 @@ namespace QuanLyBenhNhan
             }
             dgvDSBS.ClearSelection();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string mabs = getMaBS();
@@ -136,7 +126,6 @@ namespace QuanLyBenhNhan
             show();
             dgvDSBS.ClearSelection();
         }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string mabs = tbMaBS.Text.Trim();
@@ -178,36 +167,6 @@ namespace QuanLyBenhNhan
                 show();
             }
             dgvDSBS.ClearSelection();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvDSBS_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -300,13 +259,7 @@ namespace QuanLyBenhNhan
                     tbTim.Focus();
                 }
                 tbTim.Clear();
-            }
-            
-        }
-
-        private void tbTim_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+            }           
+        }     
     }
 }

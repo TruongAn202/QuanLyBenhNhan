@@ -38,8 +38,6 @@ namespace QuanLyBenhNhan
             BindingSource bs = new BindingSource();
             bs.DataSource = xyLyPK.getDsPhieuKham();
             dgvQLPK.DataSource = bs;
-
-
         }
         private string getMaPK()
         {
@@ -139,11 +137,9 @@ namespace QuanLyBenhNhan
                 existingItem.SoLuong += soluong;
             }
             else
-            {
-                
+            {   
                 dsTamThoi.Add(new CChiTietPhieuKham(soluong, dv));
             }
-
             showChiTietPK(dsTamThoi);
         }
 

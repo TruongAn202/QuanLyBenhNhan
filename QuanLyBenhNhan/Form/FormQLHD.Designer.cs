@@ -211,7 +211,7 @@ namespace QuanLyBenhNhan
             this.dgvQLHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQLHD.Size = new System.Drawing.Size(1402, 171);
             this.dgvQLHD.TabIndex = 116;
-            this.dgvQLHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLHD_CellContentClick);
+            //this.dgvQLHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLHD_CellContentClick);
             this.dgvQLHD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLHD_RowEnter);
             // 
             // Column1
@@ -386,7 +386,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(1198, 540);
             this.groupBox2.TabIndex = 154;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            //this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label14
             // 
@@ -418,7 +418,7 @@ namespace QuanLyBenhNhan
             this.tbConLai.ReadOnly = true;
             this.tbConLai.Size = new System.Drawing.Size(273, 33);
             this.tbConLai.TabIndex = 155;
-            this.tbConLai.TextChanged += new System.EventHandler(this.tbConLai_TextChanged);
+           // this.tbConLai.TextChanged += new System.EventHandler(this.tbConLai_TextChanged);
             // 
             // label10
             // 
@@ -439,7 +439,7 @@ namespace QuanLyBenhNhan
             this.tbDaTra.Name = "tbDaTra";
             this.tbDaTra.Size = new System.Drawing.Size(273, 34);
             this.tbDaTra.TabIndex = 153;
-            this.tbDaTra.TextChanged += new System.EventHandler(this.tbDaTra_TextChanged);
+            //this.tbDaTra.TextChanged += new System.EventHandler(this.tbDaTra_TextChanged);
             // 
             // label8
             // 

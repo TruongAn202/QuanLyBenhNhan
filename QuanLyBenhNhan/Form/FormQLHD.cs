@@ -22,13 +22,7 @@ namespace QuanLyBenhNhan
             showPK();
             
         }
-
-        //private void showHD(List<CHoaDon> dsHD) // danh muc dich vu
-        //{
-        //    BindingSource bs = new BindingSource();
-        //    bs.DataSource = CViewHD.getViewList(dsHD); //lay danh sach view
-        //    dgvQLHD.DataSource = bs;
-        //}
+   
         private void FormQLHD_Load(object sender, EventArgs e)
         {
             
@@ -152,41 +146,17 @@ namespace QuanLyBenhNhan
             
 
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvQLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-       
-
-        private void tbDaTra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbConLai_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
-        {
-            string mahd = getMaHD();
-            if (mahd != "")
-            {
-                xulyHD.deleteDV(mahd);
-                showDSHD();
+        //private void btnDelete_Click_1(object sender, EventArgs e)
+        //{
+        //    string mahd = getMaHD();
+        //    if (mahd != "")
+        //    {
+        //        xulyHD.deleteDV(mahd);
+        //        showDSHD();
 
 
-            }
-        }
-
+        //    }
+        //}
         private void btnTim_Click(object sender, EventArgs e)
         {
             string mahd = tbTim.Text.Trim();

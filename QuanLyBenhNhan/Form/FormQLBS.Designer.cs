@@ -145,7 +145,7 @@ namespace QuanLyBenhNhan
             this.dgvDSBS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSBS.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSBS.TabIndex = 85;
-            this.dgvDSBS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBS_CellContentClick);
+            //this.dgvDSBS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBS_CellContentClick);
             this.dgvDSBS.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBS_RowEnter);
             // 
             // Column1
@@ -398,7 +398,7 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(1214, 423);
             this.groupBox2.TabIndex = 91;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            //this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnDelete
             // 
@@ -518,7 +518,7 @@ namespace QuanLyBenhNhan
             this.tbTim.Name = "tbTim";
             this.tbTim.Size = new System.Drawing.Size(178, 47);
             this.tbTim.TabIndex = 151;
-            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
+            //this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
             // 
             // btnTim

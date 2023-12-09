@@ -69,13 +69,7 @@ namespace QuanLyBenhNhan
             dgvDSDV.RowPostPaint += dgvDSDV_RowPostPaint;
             dgvDSDV.RowHeadersVisible = true;
             dgvDSDV.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            
-            //luu
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLDV.dat");
-            //if (File.Exists(defaultPath))
-            //{
-            //    xulyDV.docFile(defaultPath);
-            //}
+           
             dgvDSDV.DataSource = xulyDV.getDsDichVu();
             
         }

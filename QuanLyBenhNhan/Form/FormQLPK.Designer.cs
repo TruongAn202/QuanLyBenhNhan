@@ -86,6 +86,7 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -97,6 +98,7 @@ namespace QuanLyBenhNhan
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -209,10 +211,9 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.btnLapPKMoi);
             this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.btnXemPK);
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.dgvQLPK);
             this.groupBox2.Controls.Add(this.panel2);
@@ -228,9 +229,9 @@ namespace QuanLyBenhNhan
             this.groupBox5.Controls.Add(this.tbTimPk);
             this.groupBox5.Controls.Add(this.btnTimPK);
             this.groupBox5.Font = new System.Drawing.Font("Inter", 12F);
-            this.groupBox5.Location = new System.Drawing.Point(391, 43);
+            this.groupBox5.Location = new System.Drawing.Point(418, 44);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(431, 102);
+            this.groupBox5.Size = new System.Drawing.Size(396, 101);
             this.groupBox5.TabIndex = 160;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tìm kiếm";
@@ -238,7 +239,7 @@ namespace QuanLyBenhNhan
             // tbTimPk
             // 
             this.tbTimPk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTimPk.Location = new System.Drawing.Point(229, 30);
+            this.tbTimPk.Location = new System.Drawing.Point(207, 32);
             this.tbTimPk.Multiline = true;
             this.tbTimPk.Name = "tbTimPk";
             this.tbTimPk.Size = new System.Drawing.Size(178, 47);
@@ -255,7 +256,7 @@ namespace QuanLyBenhNhan
             this.btnTimPK.ForeColor = System.Drawing.Color.White;
             this.btnTimPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
             this.btnTimPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimPK.Location = new System.Drawing.Point(21, 30);
+            this.btnTimPK.Location = new System.Drawing.Point(13, 32);
             this.btnTimPK.Name = "btnTimPK";
             this.btnTimPK.Size = new System.Drawing.Size(178, 47);
             this.btnTimPK.TabIndex = 150;
@@ -274,7 +275,7 @@ namespace QuanLyBenhNhan
             this.btnLapPKMoi.ForeColor = System.Drawing.Color.White;
             this.btnLapPKMoi.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_refresh_20;
             this.btnLapPKMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapPKMoi.Location = new System.Drawing.Point(240, 93);
+            this.btnLapPKMoi.Location = new System.Drawing.Point(250, 31);
             this.btnLapPKMoi.Margin = new System.Windows.Forms.Padding(0);
             this.btnLapPKMoi.Name = "btnLapPKMoi";
             this.btnLapPKMoi.Size = new System.Drawing.Size(135, 47);
@@ -313,7 +314,7 @@ namespace QuanLyBenhNhan
             this.btnXemPK.ForeColor = System.Drawing.Color.White;
             this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
             this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemPK.Location = new System.Drawing.Point(6, 93);
+            this.btnXemPK.Location = new System.Drawing.Point(16, 31);
             this.btnXemPK.Name = "btnXemPK";
             this.btnXemPK.Size = new System.Drawing.Size(217, 47);
             this.btnXemPK.TabIndex = 147;
@@ -798,6 +799,18 @@ namespace QuanLyBenhNhan
             this.label13.TabIndex = 0;
             this.label13.Text = "Danh mục chi tiết phiếu khám";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnXemPK);
+            this.groupBox6.Controls.Add(this.btnLapPKMoi);
+            this.groupBox6.Font = new System.Drawing.Font("Inter", 12F);
+            this.groupBox6.Location = new System.Drawing.Point(6, 45);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(396, 101);
+            this.groupBox6.TabIndex = 161;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Xem thông tin";
+            // 
             // FormQLPK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -831,6 +844,7 @@ namespace QuanLyBenhNhan
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -890,5 +904,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox tbTimPk;
         private System.Windows.Forms.Button btnTimPK;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
