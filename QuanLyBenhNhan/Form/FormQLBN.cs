@@ -92,6 +92,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(mabn))
             {
                 MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaBN.Focus();
                 return;
             }
             else if (xulyBN.ktTrungMa(mabn))
@@ -264,7 +265,7 @@ namespace QuanLyBenhNhan
                 if (string.IsNullOrEmpty(mabn))
                 {
                     // Hiển thị cảnh báo nếu văn bản tìm kiếm trống
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã bệnh nhân vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     // Highlight nội dung trong "tbTim"
                     tbTim.SelectAll();

@@ -140,6 +140,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(madv))
             {
                 MessageBox.Show("Vui lòng nhập mã dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaDV.Focus();
                 return;
             }
             else if (xulyDV.ktTrungMa(madv))
@@ -150,6 +151,7 @@ namespace QuanLyBenhNhan
             else if (string.IsNullOrEmpty(tenDV))
             {
                 MessageBox.Show("Vui lòng nhập tên dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTenDV.Focus();
                 return;
             }
             else if (!double.TryParse(donGiaStr, out double donGia))
@@ -231,7 +233,7 @@ namespace QuanLyBenhNhan
                 string madv = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(madv))
                 {
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã dịch vụ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
@@ -263,7 +265,7 @@ namespace QuanLyBenhNhan
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy dịch vụ có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbTim.Focus();
                 }
                 tbTim.Clear();

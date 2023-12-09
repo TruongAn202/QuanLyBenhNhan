@@ -65,6 +65,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(mahd))
             {
                 MessageBox.Show("Vui lòng nhập mã hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaHD.Focus();
                 return;
             }
             else if (xulyHD.ktTrungMa(mahd))
@@ -240,7 +241,7 @@ namespace QuanLyBenhNhan
                 string mahd = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(mahd))
                 {
-                    MessageBox.Show("Vui lòng nhập mã hóa đơn.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã hóa đơn vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;

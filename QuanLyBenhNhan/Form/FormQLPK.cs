@@ -119,12 +119,14 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(tbSoLuong.Text))
             {
                 MessageBox.Show("Hãy nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbSoLuong.Focus();
                 return;
             }
 
             if (!int.TryParse(tbSoLuong.Text, out int soluong) || soluong <= 0)
             {
-                MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng không hợp lệ, hãy nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbSoLuong.Focus();
                 return;
             }
 
@@ -227,6 +229,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(mapk))
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaPK.Focus();
                 return;
             }
             else if (xyLyPK.ktTrungMa(mapk))
@@ -322,7 +325,7 @@ namespace QuanLyBenhNhan
                 string mapk = tbTimPk.Text.Trim();
                 if (string.IsNullOrEmpty(mapk))
                 {
-                    MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã phiếu khám vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTimPk.SelectAll();
                     tbTimPk.Focus();
                     return;

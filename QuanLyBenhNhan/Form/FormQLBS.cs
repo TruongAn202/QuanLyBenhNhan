@@ -148,6 +148,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(mabs))
             {
                 MessageBox.Show("Vui lòng nhập mã bác sĩ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaBS.Focus();
                 return;
             }
             else if (xulyBS.ktTrungMa(mabs))
@@ -263,7 +264,7 @@ namespace QuanLyBenhNhan
                 string mabs = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(mabs))
                 { 
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã bác sĩ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
@@ -295,7 +296,7 @@ namespace QuanLyBenhNhan
                 }
                 else
                 { 
-                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("Không tìm thấy bác sĩ có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                     tbTim.Focus();
                 }
                 tbTim.Clear();
