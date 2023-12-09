@@ -233,6 +233,16 @@ namespace QuanLyBenhNhan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_arrow_201 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-arrow-201", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-20", resourceCulture);
@@ -456,6 +466,16 @@ namespace QuanLyBenhNhan.Properties {
         internal static System.Drawing.Bitmap icons8_pulse_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pulse-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

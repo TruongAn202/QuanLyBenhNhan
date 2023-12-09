@@ -29,5 +29,6 @@ namespace QuanLyBenhNhan
             DonGia = 0;
             DichVu = null;
         }
+        
     }
 }

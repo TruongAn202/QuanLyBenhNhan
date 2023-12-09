@@ -140,6 +140,11 @@ namespace QuanLyBenhNhan
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string mabs = tbMaBS.Text.Trim();
+            string tenbs = tbTenBS.Text.Trim();
+            string sdt = tbSDT.Text.Trim();
+            string diachi = tbDiaChi.Text.Trim();
+            string gioitinh = cbGioiTinh.Text;
+
             if (string.IsNullOrEmpty(mabs))
             {
                 MessageBox.Show("Vui lòng nhập mã bác sĩ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,9 +155,14 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Mã bác sĩ đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (string.IsNullOrEmpty(tenbs) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(diachi) || string.IsNullOrEmpty(gioitinh))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bác sĩ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             else
             {
-                xulyBS.insertBS(new CBacSi(tbMaBS.Text, tbTenBS.Text, tbSDT.Text, tbDiaChi.Text, cbGioiTinh.Text, dtNgaySInh.Value, dtNgayVaoLam.Value));
+                xulyBS.insertBS(new CBacSi(mabs, tenbs, sdt, diachi, gioitinh, dtNgaySInh.Value, dtNgayVaoLam.Value));
                 show();
             }
             dgvDSBS.ClearSelection();
@@ -195,6 +205,105 @@ namespace QuanLyBenhNhan
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string mabs = tbTim.Text.Trim();
+
+            if (string.IsNullOrEmpty(mabs))
+            {
+                MessageBox.Show("Vui lòng nhập mã bác sĩ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTim.Focus();
+                return;
+            }
+
+            int columnIndexMaBN = 0; //thay 0 bang cot thuc te
+            //xoa hightlight trc do
+            foreach (DataGridViewRow row in dgvDSBS.Rows)
+            {
+                dgvDSBS.ClearSelection();
+                row.DefaultCellStyle.BackColor = dgvDSBS.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvDSBS.DefaultCellStyle.ForeColor;
+            }
+            CBacSi bs = xulyBS.searchBS(mabs);
+
+            if (bs != null)
+            {
+                DataGridViewRow foundRow = dgvDSBS.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mabs)
+                    .FirstOrDefault();
+
+                if (foundRow != null)
+                {
+                    //hightlight
+                    foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                    foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    dgvDSBS.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy bác sĩ có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbTim.Focus();
+            }
+            tbTim.Clear();
+        }
+
+        private void tbTim_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {  
+                e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress    
+                string mabs = tbTim.Text.Trim();
+                if (string.IsNullOrEmpty(mabs))
+                { 
+                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbTim.SelectAll();
+                    tbTim.Focus();
+                    return;
+                }
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
+
+                foreach (DataGridViewRow row in dgvDSBS.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvDSBS.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvDSBS.DefaultCellStyle.ForeColor;
+                }
+                CBacSi bs = xulyBS.searchBS(mabs);
+
+                if (bs != null)
+                {
+                    // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
+                    DataGridViewRow foundRow = dgvDSBS.Rows
+                        .Cast<DataGridViewRow>()
+                        .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mabs)
+                        .FirstOrDefault();
+                    if (foundRow != null)
+                    {
+                        dgvDSBS.ClearSelection();
+                        foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                        foundRow.DefaultCellStyle.ForeColor = Color.Black;
+                  
+                        dgvDSBS.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                    }
+                }
+                else
+                { 
+                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    tbTim.Focus();
+                }
+                tbTim.Clear();
+            }
+            
+        }
+
+        private void tbTim_TextChanged(object sender, EventArgs e)
         {
 
         }

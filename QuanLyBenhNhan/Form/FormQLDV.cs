@@ -147,6 +147,11 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Mã dịch vụ đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (string.IsNullOrEmpty(tenDV))
+            {
+                MessageBox.Show("Vui lòng nhập tên dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             else if (!double.TryParse(donGiaStr, out double donGia))
             {
                 MessageBox.Show("Đơn giá phải là số. Vui lòng viết lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -165,6 +170,104 @@ namespace QuanLyBenhNhan
         private void dgvDSDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string madv = tbTim.Text.Trim();
+
+            if (string.IsNullOrEmpty(madv))
+            {
+                MessageBox.Show("Vui lòng nhập mã dịch vụ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTim.Focus();
+                return;
+            }
+
+            int columnIndexMaBN = 0; //thay 0 bang cot thuc te
+            //xoa hightlight trc do
+            foreach (DataGridViewRow row in dgvDSDV.Rows)
+            {
+                dgvDSDV.ClearSelection();
+                row.DefaultCellStyle.BackColor = dgvDSDV.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvDSDV.DefaultCellStyle.ForeColor;
+            }
+            CDichVu dv = xulyDV.searchDV(madv);
+
+            if (dv != null)
+            {
+                DataGridViewRow foundRow = dgvDSDV.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == madv)
+                    .FirstOrDefault();
+
+                if (foundRow != null)
+                {
+                    //hightlight
+                    foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                    foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    dgvDSDV.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy dịch vụ có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbTim.Focus();
+            }
+            tbTim.Clear();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbTim_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress    
+                string madv = tbTim.Text.Trim();
+                if (string.IsNullOrEmpty(madv))
+                {
+                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbTim.SelectAll();
+                    tbTim.Focus();
+                    return;
+                }
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
+
+                foreach (DataGridViewRow row in dgvDSDV.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvDSDV.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvDSDV.DefaultCellStyle.ForeColor;
+                }
+                CDichVu dv = xulyDV.searchDV(madv);
+
+                if (dv != null)
+                {
+                    // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
+                    DataGridViewRow foundRow = dgvDSDV.Rows
+                        .Cast<DataGridViewRow>()
+                        .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == madv)
+                        .FirstOrDefault();
+                    if (foundRow != null)
+                    {
+                        dgvDSDV.ClearSelection();
+                        foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                        foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                        dgvDSDV.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbTim.Focus();
+                }
+                tbTim.Clear();
+            }
         }
     }
 }

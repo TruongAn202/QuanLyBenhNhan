@@ -84,6 +84,11 @@ namespace QuanLyBenhNhan
         private void btnThem_Click(object sender, EventArgs e)
         {
             string mabn = tbMaBN.Text.Trim();
+            string tenbn = tbTenBN.Text.Trim();
+            string sdt = tbSDT.Text.Trim();
+            string diachi = tbDiaChi.Text.Trim();
+            string gioitinh = cbGioiTinh.Text;
+
             if (string.IsNullOrEmpty(mabn))
             {
                 MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,10 +98,15 @@ namespace QuanLyBenhNhan
             {
                 MessageBox.Show("Mã bệnh nhân đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-
             }
-            else {
-                xulyBN.insertBN(new CBenhNhan(tbMaBN.Text, tbTenBN.Text, tbSDT.Text, tbDiaChi.Text, cbGioiTinh.Text/*rbNam.Checked*/, dtNgaySInh.Value, dtNgayKham.Value, tbGhiChu.Text));
+            else if (string.IsNullOrEmpty(tenbn) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(diachi) || string.IsNullOrEmpty(gioitinh))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bệnh nhân.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                xulyBN.insertBN(new CBenhNhan(mabn, tenbn, sdt, diachi, gioitinh, dtNgaySInh.Value, dtNgayKham.Value, tbGhiChu.Text));
 
                 clear();
                 show();
@@ -194,5 +204,114 @@ namespace QuanLyBenhNhan
         {
             
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string mabn = tbTim.Text.Trim();
+
+            if (string.IsNullOrEmpty(mabn))
+            {  
+                MessageBox.Show("Vui lòng nhập mã bệnh nhân vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
+                tbTim.Focus();   
+                return;
+            }
+            
+            int columnIndexMaBN = 0; //thay 0 bang cot thuc te
+            //xoa hightlight trc do
+            foreach (DataGridViewRow row in dgvDSBN.Rows)
+            {
+                dgvDSBN.ClearSelection();
+                row.DefaultCellStyle.BackColor = dgvDSBN.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvDSBN.DefaultCellStyle.ForeColor;
+            }
+            CBenhNhan bn = xulyBN.searchBN(mabn);
+
+            if (bn != null)
+            {            
+                DataGridViewRow foundRow = dgvDSBN.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mabn)
+                    .FirstOrDefault();
+
+                if (foundRow != null)
+                {
+                    //hightlight
+                    foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                    foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    dgvDSBN.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                }
+            }
+            else
+            {   
+                MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabn + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbTim.Focus();
+            }
+            tbTim.Clear();
+        }
+
+        private void tbTim_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Xử lý tìm kiếm khi nhấn phím Enter
+                e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress
+
+                // Lấy mã bệnh nhân từ TextBox
+                string mabn = tbTim.Text.Trim();
+
+                if (string.IsNullOrEmpty(mabn))
+                {
+                    // Hiển thị cảnh báo nếu văn bản tìm kiếm trống
+                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Highlight nội dung trong "tbTim"
+                    tbTim.SelectAll();
+                    tbTim.Focus();
+                    return;
+                }
+
+                // Lấy chỉ mục của cột chứa mã bệnh nhân
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
+
+                // Xóa tất cả các dòng đã làm nổi bật trước đó
+                foreach (DataGridViewRow row in dgvDSBN.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvDSBN.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvDSBN.DefaultCellStyle.ForeColor;
+                }
+
+                CBenhNhan bn = xulyBN.searchBN(mabn);
+
+                if (bn != null)
+                {
+                    // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
+                    DataGridViewRow foundRow = dgvDSBN.Rows
+                        .Cast<DataGridViewRow>()
+                        .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mabn)
+                        .FirstOrDefault();
+
+                    if (foundRow != null)
+                    {
+                        dgvDSBN.ClearSelection();
+                        foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                        foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                        // Tùy chọn: Scroll đến dòng được tìm thấy
+                        dgvDSBN.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                    }
+                }
+                else
+                {
+                    // Hiển thị thông báo hoặc xử lý trường hợp nếu không tìm thấy bệnh nhân.
+                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabn + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Focus vào ô nhập liệu "tbTim"
+                    tbTim.Focus();
+                }
+                tbTim.Clear();
+            }
+        }      
     }
 }
