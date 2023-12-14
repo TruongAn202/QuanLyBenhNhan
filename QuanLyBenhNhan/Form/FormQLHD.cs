@@ -249,5 +249,6 @@ namespace QuanLyBenhNhan
                 tbTim.Clear();
             }
         }
+   
     }
 }

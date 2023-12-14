@@ -36,18 +36,14 @@ namespace QuanLyBenhNhan
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.dgvChiTietPK = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnXemPK = new System.Windows.Forms.Button();
+            this.btnLapPKMoi = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tbTimPk = new System.Windows.Forms.TextBox();
             this.btnTimPK = new System.Windows.Forms.Button();
-            this.btnLapPKMoi = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXemPK = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvQLPK = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,10 +82,15 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLPK)).BeginInit();
             this.panel2.SuspendLayout();
@@ -98,7 +99,6 @@ namespace QuanLyBenhNhan
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -117,7 +117,7 @@ namespace QuanLyBenhNhan
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Inter", 19.8F, System.Drawing.FontStyle.Bold);
             this.label.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label.Location = new System.Drawing.Point(533, 25);
+            this.label.Location = new System.Drawing.Point(533, 18);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(337, 40);
             this.label.TabIndex = 0;
@@ -168,46 +168,6 @@ namespace QuanLyBenhNhan
             this.dgvChiTietPK.Size = new System.Drawing.Size(1402, 132);
             this.dgvChiTietPK.TabIndex = 137;
             // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "MaDV";
-            this.Column6.HeaderText = "Mã dịch vụ";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "TenDV";
-            this.Column7.HeaderText = "Tên dịch vụ";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "DonGia";
-            this.Column8.HeaderText = "Đơn giá";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "SoLuong";
-            this.Column9.HeaderText = "Số lượng";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "ThanhTien";
-            this.Column10.HeaderText = "Thành tiền";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
@@ -223,6 +183,57 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(828, 567);
             this.groupBox2.TabIndex = 146;
             this.groupBox2.TabStop = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnXemPK);
+            this.groupBox6.Controls.Add(this.btnLapPKMoi);
+            this.groupBox6.Font = new System.Drawing.Font("Inter", 12F);
+            this.groupBox6.Location = new System.Drawing.Point(6, 45);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(396, 101);
+            this.groupBox6.TabIndex = 161;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Xem thông tin";
+            // 
+            // btnXemPK
+            // 
+            this.btnXemPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnXemPK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXemPK.FlatAppearance.BorderSize = 0;
+            this.btnXemPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemPK.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemPK.ForeColor = System.Drawing.Color.White;
+            this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXemPK.Location = new System.Drawing.Point(16, 31);
+            this.btnXemPK.Name = "btnXemPK";
+            this.btnXemPK.Size = new System.Drawing.Size(217, 47);
+            this.btnXemPK.TabIndex = 147;
+            this.btnXemPK.Text = "Xem phiếu khám";
+            this.btnXemPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXemPK.UseVisualStyleBackColor = false;
+            this.btnXemPK.Click += new System.EventHandler(this.btnXemPK_Click_1);
+            // 
+            // btnLapPKMoi
+            // 
+            this.btnLapPKMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
+            this.btnLapPKMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLapPKMoi.FlatAppearance.BorderSize = 0;
+            this.btnLapPKMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapPKMoi.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLapPKMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLapPKMoi.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_refresh_20;
+            this.btnLapPKMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapPKMoi.Location = new System.Drawing.Point(250, 31);
+            this.btnLapPKMoi.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLapPKMoi.Name = "btnLapPKMoi";
+            this.btnLapPKMoi.Size = new System.Drawing.Size(135, 47);
+            this.btnLapPKMoi.TabIndex = 152;
+            this.btnLapPKMoi.Text = "Làm mới";
+            this.btnLapPKMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLapPKMoi.UseVisualStyleBackColor = false;
+            this.btnLapPKMoi.Click += new System.EventHandler(this.btnLapPK_Click);
             // 
             // groupBox5
             // 
@@ -265,26 +276,6 @@ namespace QuanLyBenhNhan
             this.btnTimPK.UseVisualStyleBackColor = false;
             this.btnTimPK.Click += new System.EventHandler(this.btnTimPK_Click);
             // 
-            // btnLapPKMoi
-            // 
-            this.btnLapPKMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
-            this.btnLapPKMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLapPKMoi.FlatAppearance.BorderSize = 0;
-            this.btnLapPKMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLapPKMoi.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLapPKMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLapPKMoi.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_refresh_20;
-            this.btnLapPKMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLapPKMoi.Location = new System.Drawing.Point(250, 31);
-            this.btnLapPKMoi.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLapPKMoi.Name = "btnLapPKMoi";
-            this.btnLapPKMoi.Size = new System.Drawing.Size(135, 47);
-            this.btnLapPKMoi.TabIndex = 152;
-            this.btnLapPKMoi.Text = "Làm mới";
-            this.btnLapPKMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLapPKMoi.UseVisualStyleBackColor = false;
-            this.btnLapPKMoi.Click += new System.EventHandler(this.btnLapPK_Click);
-            // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(84)))));
@@ -295,33 +286,14 @@ namespace QuanLyBenhNhan
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(531, 501);
+            this.btnSua.Location = new System.Drawing.Point(481, 492);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(123, 39);
+            this.btnSua.Size = new System.Drawing.Size(142, 44);
             this.btnSua.TabIndex = 151;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXemPK
-            // 
-            this.btnXemPK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnXemPK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXemPK.FlatAppearance.BorderSize = 0;
-            this.btnXemPK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemPK.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemPK.ForeColor = System.Drawing.Color.White;
-            this.btnXemPK.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
-            this.btnXemPK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemPK.Location = new System.Drawing.Point(16, 31);
-            this.btnXemPK.Name = "btnXemPK";
-            this.btnXemPK.Size = new System.Drawing.Size(217, 47);
-            this.btnXemPK.TabIndex = 147;
-            this.btnXemPK.Text = "Xem phiếu khám";
-            this.btnXemPK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXemPK.UseVisualStyleBackColor = false;
-            this.btnXemPK.Click += new System.EventHandler(this.btnXemPK_Click_1);
             // 
             // btnSave
             // 
@@ -333,9 +305,9 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(688, 501);
+            this.btnSave.Location = new System.Drawing.Point(661, 492);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 39);
+            this.btnSave.Size = new System.Drawing.Size(142, 44);
             this.btnSave.TabIndex = 150;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -469,10 +441,10 @@ namespace QuanLyBenhNhan
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(389, 501);
+            this.btnDelete.Location = new System.Drawing.Point(287, 492);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(111, 39);
+            this.btnDelete.Size = new System.Drawing.Size(142, 44);
             this.btnDelete.TabIndex = 149;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -795,21 +767,49 @@ namespace QuanLyBenhNhan
             this.label13.Location = new System.Drawing.Point(36, 0);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.label13.Size = new System.Drawing.Size(351, 35);
+            this.label13.Size = new System.Drawing.Size(219, 35);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Danh mục chi tiết phiếu khám";
+            this.label13.Text = "Danh mục dịch vụ";
             // 
-            // groupBox6
+            // Column6
             // 
-            this.groupBox6.Controls.Add(this.btnXemPK);
-            this.groupBox6.Controls.Add(this.btnLapPKMoi);
-            this.groupBox6.Font = new System.Drawing.Font("Inter", 12F);
-            this.groupBox6.Location = new System.Drawing.Point(6, 45);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(396, 101);
-            this.groupBox6.TabIndex = 161;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Xem thông tin";
+            this.Column6.DataPropertyName = "DichVu";
+            this.Column6.HeaderText = "Mã dịch vụ";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "TenDV";
+            this.Column7.HeaderText = "Tên dịch vụ";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "DonGia";
+            this.Column8.HeaderText = "Đơn giá";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "SoLuong";
+            this.Column9.HeaderText = "Số lượng";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "ThanhTien";
+            this.Column10.HeaderText = "Thành tiền";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
             // 
             // FormQLPK
             // 
@@ -830,6 +830,7 @@ namespace QuanLyBenhNhan
             this.pnEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPK)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLPK)).EndInit();
@@ -844,7 +845,6 @@ namespace QuanLyBenhNhan
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -854,11 +854,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Panel pnEdit;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.DataGridView dgvChiTietPK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
@@ -905,5 +900,10 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.TextBox tbTimPk;
         private System.Windows.Forms.Button btnTimPK;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

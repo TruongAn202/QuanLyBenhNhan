@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace QuanLyBenhNhan
 {
     [Serializable]
-    class CBacSi
-    {
+    class CBacSi {
         private string maBS;
         private string tenBS;
         private DateTime ngaySinh;
@@ -16,8 +15,6 @@ namespace QuanLyBenhNhan
         private string gioiTinh;
         private DateTime ngayVaoLam;
         private string soDienThoai;
-
-        //luu y chỗ này, nếu ko làm đồng bộ thì dữ liệu sẽ null =>bên các nút ko lấy dc dữ liệu
         public string MaBS { get => maBS; set => maBS = value; }
         public string TenBS { get => tenBS; set => tenBS = value; }
         public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
@@ -25,8 +22,8 @@ namespace QuanLyBenhNhan
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
         public DateTime NgayVaoLam { get => ngayVaoLam; set => ngayVaoLam = value; }
         public string SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
-
-        public CBacSi(string mabs, string tenbs, string sodienthoai, string diachi, string gioitinh, DateTime ngaysinh, DateTime ngayvaolam)
+        public CBacSi(string mabs, string tenbs, string sodienthoai, string diachi, 
+            string gioitinh, DateTime ngaysinh, DateTime ngayvaolam)
         {
             MaBS = mabs;
             TenBS = tenbs;
@@ -36,7 +33,6 @@ namespace QuanLyBenhNhan
             NgayVaoLam = ngayvaolam;
             SoDienThoai = sodienthoai;
         }
-
         public CBacSi() : this("", "", "", "", "", DateTime.Today, DateTime.Today)
         {
 

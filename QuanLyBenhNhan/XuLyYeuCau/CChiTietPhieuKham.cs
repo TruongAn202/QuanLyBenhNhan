@@ -9,10 +9,11 @@ namespace QuanLyBenhNhan
     [Serializable]
     class CChiTietPhieuKham
     {
+        public CDichVu DichVu { get; set; }
+        public string TenDV => DichVu.TenDichVu;
         public int SoLuong { get; set; }
         public double DonGia { get; set; }
-
-        public CDichVu DichVu { get; set; }
+        
 
         public double ThanhTien => SoLuong * DonGia;
 
@@ -30,5 +31,12 @@ namespace QuanLyBenhNhan
             DichVu = null;
         }
         
+
+        public static List<CChiTietPhieuKham> getViewList(List<CChiTietPhieuKham> dsCTPK)
+        {
+            return dsCTPK;
+        }
+        
+
     }
 }

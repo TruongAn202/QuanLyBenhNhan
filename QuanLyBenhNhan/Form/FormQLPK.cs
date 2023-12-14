@@ -39,9 +39,9 @@ namespace QuanLyBenhNhan
             bs.DataSource = xyLyPK.getDsPhieuKham();
             dgvQLPK.DataSource = bs;
         }
-        private string getMaPK()
+        private string getMaPK() // gia tri o dau tien cua hang dc chon
         {
-            if (dgvQLPK.SelectedRows.Count == 0) return "";
+            if (dgvQLPK.SelectedRows.Count == 0) return ""; //kt xem co hang nao dc chon k
             int index = dgvQLPK.SelectedRows[0].Index;
             return dgvQLPK.Rows[index].Cells[0].Value.ToString();
         }
@@ -66,7 +66,7 @@ namespace QuanLyBenhNhan
         private void showChiTietPK(List<CChiTietPhieuKham> dsCTPK) // danh muc dich vu
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = CViewCTPK.getViewList(dsCTPK); //lay danh sach view
+            bs.DataSource = CChiTietPhieuKham.getViewList(dsCTPK); //lay danh sach view
             dgvChiTietPK.DataSource = bs;
         }              
         private void btnXemPK_Click_1(object sender, EventArgs e)

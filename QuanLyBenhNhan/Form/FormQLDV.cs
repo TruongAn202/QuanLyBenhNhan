@@ -102,6 +102,7 @@ namespace QuanLyBenhNhan
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string donGiaStr = tbDonGia.Text.Trim();
             string madv = getMaDV();
             if (madv == "") return;
             CDichVu dv = xulyDV.searchDV(madv);
@@ -118,6 +119,12 @@ namespace QuanLyBenhNhan
 
             dv.TenDichVu = tbTenDV.Text;
             dv.MaDichVu = tbMaDV.Text;
+            if (!double.TryParse(donGiaStr, out double donGia))
+            {
+                MessageBox.Show("Đơn giá phải là số. Vui lòng viết lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbDonGia.Focus();
+                return;
+            }
             dv.Dongia = double.Parse(tbDonGia.Text);
 
             xulyDV.updateDV(dv);
@@ -264,6 +271,11 @@ namespace QuanLyBenhNhan
                 }
                 tbTim.Clear();
             }
+        }
+
+        private void tbDonGia_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

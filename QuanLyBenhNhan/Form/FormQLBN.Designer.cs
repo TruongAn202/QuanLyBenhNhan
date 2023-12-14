@@ -35,6 +35,9 @@ namespace QuanLyBenhNhan
             this.pnInsert = new System.Windows.Forms.Panel();
             this.lbPnInsert = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.tbTim = new System.Windows.Forms.TextBox();
             this.gbGhiChu = new System.Windows.Forms.GroupBox();
             this.tbGhiChu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -69,17 +72,14 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.tbTim = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pnInsert.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.gbGhiChu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBN)).BeginInit();
             this.panel3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnInsert
@@ -132,7 +132,47 @@ namespace QuanLyBenhNhan
             this.groupBox2.Size = new System.Drawing.Size(1214, 423);
             this.groupBox2.TabIndex = 76;
             this.groupBox2.TabStop = false;
-            //this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnTim);
+            this.groupBox3.Controls.Add(this.tbTim);
+            this.groupBox3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 315);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(431, 102);
+            this.groupBox3.TabIndex = 153;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(22, 29);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(178, 47);
+            this.btnTim.TabIndex = 148;
+            this.btnTim.Text = "Tìm theo mã";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // tbTim
+            // 
+            this.tbTim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTim.Location = new System.Drawing.Point(230, 29);
+            this.tbTim.Multiline = true;
+            this.tbTim.Name = "tbTim";
+            this.tbTim.Size = new System.Drawing.Size(178, 47);
+            this.tbTim.TabIndex = 149;
+            this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
             // 
             // gbGhiChu
             // 
@@ -178,7 +218,6 @@ namespace QuanLyBenhNhan
             this.label9.Size = new System.Drawing.Size(252, 35);
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin bệnh nhân";
-            //this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dtNgayKham
             // 
@@ -212,10 +251,10 @@ namespace QuanLyBenhNhan
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(567, 361);
+            this.btnXoa.Location = new System.Drawing.Point(513, 356);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(123, 39);
+            this.btnXoa.Size = new System.Drawing.Size(142, 44);
             this.btnXoa.TabIndex = 69;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -231,9 +270,9 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(722, 361);
+            this.btnSave.Location = new System.Drawing.Point(686, 356);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 39);
+            this.btnSave.Size = new System.Drawing.Size(142, 44);
             this.btnSave.TabIndex = 73;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -275,10 +314,10 @@ namespace QuanLyBenhNhan
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(881, 361);
+            this.btnSua.Location = new System.Drawing.Point(863, 356);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(123, 39);
+            this.btnSua.Size = new System.Drawing.Size(142, 44);
             this.btnSua.TabIndex = 70;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -315,10 +354,10 @@ namespace QuanLyBenhNhan
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1038, 361);
+            this.btnThem.Location = new System.Drawing.Point(1042, 356);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(153, 39);
+            this.btnThem.Size = new System.Drawing.Size(149, 44);
             this.btnThem.TabIndex = 68;
             this.btnThem.Text = "Thêm mới";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -527,8 +566,6 @@ namespace QuanLyBenhNhan
             this.dgvDSBN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSBN.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSBN.TabIndex = 72;
-            //this.dgvDSBN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBN_CellContentClick);
-            //this.dgvDSBN.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDSBN_CellMouseDown);
             this.dgvDSBN.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBN_RowEnter);
             // 
             // panel3
@@ -565,48 +602,6 @@ namespace QuanLyBenhNhan
             this.label10.TabIndex = 0;
             this.label10.Text = "Danh sách bệnh nhân";
             // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTim.FlatAppearance.BorderSize = 0;
-            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTim.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(22, 29);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(178, 47);
-            this.btnTim.TabIndex = 148;
-            this.btnTim.Text = "Tìm theo mã";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // tbTim
-            // 
-            this.tbTim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTim.Location = new System.Drawing.Point(230, 29);
-            this.tbTim.Multiline = true;
-            this.tbTim.Name = "tbTim";
-            this.tbTim.Size = new System.Drawing.Size(178, 47);
-            this.tbTim.TabIndex = 149;
-            //this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
-            this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnTim);
-            this.groupBox3.Controls.Add(this.tbTim);
-            this.groupBox3.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(6, 315);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(431, 102);
-            this.groupBox3.TabIndex = 153;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tìm kiếm";
-            // 
             // FormQLBN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -625,6 +620,8 @@ namespace QuanLyBenhNhan
             this.pnInsert.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.gbGhiChu.ResumeLayout(false);
             this.gbGhiChu.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -633,8 +630,6 @@ namespace QuanLyBenhNhan
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBN)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -7,20 +7,16 @@ using System.Threading.Tasks;
 namespace QuanLyBenhNhan
 {
     [Serializable]
-    class CHoaDon
-    {
+    class CHoaDon{
         private string mahoadon;
         private DateTime ngaylaphoadon;
         private string tenBN;
         private string tongTien;
         private double daTra;
-        private CPhieuKham phieuKham;
-       
-
+        private CPhieuKham phieuKham;      
         public string Mahoadon { get => mahoadon; set => mahoadon = value; }
         public DateTime Ngaylaphoadon { get => ngaylaphoadon; set => ngaylaphoadon = value; }
         public string TenBN { get => tenBN; set => tenBN = value; }
-        
         public string TongTien { get => tongTien; set => tongTien = value; }
         public CPhieuKham PhieuKham { get => phieuKham; set => phieuKham = value; }
         public double DaTra { get => daTra; set => daTra = value; }
@@ -38,8 +34,8 @@ namespace QuanLyBenhNhan
                 }
             }
         }
-
-        public CHoaDon(string mahoadon, DateTime ngaylaphoadon, CPhieuKham pk, string tenbn, string tongtien, double datra)
+        public CHoaDon(string mahoadon, DateTime ngaylaphoadon, CPhieuKham pk, 
+            string tenbn, string tongtien, double datra)
         {
             Mahoadon = mahoadon;
             Ngaylaphoadon = ngaylaphoadon;
@@ -49,7 +45,6 @@ namespace QuanLyBenhNhan
             TongTien = tongtien;
             DaTra = datra;
         }
-
         public CHoaDon() 
         {
             Mahoadon = null;
@@ -82,6 +77,5 @@ namespace QuanLyBenhNhan
                 }
             }
         }
-
     }
 }

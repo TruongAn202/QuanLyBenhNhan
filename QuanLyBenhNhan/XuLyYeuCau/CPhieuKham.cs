@@ -7,26 +7,21 @@ using System.Threading.Tasks;
 namespace QuanLyBenhNhan
 {
     [Serializable]
-    internal class CPhieuKham
-    {
-        private List<CChiTietPhieuKham> dsCTPK; //= new List<CChiTietPhieuKham>();
+    internal class CPhieuKham{
+        private List<CChiTietPhieuKham> dsCTPK;
         public List<CChiTietPhieuKham> DsCTPK { 
             get => dsCTPK.ToList(); 
-            set => dsCTPK = value; }
-
-        
+            set => dsCTPK = value; } 
         private string maphieukham;
         private DateTime ngaylapphieu;
         private CBenhNhan benhNhan;
         private CBacSi bacSi;
-
         public string Maphieukham { get => maphieukham; set => maphieukham = value; }
         public DateTime Ngaylapphieu { get => ngaylapphieu; set => ngaylapphieu = value; }
         public CBenhNhan BenhNhan { get => benhNhan; set => benhNhan = value; }
         public CBacSi BacSi { get => bacSi; set => bacSi = value; }
-
-
-        public CPhieuKham(string maphieukham, DateTime ngaylapphieu, CBenhNhan benhnhan, CBacSi bacsi, List<CChiTietPhieuKham> dsCTPK)
+        public CPhieuKham(string maphieukham, DateTime ngaylapphieu, CBenhNhan benhnhan, 
+            CBacSi bacsi, List<CChiTietPhieuKham> dsCTPK)
         {
             Maphieukham = maphieukham;
             Ngaylapphieu = ngaylapphieu;
@@ -34,7 +29,7 @@ namespace QuanLyBenhNhan
             BacSi = bacsi;
             this.dsCTPK = dsCTPK;
         }
-        public CPhieuKham(/*string text*/)
+        public CPhieuKham()
         {
             Maphieukham = "";
             Ngaylapphieu = DateTime.Today;
@@ -42,7 +37,6 @@ namespace QuanLyBenhNhan
             BacSi = null;
             DsCTPK = new List<CChiTietPhieuKham>();
         }
-
         private CChiTietPhieuKham timCtpk(string maDV)
         {
             foreach (CChiTietPhieuKham cthd in dsCTPK)
@@ -52,7 +46,6 @@ namespace QuanLyBenhNhan
             }
             return null;
         }
-
         public void insert(CDichVu dv, int soLuong)
         {
             CChiTietPhieuKham existCtpk = timCtpk(dv.MaDichVu);
@@ -62,14 +55,7 @@ namespace QuanLyBenhNhan
             {
                 existCtpk.SoLuong += soLuong;
             }
-        }
-        
-        public void delete(string maDV)
-        {
-            CChiTietPhieuKham existCtpk = timCtpk(maDV);
-            if (existCtpk != null)
-                dsCTPK.Remove(existCtpk);
-        }
+        }             
         public double ThanhTien
         {
             get
@@ -84,6 +70,11 @@ namespace QuanLyBenhNhan
         {
             return Maphieukham;
         }
-
+        //public void delete(string maDV)
+        //{
+        //    CChiTietPhieuKham existCtpk = timCtpk(maDV);
+        //    if (existCtpk != null)
+        //        dsCTPK.Remove(existCtpk);
+        //}
     }
 }
