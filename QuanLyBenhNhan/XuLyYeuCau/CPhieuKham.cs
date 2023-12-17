@@ -70,11 +70,6 @@ namespace QuanLyBenhNhan
         {
             return Maphieukham;
         }
-        //public void delete(string maDV)
-        //{
-        //    CChiTietPhieuKham existCtpk = timCtpk(maDV);
-        //    if (existCtpk != null)
-        //        dsCTPK.Remove(existCtpk);
-        //}
+        
     }
 }

@@ -16,7 +16,9 @@ namespace QuanLyBenhNhan
         private CXuLyPhieuKham xyLyPK = new CXuLyPhieuKham();
         private CXuLyDichVu xuLyDV = new CXuLyDichVu();
         List<CChiTietPhieuKham> dsTamThoi = new List<CChiTietPhieuKham>();
+        private CXuLyHoaDon xulyHD = new CXuLyHoaDon();
         private CPhieuKham pk;
+        
         public FormQLPK()
         {
             InitializeComponent();
@@ -100,9 +102,21 @@ namespace QuanLyBenhNhan
             string mapk = getMaPK();
             if (mapk != "")
             {
-                xyLyPK.deletePK(mapk);
-                showDSPK();
-                clear();
+                // Kiểm tra xem "Maphieukham" có tồn tại trong danh sách hóa đơn hay không
+                List<CHoaDon> hoaDonList = xulyHD.SearchByMaPK(mapk);
+
+                if (hoaDonList.Count > 0)
+                {
+                    
+                    MessageBox.Show("Không thể xóa phiếu khám đã có hóa đơn liên quan.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Nếu không có hóa đơn liên quan, thực hiện xóa phiếu khám
+                    xyLyPK.deletePK(mapk);
+                    showDSPK();
+                    clear();
+                }
             }
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)

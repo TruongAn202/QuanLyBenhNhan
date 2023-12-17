@@ -14,6 +14,7 @@ namespace QuanLyBenhNhan
     public partial class FormQLBN : Form
     {
         private CXuLyBenhNhan xulyBN = new CXuLyBenhNhan();
+        private CXuLyPhieuKham xulyPK = new CXuLyPhieuKham();
         public FormQLBN()
         {
             InitializeComponent();
@@ -35,9 +36,7 @@ namespace QuanLyBenhNhan
         {
             BindingSource bs = new BindingSource(); // dối tượng kết nối dữ liệu
             bs.DataSource = xulyBN.getDsBenhNhan(); //cho dữ liệu của bs dc gán bằng dữ liệu của danh sách xulyBN
-            dgvDSBN.DataSource = bs; // lấy dữ liệu đó gán vào dữ liệu datagirdview
-
-            
+            dgvDSBN.DataSource = bs; // lấy dữ liệu đó gán vào dữ liệu datagirdview   
         }
         private string getMaBN() //lấy mã bệnh nhân của dòng đang chọn 
         {
@@ -45,7 +44,23 @@ namespace QuanLyBenhNhan
             int index = dgvDSBN.SelectedRows[0].Index;
             return dgvDSBN.Rows[index].Cells[0].Value.ToString();
         }
+        private string getTenBN()
+        {
+            if (dgvDSBN.SelectedRows.Count > 0)
+            {
+                // Lấy đối tượng dữ liệu liên kết với dòng được chọn
+                CBenhNhan bennhan = dgvDSBN.SelectedRows[0].DataBoundItem as CBenhNhan;
 
+                // Kiểm tra null để tránh lỗi
+                if (bennhan != null)
+                {
+                    // Truy cập thuộc tính TenBS
+                    return bennhan.TenBN;
+                }
+            }
+
+            return "";
+        }
         private void dgvDSBN_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             // Vẽ số thứ tự lên cột đầu tiên (index 0)
@@ -54,20 +69,17 @@ namespace QuanLyBenhNhan
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-
         private void dgvDSBN_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
         private void FormQLBN_Load(object sender, EventArgs e)
-        {
-            
+        {   
             dgvDSBN.RowPostPaint += dgvDSBN_RowPostPaint;
             dgvDSBN.RowHeadersVisible = true; // STT
             dgvDSBN.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders; // dieu chinh cot trai de chua all noi dung       
             dgvDSBN.DataSource = xulyBN.getDsBenhNhan();  
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             string mabn = tbMaBN.Text.Trim();
@@ -104,13 +116,30 @@ namespace QuanLyBenhNhan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            string tenbn = getTenBN();
             string mabn = getMaBN();
-            if (mabn != "")
+            if (tenbn != "")
             {
-                xulyBN.deleteBN(mabn);
+                bool benhnhandatontai = false;
 
-                clear();
-                show();
+                // Kiểm tra xem bác sĩ có tồn tại trong các phiếu khám không
+                foreach (CPhieuKham pk in xulyPK.getDsPhieuKham())
+                {
+                    if (pk.BenhNhan != null && pk.BenhNhan.TenBN == tenbn)
+                    {
+                        benhnhandatontai = true;
+                        break;
+                    }
+                }
+                if (benhnhandatontai)
+                {
+                    MessageBox.Show("Không thể xóa bệnh nhân đã tồn tại trong ít nhất một phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    xulyBN.deleteBN(mabn);
+                    show();
+                }
             }
             dgvDSBN.ClearSelection();
         }
@@ -146,7 +175,6 @@ namespace QuanLyBenhNhan
             show();
             dgvDSBN.ClearSelection();
         }
-
         private void dgvDSBN_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             string mabn = getMaBN();
@@ -162,7 +190,6 @@ namespace QuanLyBenhNhan
             dtNgaySInh.Value = bn.NgaySinh;
             tbGhiChu.Text = bn.GhiChu;
         }       
-
         private void btnSave_Click(object sender, EventArgs e)
         {           
 

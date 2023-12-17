@@ -14,13 +14,11 @@ namespace QuanLyBenhNhan
     public partial class FormQLBS : Form
     {
         private CXuLyBacSi xulyBS = new CXuLyBacSi();
-        
-
+        private CXuLyPhieuKham xulyPK = new CXuLyPhieuKham();
         public FormQLBS()
         {
             InitializeComponent();
         }
-
         private void clear()
         {
             tbMaBS.Text = "";
@@ -32,7 +30,6 @@ namespace QuanLyBenhNhan
             dtNgaySInh.Value = DateTime.Today;
             tbMaBS.Focus();
         }
-
         private void show()
         {
             BindingSource BS = new BindingSource(); // dối tượng kết nối dữ liệu
@@ -48,13 +45,23 @@ namespace QuanLyBenhNhan
             int index = dgvDSBS.SelectedRows[0].Index;
             return dgvDSBS.Rows[index].Cells[0].Value.ToString();
         }
+        private string getTenBS()
+        {
+            if (dgvDSBS.SelectedRows.Count > 0)
+            {
+                // Lấy đối tượng dữ liệu liên kết với dòng được chọn
+                CBacSi bacSi = dgvDSBS.SelectedRows[0].DataBoundItem as CBacSi;
 
-        
+                // Kiểm tra null để tránh lỗi
+                if (bacSi != null)
+                {
+                    // Truy cập thuộc tính TenBS
+                    return bacSi.TenBS;
+                }
+            }
 
-        
-
-        
-
+            return "";
+        }
         private void dgvDSBS_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             string mabs = getMaBS();
@@ -69,7 +76,6 @@ namespace QuanLyBenhNhan
             dtNgayVaoLam.Value = doctor.NgayVaoLam;
             dtNgaySInh.Value = doctor.NgaySinh;
         }
-
         private void dgvDSBS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             // Vẽ số thứ tự lên cột đầu tiên (index 0)
@@ -78,7 +84,6 @@ namespace QuanLyBenhNhan
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-
         private void FormQLBS_Load(object sender, EventArgs e)
         {
             dgvDSBS.RowPostPaint += dgvDSBS_RowPostPaint;
@@ -157,18 +162,35 @@ namespace QuanLyBenhNhan
             }
             dgvDSBS.ClearSelection();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string tenbs = getTenBS();
             string mabs = getMaBS();
-            if (mabs != "")
+            if (tenbs != "")
             {
-                xulyBS.deleteBS(mabs);
-                show();
+                bool bacsidatontai = false;
+
+                // Kiểm tra xem bác sĩ có tồn tại trong các phiếu khám không
+                foreach (CPhieuKham pk in xulyPK.getDsPhieuKham())
+                {
+                    if (pk.BacSi != null && pk.BacSi.TenBS == tenbs)
+                    {
+                        bacsidatontai = true;
+                        break;
+                    }
+                }
+                if (bacsidatontai)
+                {
+                    MessageBox.Show("Không thể xóa bác sĩ đã tồn tại trong ít nhất một phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    xulyBS.deleteBS(mabs);
+                    show();
+                }
             }
             dgvDSBS.ClearSelection();
         }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             string mabs = tbTim.Text.Trim();
@@ -214,7 +236,6 @@ namespace QuanLyBenhNhan
             }
             tbTim.Clear();
         }
-
         private void tbTim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

@@ -19,7 +19,7 @@ namespace QuanLyBenhNhan
         }
         public List<CBacSi> getDsBacSi()
         {
-            return dsBS.Values.ToList(); // 
+            return dsBS.Values.ToList();  
         }
 
         public void insertBS(CBacSi bs)
@@ -53,37 +53,6 @@ namespace QuanLyBenhNhan
         {
             return dsBS.ContainsKey(maBS);   
         }
-
-        //public bool luuFile(string filename)
-        //{
-        //    try
-        //    {
-        //        FileStream fs = new FileStream(filename, FileMode.Create);
-        //        BinaryFormatter bf = new BinaryFormatter();
-        //        bf.Serialize(fs, dsBS);
-        //        fs.Close();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-        //public bool docFile(string filename)
-        //{
-        //    try
-        //    {
-        //        FileStream fs = new FileStream(filename, FileMode.Open);
-        //        BinaryFormatter bf = new BinaryFormatter();
-        //        dsBS = (Dictionary<string, CBacSi>)bf.Deserialize(fs);
-        //        fs.Close();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
         
     }
 }

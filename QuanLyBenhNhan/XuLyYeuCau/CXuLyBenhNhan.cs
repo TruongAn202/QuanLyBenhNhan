@@ -52,35 +52,6 @@ namespace QuanLyBenhNhan
         {
             return dsBN.ContainsKey(maBN);   // Kiểm tra xem mã bệnh nhân đã tồn tại trong dsBN hay không                      
         }
-        //public bool luuFile(string filename)
-        //{
-        //    try
-        //    {
-        //        FileStream fs = new FileStream(filename, FileMode.Create);
-        //        BinaryFormatter bf = new BinaryFormatter();
-        //        bf.Serialize(fs, dsBN);
-        //        fs.Close();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-        //public bool docFile(string filename)
-        //{
-        //    try
-        //    {
-        //        FileStream fs = new FileStream(filename, FileMode.Open);
-        //        BinaryFormatter bf = new BinaryFormatter();
-        //        dsBN = (Dictionary<string, CBenhNhan>)bf.Deserialize(fs);
-        //        fs.Close();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
+        
     }
 }

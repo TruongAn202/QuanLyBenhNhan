@@ -29,8 +29,8 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.dgvDSPK = new System.Windows.Forms.DataGridView();
@@ -92,14 +92,14 @@ namespace QuanLyBenhNhan
             this.dgvDSPK.AllowUserToResizeRows = false;
             this.dgvDSPK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSPK.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSPK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSPK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -107,14 +107,14 @@ namespace QuanLyBenhNhan
             this.Column4,
             this.Column5,
             this.Column2});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSPK.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSPK.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSPK.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
             this.dgvDSPK.Location = new System.Drawing.Point(0, 636);
@@ -224,7 +224,7 @@ namespace QuanLyBenhNhan
             // 
             this.tbMaPK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbMaPK.Location = new System.Drawing.Point(774, 176);
+            this.tbMaPK.Location = new System.Drawing.Point(760, 176);
             this.tbMaPK.Multiline = true;
             this.tbMaPK.Name = "tbMaPK";
             this.tbMaPK.ReadOnly = true;
@@ -276,11 +276,11 @@ namespace QuanLyBenhNhan
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Inter Medium", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(370, 77);
+            this.label4.Location = new System.Drawing.Point(360, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(481, 40);
+            this.label4.Size = new System.Drawing.Size(463, 40);
             this.label4.TabIndex = 143;
-            this.label4.Text = "Danh sách phiếu khám đã lập";
+            this.label4.Text = "Thông tin phiếu khám đã lập";
             // 
             // panel2
             // 
@@ -307,7 +307,7 @@ namespace QuanLyBenhNhan
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label6.Location = new System.Drawing.Point(610, 178);
+            this.label6.Location = new System.Drawing.Point(596, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 20);
             this.label6.TabIndex = 119;
@@ -318,7 +318,7 @@ namespace QuanLyBenhNhan
             this.tbTenBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTenBN.Enabled = false;
             this.tbTenBN.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbTenBN.Location = new System.Drawing.Point(377, 176);
+            this.tbTenBN.Location = new System.Drawing.Point(363, 176);
             this.tbTenBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenBN.Name = "tbTenBN";
             this.tbTenBN.ReadOnly = true;
@@ -349,7 +349,7 @@ namespace QuanLyBenhNhan
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label7.Location = new System.Drawing.Point(215, 178);
+            this.label7.Location = new System.Drawing.Point(201, 178);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 20);
             this.label7.TabIndex = 122;

@@ -95,7 +95,7 @@ namespace QuanLyBenhNhan
             this.tbDonGia.Name = "tbDonGia";
             this.tbDonGia.Size = new System.Drawing.Size(306, 28);
             this.tbDonGia.TabIndex = 88;
-            this.tbDonGia.TextChanged += new System.EventHandler(this.tbDonGia_TextChanged);
+            //this.tbDonGia.TextChanged += new System.EventHandler(this.tbDonGia_TextChanged);
             // 
             // label4
             // 
@@ -191,7 +191,7 @@ namespace QuanLyBenhNhan
             this.dgvDSDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDV.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSDV.TabIndex = 92;
-            this.dgvDSDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDV_CellContentClick);
+            //this.dgvDSDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDV_CellContentClick);
             this.dgvDSDV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDV_RowEnter);
             // 
             // Column1
@@ -250,7 +250,7 @@ namespace QuanLyBenhNhan
             this.groupBox1.TabIndex = 152;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tbTim
             // 
