@@ -66,12 +66,10 @@ namespace QuanLyBenhNhan
             string maPK = txtMaPK.Text;
             string tenBN = txtTenBN.Text.Trim();
             string daTraStr = tbDaTra.Text.Trim();
+
+            double traThem;
+            string traThemStr = tbTraThem.Text.Trim();
             var existingHDs = xulyHD.SearchByMaPK(maPK);
-            if (double.TryParse(tbDaTra.Text, out double daTra1) && double.TryParse(tbTongTien.Text, out double tongTien) && daTra1 > tongTien)
-            {
-                MessageBox.Show("Số tiền cần thanh toán không được lớn hơn tổng tiền dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             if (string.IsNullOrEmpty(mahd))
             {
                 MessageBox.Show("Vui lòng nhập mã hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,8 +97,15 @@ namespace QuanLyBenhNhan
                 MessageBox.Show("Bệnh nhân này đã thanh toán đủ. Không thể thêm hóa đơn mới.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (!double.TryParse(traThemStr, out traThem))
+            {
+                MessageBox.Show("Số tiền thanh toán thêm phải là số. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTraThem.Focus();
+                return;
+            }
             else
             {
+                daTra += traThem;
                 pk = new CPhieuKham();
                 pk.Maphieukham = maPK;
                 pk.Maphieukham = txtMaPK.Text;
@@ -110,13 +115,30 @@ namespace QuanLyBenhNhan
                 TruyCapDuLieu.luuFile("data.dat");
 
                 dgvDSHD.ClearSelection();
-
                 dgvDSHD.DataSource = dgvDSHD.DataSource = xulyHD.SearchByMaPK(txtMaPK.Text);
+
             }
         }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+        private string getMaHD()
+        {
+            if (dgvDSHD.SelectedRows.Count == 0) return "";
+            int index = dgvDSHD.SelectedRows[0].Index;
+            return dgvDSHD.Rows[index].Cells[0].Value.ToString();
+        }
+        private void dgvDSHD_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string mahd = getMaHD();
+            if (mahd == "") return;
+
+            CHoaDon hd = xulyHD.searchHD(mahd);
+
+            tbTongThu.Text = hd.TongTien;
+            tbDaTra.Text = hd.DaTra.ToString();
+            
         }
     }
 }
