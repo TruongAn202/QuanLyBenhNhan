@@ -45,14 +45,7 @@ namespace QuanLyBenhNhan
                 return "";
             }
         } 
-        private void dgvQLHD_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            string mapk = getMaPK();
-            if (mapk == "") return;
-            CPhieuKham pk = xulyPK.searchPK(mapk); // không duoc sua mã
-            tbMaPK.Text = pk.Maphieukham;
-            tbTenBN.Text = pk.BenhNhan.TenBN;
-        }
+        
         private void btnTim_Click(object sender, EventArgs e)
         {
             string mapk = tbTim.Text.Trim();
@@ -171,6 +164,15 @@ namespace QuanLyBenhNhan
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xem hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void dgvDSPK_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string mapk = getMaPK();
+            if (mapk == "") return;
+            CPhieuKham pk = xulyPK.searchPK(mapk); // không duoc sua mã
+            tbMaPK.Text = pk.Maphieukham;
+            tbTenBN.Text = pk.BenhNhan.TenBN;
         }
     }
 }

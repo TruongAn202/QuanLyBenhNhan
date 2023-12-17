@@ -64,7 +64,7 @@ namespace QuanLyBenhNhan
                 {
                     if (tongTienDouble == DaTra)
                     {
-                        return "Paid";
+                        return "Thanh toán đầy đủ";
                     }
                     else
                     {
