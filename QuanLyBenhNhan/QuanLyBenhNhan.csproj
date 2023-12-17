@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\FormXemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormXemHD.Designer.cs">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="XuLyYeuCau\CBacSi.cs" />
     <Compile Include="XuLyYeuCau\CBenhNhan.cs" />
     <Compile Include="XuLyYeuCau\CChiTietPhieuKham.cs" />
@@ -111,6 +117,9 @@
     <Compile Include="DuLieu\TruyCapDuLieu.cs" />
     <EmbeddedResource Include="FormExportExcel.resx">
       <DependentUpon>FormExportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormXemHD.resx">
+      <DependentUpon>FormXemHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormQLBN.resx">
       <DependentUpon>FormQLBN.cs</DependentUpon>

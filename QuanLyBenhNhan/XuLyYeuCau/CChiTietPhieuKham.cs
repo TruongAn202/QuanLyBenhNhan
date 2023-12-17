@@ -30,7 +30,6 @@ namespace QuanLyBenhNhan
             DonGia = 0;
             DichVu = null;
         }
-        
 
         public static List<CChiTietPhieuKham> getViewList(List<CChiTietPhieuKham> dsCTPK)
         {

@@ -15,9 +15,7 @@ namespace QuanLyBenhNhan
         List<CChiTietPhieuKham> dsCTPK;
         private CXuLyPhieuKham xyLyPK = new CXuLyPhieuKham();
         private CXuLyDichVu xuLyDV = new CXuLyDichVu();
-        CChiTietPhieuKham ctpk = new CChiTietPhieuKham();
         List<CChiTietPhieuKham> dsTamThoi = new List<CChiTietPhieuKham>();
-        CDichVu dv = new CDichVu();
         private CPhieuKham pk;
         public FormQLPK()
         {
@@ -59,9 +57,9 @@ namespace QuanLyBenhNhan
 
             dtNgayLapPhieu.Value = DateTime.Today;
 
-            cbMaDV.SelectedIndex = 0;
-
-            dgvChiTietPK.DataSource = null;
+            cbMaDV.SelectedIndex = 0;           
+            dgvChiTietPK.Rows.Clear();
+            dgvChiTietPK.Refresh(); //được sử dụng để làm mới giao diện và hiển thị lại ColumnHeader.
         }
         private void showChiTietPK(List<CChiTietPhieuKham> dsCTPK) // danh muc dich vu
         {
@@ -84,8 +82,6 @@ namespace QuanLyBenhNhan
             cbBS.Text = pk.BacSi.TenBS;
             dtNgayLapPhieu.Value = pk.Ngaylapphieu;
 
-            //ListCtpk = pk.ChiTietPhieuKham;
-
             showChiTietPK(pk.DsCTPK);
         }
         private void btnSave_Click_1(object sender, EventArgs e)
@@ -107,7 +103,6 @@ namespace QuanLyBenhNhan
                 xyLyPK.deletePK(mapk);
                 showDSPK();
                 clear();
-
             }
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
@@ -149,7 +144,6 @@ namespace QuanLyBenhNhan
             tbTenDV.Text = dv.TenDichVu;
             tbDonGia.Text = dv.Dongia + "";
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             string mapk = getMaPK();
@@ -200,25 +194,8 @@ namespace QuanLyBenhNhan
             tbMaPK.Text = pk.Maphieukham;
             dtNgayLapPhieu.Value = pk.Ngaylapphieu;
             cbBN.Text = pk.BenhNhan.TenBN;
-            cbBS.Text = pk.BacSi.TenBS;
-           
+            cbBS.Text = pk.BacSi.TenBS;           
         }
-
-        private void btnLapPK_Click(object sender, EventArgs e)
-        {
-            pk = null;
-            clear();
-            foreach (DataGridViewRow row in dgvQLPK.Rows)
-            {
-                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
-                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
-                dgvQLPK.ClearSelection();
-            }
-
-            // Xóa nội dung trong TextBox "tbTim"
-            tbTimPk.Clear();
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string mapk = tbMaPK.Text.Trim();
@@ -312,7 +289,6 @@ namespace QuanLyBenhNhan
             }
             tbTimPk.Clear();
         }
-
         private void tbTimPk_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -358,6 +334,20 @@ namespace QuanLyBenhNhan
                 }
                 tbTimPk.Clear();
             }
+        }
+        private void btnLapPKMoi_Click(object sender, EventArgs e)
+        {
+            dsTamThoi = new List<CChiTietPhieuKham>();
+            clear();
+            foreach (DataGridViewRow row in dgvQLPK.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
+                dgvQLPK.ClearSelection();
+            }
+
+
+            tbTimPk.Clear();
         }
     }
 }

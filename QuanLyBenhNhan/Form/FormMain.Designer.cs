@@ -259,7 +259,7 @@ namespace QuanLyBenhNhan
             this.MinimumSize = new System.Drawing.Size(998, 553);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý bệnh nhân";
+            this.Text = "Quản lý bệnh nhân phòng khám";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMenu.ResumeLayout(false);
