@@ -52,7 +52,7 @@ namespace QuanLyBenhNhan
 
             if (string.IsNullOrEmpty(mapk))
             {
-                MessageBox.Show("Vui lòng nhập mã phiếu khám vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã hóa đơn vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbTim.Focus();
                 return;
             }
@@ -98,7 +98,7 @@ namespace QuanLyBenhNhan
                 string mapk = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(mapk))
                 {
-                    MessageBox.Show("Vui lòng nhập mã phiếu khám vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã hóa đơn vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
@@ -130,7 +130,7 @@ namespace QuanLyBenhNhan
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy phiếu khám có mã: " + mapk + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy hóa đơn có mã: " + mapk + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbTim.Focus();
                 }
                 tbTim.Clear();
@@ -173,6 +173,11 @@ namespace QuanLyBenhNhan
             CPhieuKham pk = xulyPK.searchPK(mapk); // không duoc sua mã
             tbMaPK.Text = pk.Maphieukham;
             tbTenBN.Text = pk.BenhNhan.TenBN;
+        }
+
+        private void tbTim_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

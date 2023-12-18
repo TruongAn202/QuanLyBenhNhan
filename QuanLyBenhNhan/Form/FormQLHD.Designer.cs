@@ -47,14 +47,14 @@ namespace QuanLyBenhNhan
             this.btnXemHD = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvDSPK = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnEdit.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -134,6 +134,7 @@ namespace QuanLyBenhNhan
             this.tbTim.Name = "tbTim";
             this.tbTim.Size = new System.Drawing.Size(178, 47);
             this.tbTim.TabIndex = 151;
+            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
             // 
             // btnTim
@@ -290,40 +291,6 @@ namespace QuanLyBenhNhan
             this.dgvDSPK.TabIndex = 155;
             this.dgvDSPK.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPK_RowEnter);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 609);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1402, 32);
-            this.panel3.TabIndex = 156;
-            // 
-            // label12
-            // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Transparent;
-            this.label12.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 32);
-            this.label12.TabIndex = 100;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(36, 0);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.label13.Size = new System.Drawing.Size(273, 35);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Danh sách phiếu khám";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Maphieukham";
@@ -363,6 +330,40 @@ namespace QuanLyBenhNhan
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 609);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1402, 32);
+            this.panel3.TabIndex = 156;
+            // 
+            // label12
+            // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Transparent;
+            this.label12.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_list_25;
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 32);
+            this.label12.TabIndex = 100;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Inter Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(36, 0);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.label13.Size = new System.Drawing.Size(273, 35);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Danh sách phiếu khám";
             // 
             // FormQLHD
             // 

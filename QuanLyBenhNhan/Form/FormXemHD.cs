@@ -92,7 +92,7 @@ namespace QuanLyBenhNhan
                 tbDaTra.Focus();
                 return;
             }
-            else if (existingHDs != null && existingHDs.Any(hd => hd.TinhTrang == "Paid"))
+            else if (existingHDs != null && existingHDs.Any(hd => hd.TinhTrang == "Thanh toán đủ"))
             {
                 MessageBox.Show("Bệnh nhân này đã thanh toán đủ. Không thể thêm hóa đơn mới.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -129,7 +129,8 @@ namespace QuanLyBenhNhan
             int index = dgvDSHD.SelectedRows[0].Index;
             return dgvDSHD.Rows[index].Cells[0].Value.ToString();
         }
-        private void dgvDSHD_RowEnter(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvDSHD_RowEnter_1(object sender, DataGridViewCellEventArgs e)
         {
             string mahd = getMaHD();
             if (mahd == "") return;
@@ -138,7 +139,111 @@ namespace QuanLyBenhNhan
 
             tbTongThu.Text = hd.TongTien;
             tbDaTra.Text = hd.DaTra.ToString();
-            
+        }
+
+        private void btnHDMN_Click(object sender, EventArgs e)
+        {
+            dgvDSHD.ClearSelection();
+            if (dgvDSHD.Rows.Count > 0)
+            {
+                //  dòng cuối 
+                int lastRowIndex = dgvDSHD.Rows.Count - 1;
+                dgvDSHD.Rows[lastRowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                // cuộn tới dòng đó
+                dgvDSHD.FirstDisplayedScrollingRowIndex = lastRowIndex;
+            }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            string mahd = tbTim.Text.Trim();
+
+            if (string.IsNullOrEmpty(mahd))
+            {
+                MessageBox.Show("Vui lòng nhập mã hóa đơn vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTim.Focus();
+                return;
+            }
+            int columnIndexMaBN = 0; //thay 0 bang cot thuc te
+            //xoa hightlight trc do
+            foreach (DataGridViewRow row in dgvDSHD.Rows)
+            {
+                dgvDSHD.ClearSelection();
+                row.DefaultCellStyle.BackColor = dgvDSHD.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvDSHD.DefaultCellStyle.ForeColor;
+            }
+            CHoaDon hd = xulyHD.searchHD(mahd);
+
+            if (hd != null)
+            {
+                DataGridViewRow foundRow = dgvDSHD.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mahd)
+                    .FirstOrDefault();
+
+                if (foundRow != null)
+                {
+                    //hightlight
+                    foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                    foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    dgvDSHD.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy hóa đơn có mã: " + mahd + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbTim.Focus();
+            }
+            tbTim.Clear();
+        }
+
+        private void tbTim_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Ngăn chặn tiếp tục xử lý sự kiện KeyPress    
+                string mahd = tbTim.Text.Trim();
+                if (string.IsNullOrEmpty(mahd))
+                {
+                    MessageBox.Show("Vui lòng nhập mã hóa đơn vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tbTim.SelectAll();
+                    tbTim.Focus();
+                    return;
+                }
+                int columnIndexMaBN = 0; // Thay thế 0 bằng chỉ mục cột thực tế của cột chứa mã bệnh nhân trong DataGridView của bạn
+
+                foreach (DataGridViewRow row in dgvDSHD.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = dgvDSHD.DefaultCellStyle.BackColor;
+                    row.DefaultCellStyle.ForeColor = dgvDSHD.DefaultCellStyle.ForeColor;
+                }
+                CHoaDon hd = xulyHD.searchHD(mahd);
+
+                if (hd != null)
+                {
+                    // Tìm dòng chứa dữ liệu của bệnh nhân được tìm thấy
+                    DataGridViewRow foundRow = dgvDSHD.Rows
+                        .Cast<DataGridViewRow>()
+                        .Where(r => r.Cells[columnIndexMaBN].Value.ToString() == mahd)
+                        .FirstOrDefault();
+                    if (foundRow != null)
+                    {
+                        dgvDSHD.ClearSelection();
+                        foundRow.DefaultCellStyle.BackColor = Color.Yellow;
+                        foundRow.DefaultCellStyle.ForeColor = Color.Black;
+
+                        dgvDSHD.FirstDisplayedScrollingRowIndex = foundRow.Index;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy hóa đơn có mã: " + mahd + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbTim.Focus();
+                }
+                tbTim.Clear();
+            }
         }
     }
 }

@@ -242,7 +242,7 @@ namespace QuanLyBenhNhan
                     foundRow.DefaultCellStyle.BackColor = Color.Yellow;
                     foundRow.DefaultCellStyle.ForeColor = Color.Black;
 
-                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    // cuộn đến dòng được tìm thấy
                     dgvDSDV.FirstDisplayedScrollingRowIndex = foundRow.Index;
                 }
             }
