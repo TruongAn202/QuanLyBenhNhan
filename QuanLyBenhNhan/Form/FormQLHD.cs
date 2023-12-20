@@ -19,15 +19,22 @@ namespace QuanLyBenhNhan
             InitializeComponent();  
         }
         private void FormQLHD_Load(object sender, EventArgs e)
-        {         
+        {
             showDSPK();
+            
         }
         private void showDSPK()
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = xulyHD.getDSPhieuKham();
             dgvDSPK.DataSource = bs;
-        }       
+        }
+        private void showDSHD()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = xulyHD.getDSHoaDon();
+            dgvDSPK.DataSource = bs;
+        }
         private string getMaPK()
         {
             if (dgvDSPK.SelectedRows.Count == 0) return "";
@@ -171,8 +178,8 @@ namespace QuanLyBenhNhan
             string mapk = getMaPK();
             if (mapk == "") return;
             CPhieuKham pk = xulyPK.searchPK(mapk); // không duoc sua mã
-            tbMaPK.Text = pk.Maphieukham;
-            tbTenBN.Text = pk.BenhNhan.TenBN;
+            //tbMaPK.Text = pk.Maphieukham;
+            //tbTenBN.Text = pk.BenhNhan.TenBN;
         }
 
         private void tbTim_TextChanged(object sender, EventArgs e)

@@ -29,8 +29,8 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label = new System.Windows.Forms.Label();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.tbDonGia = new System.Windows.Forms.TextBox();
@@ -95,7 +95,6 @@ namespace QuanLyBenhNhan
             this.tbDonGia.Name = "tbDonGia";
             this.tbDonGia.Size = new System.Drawing.Size(306, 28);
             this.tbDonGia.TabIndex = 88;
-            //this.tbDonGia.TextChanged += new System.EventHandler(this.tbDonGia_TextChanged);
             // 
             // label4
             // 
@@ -156,27 +155,27 @@ namespace QuanLyBenhNhan
             this.dgvDSDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSDV.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSDV.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSDV.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSDV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSDV.EnableHeadersVisualStyles = false;
             this.dgvDSDV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
@@ -191,7 +190,6 @@ namespace QuanLyBenhNhan
             this.dgvDSDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSDV.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSDV.TabIndex = 92;
-            //this.dgvDSDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDV_CellContentClick);
             this.dgvDSDV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSDV_RowEnter);
             // 
             // Column1
@@ -250,7 +248,6 @@ namespace QuanLyBenhNhan
             this.groupBox1.TabIndex = 152;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
-            //this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tbTim
             // 
@@ -312,7 +309,7 @@ namespace QuanLyBenhNhan
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(504, 345);
+            this.btnDelete.Location = new System.Drawing.Point(503, 364);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(142, 44);
@@ -331,7 +328,7 @@ namespace QuanLyBenhNhan
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(693, 345);
+            this.btnLuu.Location = new System.Drawing.Point(692, 364);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(142, 44);
             this.btnLuu.TabIndex = 97;
@@ -349,7 +346,7 @@ namespace QuanLyBenhNhan
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(874, 345);
+            this.btnUpdate.Location = new System.Drawing.Point(873, 364);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(142, 44);
@@ -368,7 +365,7 @@ namespace QuanLyBenhNhan
             this.btnInsert.ForeColor = System.Drawing.Color.White;
             this.btnInsert.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(1046, 345);
+            this.btnInsert.Location = new System.Drawing.Point(1045, 364);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(0);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(147, 44);

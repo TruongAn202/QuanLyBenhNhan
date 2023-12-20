@@ -19,6 +19,7 @@ namespace QuanLyBenhNhan
         {
             InitializeComponent();
         }
+        
         private void clear()
         {
             tbMaBS.Text = "";

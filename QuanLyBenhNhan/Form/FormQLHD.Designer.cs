@@ -35,17 +35,13 @@ namespace QuanLyBenhNhan
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbMaPK = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbTim = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbTenBN = new System.Windows.Forms.TextBox();
             this.btnXemHD = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.dgvDSPK = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,38 +84,22 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.tbMaPK);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.tbTenBN);
             this.groupBox2.Controls.Add(this.btnXemHD);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(21, 94);
+            this.groupBox2.Location = new System.Drawing.Point(12, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1198, 356);
+            this.groupBox2.Size = new System.Drawing.Size(1216, 261);
             this.groupBox2.TabIndex = 154;
             this.groupBox2.TabStop = false;
-            // 
-            // tbMaPK
-            // 
-            this.tbMaPK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbMaPK.Enabled = false;
-            this.tbMaPK.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbMaPK.Location = new System.Drawing.Point(760, 176);
-            this.tbMaPK.Multiline = true;
-            this.tbMaPK.Name = "tbMaPK";
-            this.tbMaPK.ReadOnly = true;
-            this.tbMaPK.Size = new System.Drawing.Size(205, 28);
-            this.tbMaPK.TabIndex = 160;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbTim);
             this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Font = new System.Drawing.Font("Inter", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(11, 240);
+            this.groupBox1.Location = new System.Drawing.Point(6, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(431, 102);
             this.groupBox1.TabIndex = 159;
@@ -187,28 +167,6 @@ namespace QuanLyBenhNhan
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin phiếu khám";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label6.Location = new System.Drawing.Point(596, 178);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 20);
-            this.label6.TabIndex = 119;
-            this.label6.Text = "Mã phiếu khám";
-            // 
-            // tbTenBN
-            // 
-            this.tbTenBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTenBN.Enabled = false;
-            this.tbTenBN.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.tbTenBN.Location = new System.Drawing.Point(363, 176);
-            this.tbTenBN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbTenBN.Name = "tbTenBN";
-            this.tbTenBN.ReadOnly = true;
-            this.tbTenBN.Size = new System.Drawing.Size(192, 28);
-            this.tbTenBN.TabIndex = 125;
-            // 
             // btnXemHD
             // 
             this.btnXemHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(146)))), ((int)(((byte)(70)))));
@@ -217,27 +175,17 @@ namespace QuanLyBenhNhan
             this.btnXemHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXemHD.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnXemHD.ForeColor = System.Drawing.Color.White;
-            this.btnXemHD.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnXemHD.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnXemHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXemHD.Location = new System.Drawing.Point(996, 298);
+            this.btnXemHD.Location = new System.Drawing.Point(1011, 196);
             this.btnXemHD.Margin = new System.Windows.Forms.Padding(0);
             this.btnXemHD.Name = "btnXemHD";
-            this.btnXemHD.Size = new System.Drawing.Size(187, 44);
+            this.btnXemHD.Size = new System.Drawing.Size(176, 44);
             this.btnXemHD.TabIndex = 140;
-            this.btnXemHD.Text = "Xem hóa đơn";
+            this.btnXemHD.Text = "Lập hóa đơn";
             this.btnXemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXemHD.UseVisualStyleBackColor = false;
             this.btnXemHD.Click += new System.EventHandler(this.btnXemHD_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Inter", 10.2F);
-            this.label7.Location = new System.Drawing.Point(201, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 20);
-            this.label7.TabIndex = 122;
-            this.label7.Text = "Tên bệnh nhân";
             // 
             // dgvDSPK
             // 
@@ -278,7 +226,7 @@ namespace QuanLyBenhNhan
             this.dgvDSPK.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSPK.EnableHeadersVisualStyles = false;
             this.dgvDSPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.dgvDSPK.Location = new System.Drawing.Point(0, 641);
+            this.dgvDSPK.Location = new System.Drawing.Point(0, 531);
             this.dgvDSPK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDSPK.MultiSelect = false;
             this.dgvDSPK.Name = "dgvDSPK";
@@ -287,7 +235,7 @@ namespace QuanLyBenhNhan
             this.dgvDSPK.RowHeadersWidth = 51;
             this.dgvDSPK.RowTemplate.Height = 24;
             this.dgvDSPK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDSPK.Size = new System.Drawing.Size(1402, 342);
+            this.dgvDSPK.Size = new System.Drawing.Size(1402, 452);
             this.dgvDSPK.TabIndex = 155;
             this.dgvDSPK.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSPK_RowEnter);
             // 
@@ -322,6 +270,7 @@ namespace QuanLyBenhNhan
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
             // 
             // Column5
             // 
@@ -337,7 +286,7 @@ namespace QuanLyBenhNhan
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 609);
+            this.panel3.Location = new System.Drawing.Point(0, 499);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1402, 32);
             this.panel3.TabIndex = 156;
@@ -404,10 +353,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbTim;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbTenBN;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbMaPK;
         private System.Windows.Forms.DataGridView dgvDSPK;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;

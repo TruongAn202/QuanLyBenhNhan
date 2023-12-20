@@ -18,8 +18,9 @@ namespace QuanLyBenhNhan
         public FormQLBN()
         {
             InitializeComponent();
+            
         }
-
+        
         private void clear()
         {
             tbMaBN.Text = "";
@@ -294,6 +295,8 @@ namespace QuanLyBenhNhan
                 }
                 tbTim.Clear();
             }
-        }      
+        }
+
+        
     }
 }

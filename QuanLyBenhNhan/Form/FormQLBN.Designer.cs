@@ -34,7 +34,7 @@ namespace QuanLyBenhNhan
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnInsert = new System.Windows.Forms.Panel();
             this.lbPnInsert = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grboxBN = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.tbTim = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@ namespace QuanLyBenhNhan
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pnInsert.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grboxBN.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbGhiChu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,34 +104,34 @@ namespace QuanLyBenhNhan
             this.lbPnInsert.TabIndex = 0;
             this.lbPnInsert.Text = "Quản lý bệnh nhân";
             // 
-            // groupBox2
+            // grboxBN
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.gbGhiChu);
-            this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.dtNgayKham);
-            this.groupBox2.Controls.Add(this.dtNgaySInh);
-            this.groupBox2.Controls.Add(this.btnXoa);
-            this.groupBox2.Controls.Add(this.btnSave);
-            this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Controls.Add(this.btnSua);
-            this.groupBox2.Controls.Add(this.tbDiaChi);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.tbTenBN);
-            this.groupBox2.Controls.Add(this.tbSDT);
-            this.groupBox2.Controls.Add(this.tbMaBN);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 95);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1214, 423);
-            this.groupBox2.TabIndex = 76;
-            this.groupBox2.TabStop = false;
+            this.grboxBN.BackColor = System.Drawing.Color.White;
+            this.grboxBN.Controls.Add(this.groupBox3);
+            this.grboxBN.Controls.Add(this.gbGhiChu);
+            this.grboxBN.Controls.Add(this.panel2);
+            this.grboxBN.Controls.Add(this.dtNgayKham);
+            this.grboxBN.Controls.Add(this.dtNgaySInh);
+            this.grboxBN.Controls.Add(this.btnXoa);
+            this.grboxBN.Controls.Add(this.btnSave);
+            this.grboxBN.Controls.Add(this.groupBox1);
+            this.grboxBN.Controls.Add(this.btnSua);
+            this.grboxBN.Controls.Add(this.tbDiaChi);
+            this.grboxBN.Controls.Add(this.label4);
+            this.grboxBN.Controls.Add(this.btnThem);
+            this.grboxBN.Controls.Add(this.label3);
+            this.grboxBN.Controls.Add(this.label2);
+            this.grboxBN.Controls.Add(this.tbTenBN);
+            this.grboxBN.Controls.Add(this.tbSDT);
+            this.grboxBN.Controls.Add(this.tbMaBN);
+            this.grboxBN.Controls.Add(this.label5);
+            this.grboxBN.Controls.Add(this.label7);
+            this.grboxBN.Controls.Add(this.label1);
+            this.grboxBN.Location = new System.Drawing.Point(12, 95);
+            this.grboxBN.Name = "grboxBN";
+            this.grboxBN.Size = new System.Drawing.Size(1214, 423);
+            this.grboxBN.TabIndex = 76;
+            this.grboxBN.TabStop = false;
             // 
             // groupBox3
             // 
@@ -251,7 +251,7 @@ namespace QuanLyBenhNhan
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(513, 356);
+            this.btnXoa.Location = new System.Drawing.Point(513, 361);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(142, 44);
@@ -270,7 +270,7 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(686, 356);
+            this.btnSave.Location = new System.Drawing.Point(686, 361);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(142, 44);
             this.btnSave.TabIndex = 73;
@@ -314,7 +314,7 @@ namespace QuanLyBenhNhan
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(863, 356);
+            this.btnSua.Location = new System.Drawing.Point(863, 361);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(142, 44);
@@ -354,7 +354,7 @@ namespace QuanLyBenhNhan
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(1042, 356);
+            this.btnThem.Location = new System.Drawing.Point(1042, 361);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(149, 44);
@@ -608,7 +608,7 @@ namespace QuanLyBenhNhan
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 983);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grboxBN);
             this.Controls.Add(this.dgvDSBN);
             this.Controls.Add(this.pnInsert);
             this.ForeColor = System.Drawing.Color.Black;
@@ -618,8 +618,8 @@ namespace QuanLyBenhNhan
             this.Load += new System.EventHandler(this.FormQLBN_Load);
             this.pnInsert.ResumeLayout(false);
             this.pnInsert.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grboxBN.ResumeLayout(false);
+            this.grboxBN.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.gbGhiChu.ResumeLayout(false);
@@ -641,7 +641,7 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grboxBN;
         private System.Windows.Forms.DateTimePicker dtNgayKham;
         private System.Windows.Forms.DateTimePicker dtNgaySInh;
         private System.Windows.Forms.GroupBox groupBox1;

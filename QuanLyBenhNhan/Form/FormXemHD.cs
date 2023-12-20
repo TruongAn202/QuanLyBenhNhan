@@ -62,14 +62,22 @@ namespace QuanLyBenhNhan
         }
         private void btnLapHD_Click_1(object sender, EventArgs e)
         {
+            if (dgvDSHD.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để thêm thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow selectedRow = dgvDSHD.SelectedRows[0];
             string mahd = tbMaHD.Text.Trim();
             string maPK = txtMaPK.Text;
             string tenBN = txtTenBN.Text.Trim();
             string daTraStr = tbDaTra.Text.Trim();
-
             double traThem;
             string traThemStr = tbTraThem.Text.Trim();
             var existingHDs = xulyHD.SearchByMaPK(maPK);
+
+
             if (string.IsNullOrEmpty(mahd))
             {
                 MessageBox.Show("Vui lòng nhập mã hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -79,11 +87,6 @@ namespace QuanLyBenhNhan
             else if (xulyHD.ktTrungMa(mahd))
             {
                 MessageBox.Show("Mã hóa đơn đã tồn tại. Vui lòng chọn mã khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (string.IsNullOrEmpty(maPK))
-            {
-                MessageBox.Show("Vui lòng chọn mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else if (!double.TryParse(daTraStr, out double daTra))
@@ -103,20 +106,38 @@ namespace QuanLyBenhNhan
                 tbTraThem.Focus();
                 return;
             }
+            else if (traThem < 0)
+            {
+                MessageBox.Show("Số tiền thanh toán thêm không được là số âm. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTraThem.Focus();
+                return;
+            }
             else
             {
-                daTra += traThem;
-                pk = new CPhieuKham();
-                pk.Maphieukham = maPK;
-                pk.Maphieukham = txtMaPK.Text;
+                if (selectedRow.DefaultCellStyle.BackColor == Color.Yellow)
+                {
+                    daTra += traThem;
+                    if (daTra > Convert.ToDouble(tbTongTien.Text))
+                    {
+                        MessageBox.Show("Số tiền trả thêm cộng với số tiền đã thanh toán đã vượt mức tổng tiền.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    pk = new CPhieuKham();
+                    pk.Maphieukham = maPK;
+                    pk.Maphieukham = txtMaPK.Text;
 
-                hd = new CHoaDon(mahd, dtNgayLapPhieu.Value, pk, tenBN, tbTongTien.Text, daTra);
-                xulyHD.insertHD(hd);
-                TruyCapDuLieu.luuFile("data.dat");
+                    hd = new CHoaDon(mahd, dtNgayLapPhieu.Value, pk, tenBN, tbTongTien.Text, daTra);
+                    xulyHD.insertHD(hd);
+                    TruyCapDuLieu.luuFile("data.dat");
 
-                dgvDSHD.ClearSelection();
-                dgvDSHD.DataSource = dgvDSHD.DataSource = xulyHD.SearchByMaPK(txtMaPK.Text);
-
+                    dgvDSHD.ClearSelection();
+                    dgvDSHD.DataSource = dgvDSHD.DataSource = xulyHD.SearchByMaPK(txtMaPK.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Hãy nhấp chuột trái vào dòng đã được đánh dấu màu vàng sau khi bạn đã nhấn nút \"Tìm mới nhất\" để thực hiện thanh toán.", "Cảnh báo nguy hiểm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
         }
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -139,6 +160,7 @@ namespace QuanLyBenhNhan
 
             tbTongThu.Text = hd.TongTien;
             tbDaTra.Text = hd.DaTra.ToString();
+            tbTraThem.Clear();
         }
 
         private void btnHDMN_Click(object sender, EventArgs e)
@@ -151,7 +173,9 @@ namespace QuanLyBenhNhan
                 dgvDSHD.Rows[lastRowIndex].DefaultCellStyle.BackColor = Color.Yellow;
                 // cuộn tới dòng đó
                 dgvDSHD.FirstDisplayedScrollingRowIndex = lastRowIndex;
+
             }
+            
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -244,6 +268,6 @@ namespace QuanLyBenhNhan
                 }
                 tbTim.Clear();
             }
-        }
+        } 
     }
 }
