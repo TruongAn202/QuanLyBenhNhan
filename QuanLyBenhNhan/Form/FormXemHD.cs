@@ -62,13 +62,6 @@ namespace QuanLyBenhNhan
         }
         private void btnLapHD_Click_1(object sender, EventArgs e)
         {
-            if (dgvDSHD.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn một hóa đơn để thêm thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DataGridViewRow selectedRow = dgvDSHD.SelectedRows[0];
             string mahd = tbMaHD.Text.Trim();
             string maPK = txtMaPK.Text;
             string tenBN = txtTenBN.Text.Trim();
@@ -114,7 +107,7 @@ namespace QuanLyBenhNhan
             }
             else
             {
-                if (selectedRow.DefaultCellStyle.BackColor == Color.Yellow)
+                if (existingHDs == null || !existingHDs.Any())
                 {
                     daTra += traThem;
                     if (daTra > Convert.ToDouble(tbTongTien.Text))
@@ -128,6 +121,7 @@ namespace QuanLyBenhNhan
 
                     hd = new CHoaDon(mahd, dtNgayLapPhieu.Value, pk, tenBN, tbTongTien.Text, daTra);
                     xulyHD.insertHD(hd);
+
                     TruyCapDuLieu.luuFile("data.dat");
 
                     dgvDSHD.ClearSelection();
@@ -135,9 +129,35 @@ namespace QuanLyBenhNhan
                 }
                 else
                 {
-                    MessageBox.Show("Hãy nhấp chuột trái vào dòng đã được đánh dấu màu vàng sau khi bạn đã nhấn nút \"Tìm mới nhất\" để thực hiện thanh toán.", "Cảnh báo nguy hiểm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    DataGridViewRow selectedRow = dgvDSHD.SelectedRows[0];
+                    if (selectedRow.DefaultCellStyle.BackColor == Color.Yellow)
+                    {
+                        daTra += traThem;
+                        if (daTra > Convert.ToDouble(tbTongTien.Text))
+                        {
+                            MessageBox.Show("Số tiền trả thêm cộng với số tiền đã thanh toán đã vượt mức tổng tiền.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        pk = new CPhieuKham();
+                        pk.Maphieukham = maPK;
+                        pk.Maphieukham = txtMaPK.Text;
+
+                        hd = new CHoaDon(mahd, dtNgayLapPhieu.Value, pk, tenBN, tbTongTien.Text, daTra);
+                        xulyHD.insertHD(hd);
+
+                        TruyCapDuLieu.luuFile("data.dat");
+
+                        dgvDSHD.ClearSelection();
+                        dgvDSHD.DataSource = dgvDSHD.DataSource = xulyHD.SearchByMaPK(txtMaPK.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hãy nhấp chuột trái vào dòng đã được đánh dấu màu vàng sau khi bạn đã nhấn nút \"Tìm mới nhất\" để thực hiện thanh toán.", "Cảnh báo nguy hiểm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                 }
+
             }
         }
         private void groupBox3_Enter(object sender, EventArgs e)

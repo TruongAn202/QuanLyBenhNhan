@@ -29,9 +29,9 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnEdit = new System.Windows.Forms.Panel();
             this.label = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -51,12 +51,16 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbLocTinhTrang = new System.Windows.Forms.ComboBox();
             this.pnEdit.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPK)).BeginInit();
             this.panel3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnEdit
@@ -84,6 +88,7 @@ namespace QuanLyBenhNhan
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.panel2);
@@ -114,7 +119,7 @@ namespace QuanLyBenhNhan
             this.tbTim.Name = "tbTim";
             this.tbTim.Size = new System.Drawing.Size(178, 47);
             this.tbTim.TabIndex = 151;
-            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
+            //this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
             this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
             // 
             // btnTim
@@ -193,21 +198,21 @@ namespace QuanLyBenhNhan
             this.dgvDSPK.AllowUserToDeleteRows = false;
             this.dgvDSPK.AllowUserToResizeColumns = false;
             this.dgvDSPK.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDSPK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDSPK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSPK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSPK.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSPK.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSPK.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDSPK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSPK.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -215,14 +220,14 @@ namespace QuanLyBenhNhan
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSPK.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSPK.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDSPK.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSPK.EnableHeadersVisualStyles = false;
             this.dgvDSPK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
@@ -314,6 +319,42 @@ namespace QuanLyBenhNhan
             this.label13.TabIndex = 0;
             this.label13.Text = "Danh sách phiếu khám";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Controls.Add(this.cbLocTinhTrang);
+            this.groupBox6.Font = new System.Drawing.Font("Inter", 12F);
+            this.groupBox6.Location = new System.Drawing.Point(459, 138);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(396, 101);
+            this.groupBox6.TabIndex = 163;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Lọc theo tình trạng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.TabIndex = 161;
+            this.label1.Text = "Tình trạng";
+            // 
+            // cbLocTinhTrang
+            // 
+            this.cbLocTinhTrang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbLocTinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLocTinhTrang.FormattingEnabled = true;
+            this.cbLocTinhTrang.Items.AddRange(new object[] {
+            "Đã thanh toán đủ",
+            "Chưa thanh toán",
+            "Tất cả"});
+            this.cbLocTinhTrang.Location = new System.Drawing.Point(147, 36);
+            this.cbLocTinhTrang.Name = "cbLocTinhTrang";
+            this.cbLocTinhTrang.Size = new System.Drawing.Size(229, 32);
+            this.cbLocTinhTrang.TabIndex = 160;
+            this.cbLocTinhTrang.SelectedIndexChanged += new System.EventHandler(this.cbLocTinhTrang_SelectedIndexChanged);
+            // 
             // FormQLHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,6 +379,8 @@ namespace QuanLyBenhNhan
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSPK)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +405,8 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbLocTinhTrang;
     }
 }

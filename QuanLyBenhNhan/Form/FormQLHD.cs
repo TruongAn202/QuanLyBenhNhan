@@ -178,13 +178,15 @@ namespace QuanLyBenhNhan
             string mapk = getMaPK();
             if (mapk == "") return;
             CPhieuKham pk = xulyPK.searchPK(mapk); // không duoc sua mã
-            //tbMaPK.Text = pk.Maphieukham;
-            //tbTenBN.Text = pk.BenhNhan.TenBN;
         }
 
-        private void tbTim_TextChanged(object sender, EventArgs e)
+        private void cbLocTinhTrang_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dgvDSPK.DataSource = xulyPK.SearchByTinhTrang(cbLocTinhTrang.Text);
+            if (cbLocTinhTrang.Text == "Tất cả")
+            {
+                showDSPK();
+            }
         }
     }
 }

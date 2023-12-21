@@ -66,6 +66,23 @@ namespace QuanLyBenhNhan
                 return tong;
             }
         }
+        public string TinhTrang
+        {
+            get
+            {
+                CXuLyHoaDon xuLyHoaDon = new CXuLyHoaDon();
+                List<CHoaDon> danhSachHoaDon = xuLyHoaDon.SearchByMaPK(Maphieukham);
+
+                if (danhSachHoaDon.Any(hoaDon => hoaDon.TinhTrang == "Thanh toán đủ"))
+                {
+                    return "Đã thanh toán đủ";
+                }
+                else
+                {
+                    return "Chưa thanh toán";
+                }
+            }
+        }
         public override string ToString() 
         {
             return Maphieukham;
