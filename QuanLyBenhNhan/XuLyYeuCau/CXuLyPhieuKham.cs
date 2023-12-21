@@ -73,5 +73,20 @@ namespace QuanLyBenhNhan
         {
             return dsPK.ContainsKey(maPK);
         }
+
+        public List<CPhieuKham> SearchByTinhTrang(string tinhTrang)
+        {
+            List<CPhieuKham> danhSachTimKiem = new List<CPhieuKham>();
+
+            foreach (var pk in dsPK.Values)
+            {
+                if (pk.TinhTrang.Equals(tinhTrang, StringComparison.OrdinalIgnoreCase))
+                {
+                    danhSachTimKiem.Add(pk);
+                }
+            }
+
+            return danhSachTimKiem;
+        }
     }
 }

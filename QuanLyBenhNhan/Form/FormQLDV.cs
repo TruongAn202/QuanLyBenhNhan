@@ -14,11 +14,13 @@ namespace QuanLyBenhNhan
     public partial class FormQLDV : Form
     {
         CXuLyDichVu xulyDV = new CXuLyDichVu();
+        private CChiTietPhieuKham ctpk = new CChiTietPhieuKham();
+        List<CChiTietPhieuKham> dsCTPK = new List<CChiTietPhieuKham>();
+        private CXuLyPhieuKham xulyPK = new CXuLyPhieuKham();
         public FormQLDV()
         {
             InitializeComponent();
         }
-
         private void clear()
         {
             tbDonGia.Text = "";
@@ -40,8 +42,23 @@ namespace QuanLyBenhNhan
             int index = dgvDSDV.SelectedRows[0].Index;
             return dgvDSDV.Rows[index].Cells[0].Value.ToString();
         }
-               
+        private string getTenDV()
+        {
+            if (dgvDSDV.SelectedRows.Count > 0)
+            {
+                // Lấy đối tượng dữ liệu liên kết với dòng được chọn
+                CDichVu dichvu = dgvDSDV.SelectedRows[0].DataBoundItem as CDichVu;
 
+                // Kiểm tra null để tránh lỗi
+                if (dichvu != null)
+                {
+                    // Truy cập thuộc tính TenBS
+                    return dichvu.TenDichVu;
+                }
+            }
+
+            return "";
+        }
         private void dgvDSDV_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             string madv = getMaDV();
@@ -53,7 +70,6 @@ namespace QuanLyBenhNhan
             tbTenDV.Text = dv.TenDichVu;
             tbDonGia.Text = dv.Dongia.ToString();
         }
-
         private void dgvDSDV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             // Vẽ số thứ tự lên cột đầu tiên (index 0)
@@ -62,35 +78,54 @@ namespace QuanLyBenhNhan
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-
         private void FormQLDV_Load(object sender, EventArgs e)
         {    
             // insert stt
             dgvDSDV.RowPostPaint += dgvDSDV_RowPostPaint;
             dgvDSDV.RowHeadersVisible = true;
             dgvDSDV.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            
-            //luu
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLDV.dat");
-            //if (File.Exists(defaultPath))
-            //{
-            //    xulyDV.docFile(defaultPath);
-            //}
+           
             dgvDSDV.DataSource = xulyDV.getDsDichVu();
             
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string tendv = getTenDV();
             string madv = getMaDV();
-            if (madv != "")
+            if (tendv != "")
             {
-                xulyDV.deleteDV(madv);
-                show();
+                bool dichvudatontai = false;
+
+                // Kiểm tra xem dịch vụ có tồn tại trong ít nhất một phiếu khám không
+                foreach (CPhieuKham pk in xulyPK.getDsPhieuKham())
+                {
+                    foreach (CChiTietPhieuKham ctpk in pk.DsCTPK)
+                    {
+                        if (ctpk.DichVu != null && ctpk.DichVu.TenDichVu == tendv)
+                        {
+                            dichvudatontai = true;
+                            break;
+                        }
+                    }
+
+                    if (dichvudatontai)
+                    {
+                        break; // Nếu đã tìm thấy trong một phiếu khám thì thoát khỏi vòng lặp ngoại cùng
+                    }
+                }
+
+                if (dichvudatontai)
+                {
+                    MessageBox.Show("Không thể xóa dịch vụ đã tồn tại trong ít nhất một phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    xulyDV.deleteDV(madv);
+                    show();
+                }
             }
             dgvDSDV.ClearSelection();
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLDV.dat");
@@ -105,9 +140,9 @@ namespace QuanLyBenhNhan
             }
             dgvDSDV.ClearSelection();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string donGiaStr = tbDonGia.Text.Trim();
             string madv = getMaDV();
             if (madv == "") return;
             CDichVu dv = xulyDV.searchDV(madv);
@@ -124,13 +159,18 @@ namespace QuanLyBenhNhan
 
             dv.TenDichVu = tbTenDV.Text;
             dv.MaDichVu = tbMaDV.Text;
+            if (!double.TryParse(donGiaStr, out double donGia))
+            {
+                MessageBox.Show("Đơn giá phải là số. Vui lòng viết lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbDonGia.Focus();
+                return;
+            }
             dv.Dongia = double.Parse(tbDonGia.Text);
 
             xulyDV.updateDV(dv);
             show();
             dgvDSDV.ClearSelection();
         }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string madv = tbMaDV.Text.Trim();
@@ -140,6 +180,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(madv))
             {
                 MessageBox.Show("Vui lòng nhập mã dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaDV.Focus();
                 return;
             }
             else if (xulyDV.ktTrungMa(madv))
@@ -150,6 +191,7 @@ namespace QuanLyBenhNhan
             else if (string.IsNullOrEmpty(tenDV))
             {
                 MessageBox.Show("Vui lòng nhập tên dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbTenDV.Focus();
                 return;
             }
             else if (!double.TryParse(donGiaStr, out double donGia))
@@ -165,13 +207,7 @@ namespace QuanLyBenhNhan
                 show();
                 dgvDSDV.ClearSelection();
             }
-        }
-
-        private void dgvDSDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
+        }       
         private void btnTim_Click(object sender, EventArgs e)
         {
             string madv = tbTim.Text.Trim();
@@ -206,7 +242,7 @@ namespace QuanLyBenhNhan
                     foundRow.DefaultCellStyle.BackColor = Color.Yellow;
                     foundRow.DefaultCellStyle.ForeColor = Color.Black;
 
-                    // Tùy chọn: Scroll đến dòng được tìm thấy
+                    // cuộn đến dòng được tìm thấy
                     dgvDSDV.FirstDisplayedScrollingRowIndex = foundRow.Index;
                 }
             }
@@ -218,11 +254,6 @@ namespace QuanLyBenhNhan
             tbTim.Clear();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbTim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -231,7 +262,7 @@ namespace QuanLyBenhNhan
                 string madv = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(madv))
                 {
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã dịch vụ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
@@ -263,11 +294,11 @@ namespace QuanLyBenhNhan
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Không tìm thấy dịch vụ có mã: " + madv + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbTim.Focus();
                 }
                 tbTim.Clear();
             }
-        }
+        }      
     }
 }

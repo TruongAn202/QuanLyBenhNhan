@@ -12,7 +12,6 @@ namespace QuanLyBenhNhan
         private string maDichVu;
         private string tenDichVu;
         private double dongia;
-
         public CDichVu(string maDichVu, string tenDichVu, double dongia)
         {
             MaDichVu = maDichVu;
@@ -25,12 +24,10 @@ namespace QuanLyBenhNhan
             TenDichVu = null;
             Dongia = 0;
         }
-
         public string MaDichVu { get => maDichVu; set => maDichVu = value; }
         public string TenDichVu { get => tenDichVu; set => tenDichVu = value; }
         public double Dongia { get => dongia; set => dongia = value; }
-
-        public override string ToString() //hienthi chi madv len cb
+        public override string ToString() 
         {
             return MaDichVu;
 

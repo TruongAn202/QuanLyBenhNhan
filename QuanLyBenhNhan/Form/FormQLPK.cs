@@ -15,10 +15,10 @@ namespace QuanLyBenhNhan
         List<CChiTietPhieuKham> dsCTPK;
         private CXuLyPhieuKham xyLyPK = new CXuLyPhieuKham();
         private CXuLyDichVu xuLyDV = new CXuLyDichVu();
-        CChiTietPhieuKham ctpk = new CChiTietPhieuKham();
         List<CChiTietPhieuKham> dsTamThoi = new List<CChiTietPhieuKham>();
-        CDichVu dv = new CDichVu();
+        private CXuLyHoaDon xulyHD = new CXuLyHoaDon();
         private CPhieuKham pk;
+        
         public FormQLPK()
         {
             InitializeComponent();
@@ -38,12 +38,10 @@ namespace QuanLyBenhNhan
             BindingSource bs = new BindingSource();
             bs.DataSource = xyLyPK.getDsPhieuKham();
             dgvQLPK.DataSource = bs;
-
-
         }
-        private string getMaPK()
+        private string getMaPK() // gia tri o dau tien cua hang dc chon
         {
-            if (dgvQLPK.SelectedRows.Count == 0) return "";
+            if (dgvQLPK.SelectedRows.Count == 0) return ""; //kt xem co hang nao dc chon k
             int index = dgvQLPK.SelectedRows[0].Index;
             return dgvQLPK.Rows[index].Cells[0].Value.ToString();
         }
@@ -61,14 +59,14 @@ namespace QuanLyBenhNhan
 
             dtNgayLapPhieu.Value = DateTime.Today;
 
-            cbMaDV.SelectedIndex = 0;
-
-            dgvChiTietPK.DataSource = null;
+            cbMaDV.SelectedIndex = 0;           
+            dgvChiTietPK.Rows.Clear();
+            dgvChiTietPK.Refresh(); //được sử dụng để làm mới giao diện và hiển thị lại ColumnHeader.
         }
         private void showChiTietPK(List<CChiTietPhieuKham> dsCTPK) // danh muc dich vu
         {
             BindingSource bs = new BindingSource();
-            bs.DataSource = CViewCTPK.getViewList(dsCTPK); //lay danh sach view
+            bs.DataSource = CChiTietPhieuKham.getViewList(dsCTPK); //lay danh sach view
             dgvChiTietPK.DataSource = bs;
         }              
         private void btnXemPK_Click_1(object sender, EventArgs e)
@@ -85,8 +83,6 @@ namespace QuanLyBenhNhan
             cbBN.Text = pk.BenhNhan.TenBN;
             cbBS.Text = pk.BacSi.TenBS;
             dtNgayLapPhieu.Value = pk.Ngaylapphieu;
-
-            //ListCtpk = pk.ChiTietPhieuKham;
 
             showChiTietPK(pk.DsCTPK);
         }
@@ -106,10 +102,21 @@ namespace QuanLyBenhNhan
             string mapk = getMaPK();
             if (mapk != "")
             {
-                xyLyPK.deletePK(mapk);
-                showDSPK();
-                clear();
+                // Kiểm tra xem "Maphieukham" có tồn tại trong danh sách hóa đơn hay không
+                List<CHoaDon> hoaDonList = xulyHD.SearchByMaPK(mapk);
 
+                if (hoaDonList.Count > 0)
+                {
+                    
+                    MessageBox.Show("Không thể xóa phiếu khám đã có hóa đơn liên quan.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Nếu không có hóa đơn liên quan, thực hiện xóa phiếu khám
+                    xyLyPK.deletePK(mapk);
+                    showDSPK();
+                    clear();
+                }
             }
         }        
         private void btnChonDV_Click_1(object sender, EventArgs e)
@@ -119,12 +126,14 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(tbSoLuong.Text))
             {
                 MessageBox.Show("Hãy nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbSoLuong.Focus();
                 return;
             }
 
             if (!int.TryParse(tbSoLuong.Text, out int soluong) || soluong <= 0)
             {
-                MessageBox.Show("Số lượng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng không hợp lệ, hãy nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbSoLuong.Focus();
                 return;
             }
 
@@ -137,11 +146,9 @@ namespace QuanLyBenhNhan
                 existingItem.SoLuong += soluong;
             }
             else
-            {
-                
+            {   
                 dsTamThoi.Add(new CChiTietPhieuKham(soluong, dv));
             }
-
             showChiTietPK(dsTamThoi);
         }
 
@@ -151,7 +158,6 @@ namespace QuanLyBenhNhan
             tbTenDV.Text = dv.TenDichVu;
             tbDonGia.Text = dv.Dongia + "";
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             string mapk = getMaPK();
@@ -202,31 +208,15 @@ namespace QuanLyBenhNhan
             tbMaPK.Text = pk.Maphieukham;
             dtNgayLapPhieu.Value = pk.Ngaylapphieu;
             cbBN.Text = pk.BenhNhan.TenBN;
-            cbBS.Text = pk.BacSi.TenBS;
-           
+            cbBS.Text = pk.BacSi.TenBS;           
         }
-
-        private void btnLapPK_Click(object sender, EventArgs e)
-        {
-            pk = null;
-            clear();
-            foreach (DataGridViewRow row in dgvQLPK.Rows)
-            {
-                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
-                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
-                dgvQLPK.ClearSelection();
-            }
-
-            // Xóa nội dung trong TextBox "tbTim"
-            tbTimPk.Clear();
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string mapk = tbMaPK.Text.Trim();
             if (string.IsNullOrEmpty(mapk))
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaPK.Focus();
                 return;
             }
             else if (xyLyPK.ktTrungMa(mapk))
@@ -313,7 +303,6 @@ namespace QuanLyBenhNhan
             }
             tbTimPk.Clear();
         }
-
         private void tbTimPk_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -322,7 +311,7 @@ namespace QuanLyBenhNhan
                 string mapk = tbTimPk.Text.Trim();
                 if (string.IsNullOrEmpty(mapk))
                 {
-                    MessageBox.Show("Vui lòng nhập mã phiếu khám.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã phiếu khám vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTimPk.SelectAll();
                     tbTimPk.Focus();
                     return;
@@ -359,6 +348,20 @@ namespace QuanLyBenhNhan
                 }
                 tbTimPk.Clear();
             }
+        }
+        private void btnLapPKMoi_Click(object sender, EventArgs e)
+        {
+            dsTamThoi = new List<CChiTietPhieuKham>();
+            clear();
+            foreach (DataGridViewRow row in dgvQLPK.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dgvQLPK.DefaultCellStyle.BackColor;
+                row.DefaultCellStyle.ForeColor = dgvQLPK.DefaultCellStyle.ForeColor;
+                dgvQLPK.ClearSelection();
+            }
+
+
+            tbTimPk.Clear();
         }
     }
 }

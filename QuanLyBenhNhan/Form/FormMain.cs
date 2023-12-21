@@ -36,18 +36,7 @@ namespace QuanLyBenhNhan
             childForm.BringToFront(); // đưa form con lên trước
             childForm.Show();
   
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-       
-
-       
+        }  
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e) // hành dộng hỏi khi nhấn thoát
         {
@@ -72,9 +61,7 @@ namespace QuanLyBenhNhan
        
         private void FormMain_Load(object sender, EventArgs e)
         {
-            timer1.Start(); // cho time vừa tạo chạy
-            
-
+            timer1.Start(); // cho time vừa tạo chạy           
             
             string absolutePath = "iconMini.png"; // để hỉnh ở ngoài, click vào hình chọn: copy to Output -> copu if newer, thêm ảnh: click phải dự án -> add -> Existring items
             Image image = Image.FromFile(absolutePath);
@@ -86,11 +73,7 @@ namespace QuanLyBenhNhan
             this.Icon = icon;
 
             //dulieu
-            TruyCapDuLieu.docFile("data.dat");
-            //TruyCapDuLieu.docFile("dataQLBN.dat");
-            //TruyCapDuLieu.docFile("dataQLDV.dat");
-            //TruyCapDuLieu.docFile("dataQLHD.dat");
-            //TruyCapDuLieu.docFile("dataQLPK.dat");
+            TruyCapDuLieu.docFile("data.dat");     
         }
 
         private void timer1_Tick(object sender, EventArgs e) // tạo 1 timer rồi click vào
@@ -104,17 +87,7 @@ namespace QuanLyBenhNhan
 
         private void btnInsertCha_MouseEnter(object sender, EventArgs e)
         {
-            //btnInsertCha.BackColor = Color.FromArgb(140, 181, 252);
         }
-
-        private void btnDSBN_Click(object sender, EventArgs e)
-        {
-           // openChildform(new FormPatientList());
-        }
-
-        
-
-       
 
         private void btnCloseMain_Click_1(object sender, EventArgs e)
         {

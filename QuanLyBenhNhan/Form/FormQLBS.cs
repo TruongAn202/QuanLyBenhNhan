@@ -14,13 +14,12 @@ namespace QuanLyBenhNhan
     public partial class FormQLBS : Form
     {
         private CXuLyBacSi xulyBS = new CXuLyBacSi();
-        
-
+        private CXuLyPhieuKham xulyPK = new CXuLyPhieuKham();
         public FormQLBS()
         {
             InitializeComponent();
         }
-
+        
         private void clear()
         {
             tbMaBS.Text = "";
@@ -32,7 +31,6 @@ namespace QuanLyBenhNhan
             dtNgaySInh.Value = DateTime.Today;
             tbMaBS.Focus();
         }
-
         private void show()
         {
             BindingSource BS = new BindingSource(); // dối tượng kết nối dữ liệu
@@ -48,13 +46,23 @@ namespace QuanLyBenhNhan
             int index = dgvDSBS.SelectedRows[0].Index;
             return dgvDSBS.Rows[index].Cells[0].Value.ToString();
         }
+        private string getTenBS()
+        {
+            if (dgvDSBS.SelectedRows.Count > 0)
+            {
+                // Lấy đối tượng dữ liệu liên kết với dòng được chọn
+                CBacSi bacSi = dgvDSBS.SelectedRows[0].DataBoundItem as CBacSi;
 
-        
+                // Kiểm tra null để tránh lỗi
+                if (bacSi != null)
+                {
+                    // Truy cập thuộc tính TenBS
+                    return bacSi.TenBS;
+                }
+            }
 
-        
-
-        
-
+            return "";
+        }
         private void dgvDSBS_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             string mabs = getMaBS();
@@ -69,7 +77,6 @@ namespace QuanLyBenhNhan
             dtNgayVaoLam.Value = doctor.NgayVaoLam;
             dtNgaySInh.Value = doctor.NgaySinh;
         }
-
         private void dgvDSBS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             // Vẽ số thứ tự lên cột đầu tiên (index 0)
@@ -78,26 +85,16 @@ namespace QuanLyBenhNhan
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brush, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
             }
         }
-
         private void FormQLBS_Load(object sender, EventArgs e)
         {
             dgvDSBS.RowPostPaint += dgvDSBS_RowPostPaint;
             dgvDSBS.RowHeadersVisible = true;
             dgvDSBS.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBS.dat");
-            //    if (File.Exists(defaultPath))
-            //    {
-            //        xulyBS.docFile(defaultPath);
-            //    }
             dgvDSBS.DataSource = xulyBS.getDsBacSi(); // load data lên dgv ngay
             
         }
-
-        
-
         private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            //string defaultPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dataQLBS.dat");
+        {           
 
             if (TruyCapDuLieu.luuFile("data.dat"))
             {
@@ -109,7 +106,6 @@ namespace QuanLyBenhNhan
             }
             dgvDSBS.ClearSelection();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string mabs = getMaBS();
@@ -136,7 +132,6 @@ namespace QuanLyBenhNhan
             show();
             dgvDSBS.ClearSelection();
         }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             string mabs = tbMaBS.Text.Trim();
@@ -148,6 +143,7 @@ namespace QuanLyBenhNhan
             if (string.IsNullOrEmpty(mabs))
             {
                 MessageBox.Show("Vui lòng nhập mã bác sĩ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbMaBS.Focus();
                 return;
             }
             else if (xulyBS.ktTrungMa(mabs))
@@ -167,48 +163,35 @@ namespace QuanLyBenhNhan
             }
             dgvDSBS.ClearSelection();
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string tenbs = getTenBS();
             string mabs = getMaBS();
-            if (mabs != "")
+            if (tenbs != "")
             {
-                xulyBS.deleteBS(mabs);
-                show();
+                bool bacsidatontai = false;
+
+                // Kiểm tra xem bác sĩ có tồn tại trong các phiếu khám không
+                foreach (CPhieuKham pk in xulyPK.getDsPhieuKham())
+                {
+                    if (pk.BacSi != null && pk.BacSi.TenBS == tenbs)
+                    {
+                        bacsidatontai = true;
+                        break;
+                    }
+                }
+                if (bacsidatontai)
+                {
+                    MessageBox.Show("Không thể xóa bác sĩ đã tồn tại trong ít nhất một phiếu khám.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    xulyBS.deleteBS(mabs);
+                    show();
+                }
             }
             dgvDSBS.ClearSelection();
         }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvDSBS_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             string mabs = tbTim.Text.Trim();
@@ -254,7 +237,6 @@ namespace QuanLyBenhNhan
             }
             tbTim.Clear();
         }
-
         private void tbTim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -263,7 +245,7 @@ namespace QuanLyBenhNhan
                 string mabs = tbTim.Text.Trim();
                 if (string.IsNullOrEmpty(mabs))
                 { 
-                    MessageBox.Show("Vui lòng nhập mã bệnh nhân.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng nhập mã bác sĩ vào ô tìm kiếm.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tbTim.SelectAll();
                     tbTim.Focus();
                     return;
@@ -295,17 +277,11 @@ namespace QuanLyBenhNhan
                 }
                 else
                 { 
-                    MessageBox.Show("Không tìm thấy bệnh nhân có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("Không tìm thấy bác sĩ có mã: " + mabs + ". Vui lòng kiểm tra lại và nhập mã theo định dạng đúng (viết hoa và viết thường).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                     tbTim.Focus();
                 }
                 tbTim.Clear();
-            }
-            
-        }
-
-        private void tbTim_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+            }           
+        }     
     }
 }

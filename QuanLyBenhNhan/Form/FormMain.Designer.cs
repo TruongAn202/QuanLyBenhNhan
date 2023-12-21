@@ -215,7 +215,7 @@ namespace QuanLyBenhNhan
             this.labTime.AutoSize = true;
             this.labTime.Font = new System.Drawing.Font("Inter", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labTime.ForeColor = System.Drawing.Color.White;
-            this.labTime.Location = new System.Drawing.Point(531, 601);
+            this.labTime.Location = new System.Drawing.Point(499, 577);
             this.labTime.Name = "labTime";
             this.labTime.Size = new System.Drawing.Size(170, 72);
             this.labTime.TabIndex = 2;
@@ -227,7 +227,7 @@ namespace QuanLyBenhNhan
             this.labDay.AutoSize = true;
             this.labDay.Font = new System.Drawing.Font("Inter Italic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labDay.ForeColor = System.Drawing.Color.White;
-            this.labDay.Location = new System.Drawing.Point(501, 673);
+            this.labDay.Location = new System.Drawing.Point(469, 649);
             this.labDay.Name = "labDay";
             this.labDay.Size = new System.Drawing.Size(57, 29);
             this.labDay.TabIndex = 1;
@@ -237,7 +237,7 @@ namespace QuanLyBenhNhan
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::QuanLyBenhNhan.Properties.Resources.An__5_;
-            this.pictureBox1.Location = new System.Drawing.Point(475, 214);
+            this.pictureBox1.Location = new System.Drawing.Point(443, 190);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(480, 480);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +259,7 @@ namespace QuanLyBenhNhan
             this.MinimumSize = new System.Drawing.Size(998, 553);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý bệnh nhân";
+            this.Text = "Quản lý bệnh nhân phòng khám";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMenu.ResumeLayout(false);

@@ -29,8 +29,8 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDSBS = new System.Windows.Forms.DataGridView();
@@ -57,7 +57,10 @@ namespace QuanLyBenhNhan
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grboxBS = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.tbTim = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -65,16 +68,13 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbTim = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSBS)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.grboxBS.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -107,14 +107,14 @@ namespace QuanLyBenhNhan
             this.dgvDSBS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSBS.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSBS.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDSBS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Inter", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDSBS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSBS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSBS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -124,14 +124,14 @@ namespace QuanLyBenhNhan
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Inter", 10.2F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSBS.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Inter", 10.2F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDSBS.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDSBS.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSBS.EnableHeadersVisualStyles = false;
             this.dgvDSBS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
@@ -145,7 +145,6 @@ namespace QuanLyBenhNhan
             this.dgvDSBS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSBS.Size = new System.Drawing.Size(1402, 285);
             this.dgvDSBS.TabIndex = 85;
-            this.dgvDSBS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBS_CellContentClick);
             this.dgvDSBS.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSBS_RowEnter);
             // 
             // Column1
@@ -371,34 +370,74 @@ namespace QuanLyBenhNhan
             this.panel2.Size = new System.Drawing.Size(1214, 32);
             this.panel2.TabIndex = 83;
             // 
-            // groupBox2
+            // grboxBS
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.btnSave);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.btnUpdate);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.btnInsert);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbMaBS);
-            this.groupBox2.Controls.Add(this.tbSDT);
-            this.groupBox2.Controls.Add(this.dtNgayVaoLam);
-            this.groupBox2.Controls.Add(this.tbTenBS);
-            this.groupBox2.Controls.Add(this.dtNgaySInh);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tbDiaChi);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 94);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1214, 423);
-            this.groupBox2.TabIndex = 91;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.grboxBS.BackColor = System.Drawing.Color.White;
+            this.grboxBS.Controls.Add(this.groupBox3);
+            this.grboxBS.Controls.Add(this.panel2);
+            this.grboxBS.Controls.Add(this.btnDelete);
+            this.grboxBS.Controls.Add(this.btnSave);
+            this.grboxBS.Controls.Add(this.label6);
+            this.grboxBS.Controls.Add(this.btnUpdate);
+            this.grboxBS.Controls.Add(this.label7);
+            this.grboxBS.Controls.Add(this.btnInsert);
+            this.grboxBS.Controls.Add(this.label5);
+            this.grboxBS.Controls.Add(this.tbMaBS);
+            this.grboxBS.Controls.Add(this.tbSDT);
+            this.grboxBS.Controls.Add(this.dtNgayVaoLam);
+            this.grboxBS.Controls.Add(this.tbTenBS);
+            this.grboxBS.Controls.Add(this.dtNgaySInh);
+            this.grboxBS.Controls.Add(this.label2);
+            this.grboxBS.Controls.Add(this.groupBox1);
+            this.grboxBS.Controls.Add(this.label3);
+            this.grboxBS.Controls.Add(this.tbDiaChi);
+            this.grboxBS.Controls.Add(this.label4);
+            this.grboxBS.Location = new System.Drawing.Point(12, 94);
+            this.grboxBS.Name = "grboxBS";
+            this.grboxBS.Size = new System.Drawing.Size(1214, 423);
+            this.grboxBS.TabIndex = 91;
+            this.grboxBS.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnTim);
+            this.groupBox3.Controls.Add(this.tbTim);
+            this.groupBox3.Font = new System.Drawing.Font("Inter", 12F);
+            this.groupBox3.Location = new System.Drawing.Point(6, 315);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(431, 102);
+            this.groupBox3.TabIndex = 153;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
+            this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTim.FlatAppearance.BorderSize = 0;
+            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTim.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(23, 36);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(178, 47);
+            this.btnTim.TabIndex = 150;
+            this.btnTim.Text = "Tìm theo mã";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // tbTim
+            // 
+            this.tbTim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTim.Location = new System.Drawing.Point(231, 36);
+            this.tbTim.Multiline = true;
+            this.tbTim.Name = "tbTim";
+            this.tbTim.Size = new System.Drawing.Size(178, 47);
+            this.tbTim.TabIndex = 151;
+            this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
             // 
             // btnDelete
             // 
@@ -410,10 +449,10 @@ namespace QuanLyBenhNhan
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_eraser_20;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(554, 360);
+            this.btnDelete.Location = new System.Drawing.Point(504, 361);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(123, 39);
+            this.btnDelete.Size = new System.Drawing.Size(142, 44);
             this.btnDelete.TabIndex = 88;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -429,9 +468,9 @@ namespace QuanLyBenhNhan
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_save_19;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(709, 360);
+            this.btnSave.Location = new System.Drawing.Point(690, 361);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(127, 39);
+            this.btnSave.Size = new System.Drawing.Size(142, 47);
             this.btnSave.TabIndex = 90;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -447,10 +486,10 @@ namespace QuanLyBenhNhan
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_pencil_20__1_;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(868, 360);
+            this.btnUpdate.Location = new System.Drawing.Point(868, 361);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(123, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(142, 47);
             this.btnUpdate.TabIndex = 89;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -466,10 +505,10 @@ namespace QuanLyBenhNhan
             this.btnInsert.ForeColor = System.Drawing.Color.White;
             this.btnInsert.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_add_20;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(1025, 360);
+            this.btnInsert.Location = new System.Drawing.Point(1044, 361);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(0);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(153, 39);
+            this.btnInsert.Size = new System.Drawing.Size(149, 47);
             this.btnInsert.TabIndex = 87;
             this.btnInsert.Text = "Thêm mới";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -510,48 +549,6 @@ namespace QuanLyBenhNhan
             this.label10.TabIndex = 0;
             this.label10.Text = "Danh sách bác sĩ";
             // 
-            // tbTim
-            // 
-            this.tbTim.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTim.Location = new System.Drawing.Point(231, 36);
-            this.tbTim.Multiline = true;
-            this.tbTim.Name = "tbTim";
-            this.tbTim.Size = new System.Drawing.Size(178, 47);
-            this.tbTim.TabIndex = 151;
-            this.tbTim.TextChanged += new System.EventHandler(this.tbTim_TextChanged);
-            this.tbTim.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTim_KeyDown);
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(181)))), ((int)(((byte)(252)))));
-            this.btnTim.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTim.FlatAppearance.BorderSize = 0;
-            this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTim.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Image = global::QuanLyBenhNhan.Properties.Resources.icons8_magnifying_glass_20;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(23, 36);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(178, 47);
-            this.btnTim.TabIndex = 150;
-            this.btnTim.Text = "Tìm theo mã";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnTim);
-            this.groupBox3.Controls.Add(this.tbTim);
-            this.groupBox3.Font = new System.Drawing.Font("Inter", 12F);
-            this.groupBox3.Location = new System.Drawing.Point(6, 315);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(431, 102);
-            this.groupBox3.TabIndex = 153;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tìm kiếm";
-            // 
             // FormQLBS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -559,7 +556,7 @@ namespace QuanLyBenhNhan
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1402, 983);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grboxBS);
             this.Controls.Add(this.dgvDSBS);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -572,12 +569,12 @@ namespace QuanLyBenhNhan
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.grboxBS.ResumeLayout(false);
+            this.grboxBS.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,7 +611,7 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grboxBS;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
