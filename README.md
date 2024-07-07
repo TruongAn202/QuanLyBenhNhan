@@ -10,3 +10,4 @@ I.4 Quản lý phiếu khám:
 -	Xây dựng chức năng ghi lại thông tin chi tiết về mỗi phiếu khám, bao gồm bệnh nhân, bác sĩ và đăng ký dịch vụ. 
 I.5 Quản lý hóa đơn:
 -	Phát triển chức năng ghi lại thông tin về hóa đơn, bao gồm tổng tiền, thanh toán và nợ còn lại, giúp theo dõi tình trạng tài chính một cách hiệu quả.
+![image](https://github.com/TruongAn202/QuanLyBenhNhan/assets/145119931/0663d606-589d-4392-983d-b14ee0895e7b)
